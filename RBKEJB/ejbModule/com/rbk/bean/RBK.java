@@ -312,7 +312,10 @@ public class RBK implements MessageListener {
 		else
 		{
 			System.out.println("<rbk><addPayee2FA2>failed because addPayee2FA2Success == false");
-			replyToServlet("70||");
+			replyString = "70|";
+			replyString=replyString+Long.toString(x.getPayerAccount())+"|";
+			replyString=replyString+Long.toString(x.getPayeeAccount())+"|";
+			replyToServlet(replyString);
 		}
 			
 	}
@@ -362,13 +365,24 @@ public class RBK implements MessageListener {
 			}
 			else{		
 				System.out.println("<rbk><payPayee2FA2>failed because acct.FundTransfer failed");
-				replyToServlet("50||");
-				
+				replyString = "50|";
+				replyString = replyString + x.getPayeeAccount()+"|";
+				System.out.println("<rbk><payPayee2FA2>amount = "+x.getAmount());
+				String amountString = Double.toString(x.getAmount());
+				replyString = replyString + amountString+"|";
+				replyString = replyString + x.getPayerAccount()+"|";
+				replyToServlet(replyString);
 			}
 		}
 		else{
 			System.out.println("<rbk><payPayee2FA2>failed because payPayee2FA2Success == false");
-			replyToServlet("50||");
+			replyString = "50|";
+			replyString = replyString + x.getPayeeAccount()+"|";
+			System.out.println("<rbk><payPayee2FA2>amount = "+x.getAmount());
+			String amountString = Double.toString(x.getAmount());
+			replyString = replyString + amountString+"|";
+			replyString = replyString + x.getPayerAccount()+"|";
+			replyToServlet(replyString);
 		}
 	}
 

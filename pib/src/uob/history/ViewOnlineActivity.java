@@ -126,7 +126,6 @@ public class ViewOnlineActivity extends HttpServlet {
 		DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy hh:mm");
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTimeInMillis(time);
-		System.out.println(formatter.format(calendar.getTime()));
 		String x = formatter.format(calendar.getTime());
 		String[] y = x.split(" ");
 		x=y[0]+"+"+y[1];

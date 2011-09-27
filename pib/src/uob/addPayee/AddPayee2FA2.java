@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import uob.data.AccountClass;
 import uob.data.AccountLinkDataStructure;
 import uob.data.AddPayee2FAData;
+import uob.service.HistClientService;
 import uob.service.RBKClientService;
 import uob.service.SSOClientService;
 
@@ -43,6 +44,7 @@ public class AddPayee2FA2 extends HttpServlet {
 		String userHash = getClientHash(cookies);
 		SSOClientService ssocs = new SSOClientService();
 		RBKClientService rbkcs = new RBKClientService();
+		HistClientService hcs = new HistClientService();
 		
 		if(userHash!=null){
 			if(ssocs.checkTrust2FA(userHash)){
@@ -67,7 +69,7 @@ public class AddPayee2FA2 extends HttpServlet {
 			AddPayee2FAData x = rbkcs.addPayee2FA2(indexHash, hash2FA);
 			
 			if(x.getAddPayee2FA2Success()){
-				
+				hcs.addPayeeSuccess(userName, x.getPayerAccount(), x.getPayeeAccount());
 				request.setAttribute("toAccount", Long.toString(x.getPayeeAccount()));
 				request.setAttribute("fromAccount", Long.toString(x.getPayerAccount()));
 				
@@ -75,6 +77,9 @@ public class AddPayee2FA2 extends HttpServlet {
 				if (dispatcher != null) dispatcher.forward(request, response);
 			}
 			else{
+				hcs.addPayeeNotSuccess(userName, x.getPayerAccount(), x.getPayeeAccount());
+				request.setAttribute("toAccount", Long.toString(x.getPayeeAccount()));
+				request.setAttribute("fromAccount", Long.toString(x.getPayerAccount()));
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/addPayee/addPayeeNotSuccessful.jsp");
 				if (dispatcher != null) dispatcher.forward(request, response);
 			}

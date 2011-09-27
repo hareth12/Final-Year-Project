@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import uob.data.AccountClass;
 import uob.data.AccountLinkDataStructure;
 import uob.data.PayPayee2FAData;
+import uob.service.HistClientService;
 import uob.service.RBKClientService;
 import uob.service.SSOClientService;
 
@@ -46,6 +47,7 @@ public class FundTransfer2FA2 extends HttpServlet {
 		String userHash = getClientHash(cookies);
 		SSOClientService ssocs = new SSOClientService();
 		RBKClientService rbkcs = new RBKClientService();
+		HistClientService hcs = new HistClientService();
 		
 		if(userHash!=null){
 			if(ssocs.checkTrust2FA(userHash)){
@@ -70,7 +72,7 @@ public class FundTransfer2FA2 extends HttpServlet {
 			PayPayee2FAData x = rbkcs.payPayee2FA2(indexHash, hash2FA);
 			
 			if(x.getPayPayee2FA2Success()){
-				
+				hcs.fundTransferSuccess(userName, x.getPayerAccount(), x.getPayeeAccount(),x.getAmount());
 				request.setAttribute("toAccount", Long.toString(x.getPayeeAccount()));
 				request.setAttribute("fromAccount", Long.toString(x.getPayerAccount()));
 				request.setAttribute("amount", Double.toString(x.getAmount()));
@@ -79,6 +81,10 @@ public class FundTransfer2FA2 extends HttpServlet {
 				if (dispatcher != null) dispatcher.forward(request, response);
 			}
 			else{
+				hcs.fundTransferNotSuccess(userName, x.getPayerAccount(), x.getPayeeAccount(),x.getAmount());
+				request.setAttribute("toAccount", Long.toString(x.getPayeeAccount()));
+				request.setAttribute("fromAccount", Long.toString(x.getPayerAccount()));
+				request.setAttribute("amount", Double.toString(x.getAmount()));
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/fundTransfer/fundTransfer2FANotSuccessful.jsp");
 				if (dispatcher != null) dispatcher.forward(request, response);
 			}

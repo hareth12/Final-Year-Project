@@ -1,0 +1,346 @@
+package com.accountLink;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+import java.util.Random;
+
+import javax.ejb.Stateful;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+
+/**
+ * Session Bean implementation class Account
+ */
+@Stateful(mappedName="AccountLink")
+public class AccountLink implements AccountLinkRemote {
+
+	
+	@PersistenceContext(unitName="accountLink-unit")
+	private EntityManager em;
+
+	@Override
+	public AddPayee2FAData addAccountLink2FA1(String idPib, long payerAccount,
+			long payeeAccount,String telephone, String fromType, String toType) throws Exception {
+		AddPayee2FAData x = new AddPayee2FAData();
+		
+		//Is payeeAccount and payerAccount number valid
+		int payeeAccountLength = getLength(payeeAccount);
+		int payerAccountLength = getLength(payerAccount);
+		
+		if( (payerAccountLength!=10) || (payeeAccountLength!=10)){
+			x.setAddPayee2FA1Success(false);
+			System.out.println("<AccountLink><addAccountLink> payerAccountLength and payeeAccountLength is not of 10 digits");
+		}
+		else{
+			
+			System.out.println("<AccountLink><addAccountLink> length check completed:");
+			
+			//need to find an unused indexHash
+			String preparedIndexHash = hashGeneratorForIndex(40);
+			boolean indexHashGoodToUse = false;
+			AccountLinkClass a = em.find(AccountLinkClass.class, preparedIndexHash);
+			while(a!=null){
+				preparedIndexHash = hashGeneratorForIndex(40);
+				a = em.find(AccountLinkClass.class, preparedIndexHash);
+			}
+			
+			if(a==null){
+				indexHashGoodToUse = true;
+				System.out.println("<AccountLink><addAccountLink>Good indexHash is found: "+preparedIndexHash);
+			}
+			
+			String pre2FAHash = hashGeneratorForPreHash(4);
+			String hash2FA = hashGenerator(6);
+			
+			a = new AccountLinkClass(idPib, payeeAccount, payerAccount, preparedIndexHash,telephone);
+			a.setPre2FAHash(pre2FAHash);
+			a.setHash2FA(hash2FA);
+			a.updateTime();
+			a.setValidLink(false);
+			a.setFromType(fromType);
+			a.setToType(toType);
+			em.persist(a);
+			
+			x.setAddPayee2FA1Success(true);
+			x.setIndexHash(preparedIndexHash);
+			x.setPreHash(pre2FAHash);
+			x.setPayeeAccount(payeeAccount);
+			x.setPayerAccount(payerAccount);
+			System.out.println("<AccountLink><addAccountLink> AccountLink is added");
+			
+			//send sms
+			String timeToExpire = changeDate(a.getTimeToEnd());
+			
+			
+			//sendSMS(pre2FAHash,hash2FA, a.getTelephone(), timeToExpire);
+			
+		}
+		
+		return x;
+	}
+	
+	private int getLength(long number){
+		return String.valueOf(number).length();
+	}
+
+	@Override
+	public List<AccountLinkDataStructure> getPayee(String idPib) {
+		System.out.println("<AccountLinkEJB><getPayee>idPib = "+idPib);
+		
+		Query q =em.createQuery("Select m from AccountLinkClass m where m.idPib = ?1 ");
+		q.setParameter(1, idPib);
+		List<AccountLinkClass> resultList = q.getResultList();
+		List<AccountLinkDataStructure> returnList = new ArrayList<AccountLinkDataStructure>();
+
+		
+		
+		//changing to another dataStructure
+		System.out.println("<Account><getAccount>size = "+ resultList.size());
+		int index = resultList.size();
+		int i =0;
+		while(i!=index){
+			AccountLinkDataStructure x = new AccountLinkDataStructure();
+			x.setAccountLinkHash(resultList.get(i).getIndexHash());
+			x.setPayeeAccount(resultList.get(i).getPayeeAccount());
+			returnList.add(x);
+			
+			System.out.println("<Account><getAccount>AccountNumber   = "+ resultList.get(i).getPayeeAccount());
+			System.out.println("<Account><getAccount>linkHash   = "+ resultList.get(i).getIndexHash());
+			i++;
+		}
+		
+		
+		
+		
+		System.out.println("<AccountLink><getPayee>before return");
+		return returnList;
+		
+	}
+	
+	private String hashGeneratorForIndex(int len){
+		String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+		Random rnd = new Random();
+		StringBuilder sb = new StringBuilder(len);
+		for( int i = 0; i < len; i++ ) 
+		      sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );		
+		return sb.toString();
+		
+	}
+	
+	private String hashGenerator(int len){
+		String AB = "0123456789";
+		Random rnd = new Random();
+		StringBuilder sb = new StringBuilder(len);
+		for( int i = 0; i < len; i++ ) 
+		      sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );		
+		return sb.toString();
+		
+	}
+	
+	private String hashGeneratorForPreHash(int len){
+		String AB = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+		Random rnd = new Random();
+		StringBuilder sb = new StringBuilder(len);
+		for( int i = 0; i < len; i++ ) 
+		      sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );		
+		return sb.toString();
+		
+	}
+
+	@Override
+	public payPayee2FAData payPayee2FA1(String payeeIndexHash, double amount)
+			throws Exception {
+		payPayee2FAData returnVar = new payPayee2FAData();
+		returnVar.setAmount(amount);
+		returnVar.setIndexHash(payeeIndexHash);
+		
+		AccountLinkClass x = em.find(AccountLinkClass.class, payeeIndexHash);
+		if(x!=null){
+			if(x.isValidLink()){
+				String pre2FAHash = hashGeneratorForPreHash(4);
+				x.setPre2FAHash(pre2FAHash);
+				String hash2FA = hashGenerator(6);
+				x.setHash2FA(hash2FA);
+				x.updateTime();
+				x.setAmountPending(amount);
+				long payeeAccountNumber = x.getPayeeAccount();
+				
+				returnVar.setPayeeAccount(payeeAccountNumber);
+				returnVar.setPreHash(pre2FAHash);
+				returnVar.setPayPayee2FA1Success(true);
+				
+				//sms
+				String timeToExpire = changeDate(x.getTimeToEnd());
+		//sendSMSTransfer(pre2FAHash,hash2FA, x.getTelephone(), timeToExpire);
+			}
+			else
+				System.out.println("<AccountLink><payPayee2FA1> not a valid link");
+		}
+		else
+		{
+			System.out.println("<AccountLink><payPayee2FA1> payeeIndexHash = "+payeeIndexHash +" cannot be found.");
+		}
+		
+		return returnVar;
+	}
+
+	@Override
+	public payPayee2FAData payPayee2FA2(String indexHash, String hash2FA)
+			throws Exception {
+		payPayee2FAData returnVar = new payPayee2FAData();
+		returnVar.setIndexHash(indexHash);
+		
+		AccountLinkClass x = em.find(AccountLinkClass.class, indexHash);
+		if(x!=null){
+			if(x.getHash2FA().equals(hash2FA))
+			{
+				if(x.checkTime()){
+					if(x.isValidLink()){
+						returnVar.setAmount(x.getAmountPending());
+						returnVar.setPayeeAccount(x.getPayeeAccount());
+						returnVar.setPayerAccount(x.getPayerAccount());
+						returnVar.setPayPayee2FA1Success(true);
+						returnVar.setPayPayee2FA2Success(true);
+					}
+					else
+					{System.out.println("<AccountLink><payPayee2FA2>valid Link failed");
+					}	
+				}
+				else
+				{System.out.println("<AccountLink><payPayee2FA2>time check failed");
+				}
+			}
+			else{
+				System.out.println("<AccountLink><payPayee2FA2>Hash check failed");
+			}
+				
+		}
+		else
+		{
+			System.out.println("<AccountLink><payPayee2FA2> indexHash = "+indexHash +" cannot be found.");
+		}
+		
+		return returnVar;
+	}
+
+	@Override
+	public AddPayee2FAData addAccountLink2FA2(String indexHash, String hash2FA)
+			throws Exception {
+		
+		AddPayee2FAData x = new AddPayee2FAData();
+		AccountLinkClass a = em.find(AccountLinkClass.class, indexHash);
+		
+		if(a!=null){
+			if(a.getHash2FA().equals(hash2FA)){
+				if(a.checkTime()){
+					a.setValidLink(true);
+					x.setAddPayee2FA1Success(true);
+					x.setAddPayee2FA2Success(true);
+					x.setIndexHash(indexHash);
+					x.setPayerAccount(a.getPayerAccount());
+					x.setPayeeAccount(a.getPayeeAccount());
+				}
+				else{
+					System.out.println("<AccountLink><addAccountLink2FA2> timecheck fail");
+				}
+				
+			}
+			else
+				System.out.println("<AccountLink><addAccountLink2FA2> hash2FA don't match.");
+		}
+		else
+		{
+			System.out.println("<AccountLink><addAccountLink2FA2> indexHash = "+indexHash +" cannot be found.");
+		}
+		
+		return x;
+	}
+
+	@Override
+	public long getToAccountNumber(String indexHash) throws Exception {
+		AccountLinkClass a = em.find(AccountLinkClass.class, indexHash);
+		
+		if(a!=null){
+			return a.getPayeeAccount();
+		}
+		return -1;
+	}
+
+	@Override
+	public List<AccountLinkDataStructure> getAccountLink(long fromAccount)
+			throws Exception {
+System.out.println("<AccountLinkEJB><getAccountLink>fromAccount = "+fromAccount);
+		
+		Query q =em.createQuery("Select m from AccountLinkClass m where m.payerAccount = ?1 ");
+		q.setParameter(1, fromAccount);
+		List<AccountLinkClass> resultList = q.getResultList();
+		List<AccountLinkDataStructure> returnList = new ArrayList<AccountLinkDataStructure>();
+
+
+		//changing to another dataStructure
+		System.out.println("<Account><getAccountLink>size = "+ resultList.size());
+		int index = resultList.size();
+		int i =0;
+		while(i!=index){
+			AccountLinkDataStructure x = new AccountLinkDataStructure();
+			if(resultList.get(i).isValidLink()){
+				x.setPayerAccountType(resultList.get(i).getFromType());
+				x.setPayerAccount(resultList.get(i).getPayerAccount());
+				x.setPayeeAccountType(resultList.get(i).getToType());
+				x.setPayeeAccount(resultList.get(i).getPayeeAccount());
+				x.setAccountLinkHash(resultList.get(i).getIndexHash());
+				returnList.add(x);
+			}
+			i++;
+		}
+		System.out.println("<AccountLinkEJB><getAccountLink>out of Loop");
+		return returnList;
+
+	}
+	
+	private String changeDate(long now){
+		DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTimeInMillis(now);
+		System.out.println(formatter.format(calendar.getTime()));
+		String x = formatter.format(calendar.getTime());
+		String[] y = x.split(" ");
+		x=y[0]+"+"+y[1];
+		return x;
+	}
+	
+    private void sendSMS(String preHash,String Hash , String telephone, String time) throws Exception{
+    	String Msg = "The+SMS-OTP+is+"+preHash+"+"+Hash+"+for+TheBank+Personal+Internet+Banking+Add+a+new+payee+Please+enter+by+"+time+"+Singapore+Time";
+        URL smsURL = new URL("http://www.smsxchange.com/scripts/sendsms.asp?phone="+telephone +"&sms="+Msg+"&userid=zhongcai&password=607945");
+            URLConnection yc = smsURL.openConnection();
+            BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
+            String inputLine;
+            while((inputLine=in.readLine())!=null){
+                System.out.println(inputLine);
+            }
+            in.close();
+        }
+    
+    private void sendSMSTransfer(String preHash,String Hash , String telephone, String time) throws Exception{
+    	String Msg = "The+SMS-OTP+is+"+preHash+"+"+Hash+"+for+TheBank+Personal+Internet+Banking+Fund+Transfer+Please+enter+by+"+time+"+Singapore+Time";
+        URL smsURL = new URL("http://www.smsxchange.com/scripts/sendsms.asp?phone="+telephone +"&sms="+Msg+"&userid=zhongcai&password=607945");
+            URLConnection yc = smsURL.openConnection();
+            BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
+            String inputLine;
+            while((inputLine=in.readLine())!=null){
+                System.out.println(inputLine);
+            }
+            in.close();
+        }
+
+
+}

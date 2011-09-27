@@ -131,12 +131,13 @@ public class History implements HistoryRemote {
 			h.setStatus(aList.get(i).getStatus());
 			h.setTxnNumber(aList.get(i).getTxnNumber());
 			resultList.add(h);
-			
+			/*
 			System.out.println("<History><getHistory>getIdPib  = "+ resultList.get(i).getIdPib());
 			System.out.println("<History><getHistory>getStatus   = "+ resultList.get(i).getStatus());
 			System.out.println("<History><getHistory>getAmount    = "+ resultList.get(i).getAmount());
 			System.out.println("<History><getHistory>getTxnName  = "+ resultList.get(i).getTxnName());
 			System.out.println("<History><getHistory>getTxnName    = "+ resultList.get(i).getTxnNumber());
+			*/
 			i++;
 		}
         
@@ -151,6 +152,65 @@ public class History implements HistoryRemote {
         });
         
 		return resultList;
+	}
+
+	@Override
+	public void addPayeeSuccess(String idPib, String fromS, String toS) {
+		long time = System.currentTimeMillis();
+		long txnNumber=txnNumberGenerator();		
+		HistoryClass h = new HistoryClass();
+		h.setIdPib(idPib);
+		h.setTime(time);
+		h.setTxnName("Add Payee From: "+fromS+" To: "+toS);
+		h.setStatus("Success");
+		h.setTxnNumber(txnNumber);
+		em.persist(h);
+		
+	}
+
+	@Override
+	public void addPayeeNotSuccess(String idPib, String fromS, String toS) {
+		long time = System.currentTimeMillis();
+		long txnNumber=txnNumberGenerator();		
+		HistoryClass h = new HistoryClass();
+		h.setIdPib(idPib);
+		h.setTime(time);
+		h.setTxnName("Add Payee From: "+fromS+" To: "+toS);
+		h.setStatus("2FA Auth. Failed");
+		h.setTxnNumber(txnNumber);
+		em.persist(h);
+		
+	}
+
+	@Override
+	public void fundTransferSuccess(String idPib, String fromS, String toS,String amount) {
+		long time = System.currentTimeMillis();
+		long txnNumber=txnNumberGenerator();		
+		HistoryClass h = new HistoryClass();
+		double amountDouble = Double.parseDouble(amount);
+		h.setAmount(amountDouble);
+		h.setIdPib(idPib);
+		h.setTime(time);
+		h.setTxnName("Fund Transfer From: "+fromS+" To: "+toS);
+		h.setStatus("Success");
+		h.setTxnNumber(txnNumber);
+		em.persist(h);
+		
+	}
+
+	@Override
+	public void fundTransferNotSuccess(String idPib, String fromS, String toS,String amount) {
+		long time = System.currentTimeMillis();
+		long txnNumber=txnNumberGenerator();		
+		HistoryClass h = new HistoryClass();
+		double amountDouble = Double.parseDouble(amount);
+		h.setAmount(amountDouble);
+		h.setIdPib(idPib);
+		h.setTime(time);
+		h.setTxnName("Fund Transfer From: "+fromS+" To: "+toS);
+		h.setStatus("2FA Auth. Failed");
+		h.setTxnNumber(txnNumber);
+		em.persist(h);
 	}
 
 }

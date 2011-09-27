@@ -201,13 +201,13 @@ public class AccountLink implements AccountLinkRemote {
 		
 		AccountLinkClass x = em.find(AccountLinkClass.class, indexHash);
 		if(x!=null){
+			returnVar.setAmount(x.getAmountPending());
+			returnVar.setPayeeAccount(x.getPayeeAccount());
+			returnVar.setPayerAccount(x.getPayerAccount());
 			if(x.getHash2FA().equals(hash2FA))
 			{
 				if(x.checkTime()){
 					if(x.isValidLink()){
-						returnVar.setAmount(x.getAmountPending());
-						returnVar.setPayeeAccount(x.getPayeeAccount());
-						returnVar.setPayerAccount(x.getPayerAccount());
 						returnVar.setPayPayee2FA1Success(true);
 						returnVar.setPayPayee2FA2Success(true);
 					}
@@ -240,14 +240,14 @@ public class AccountLink implements AccountLinkRemote {
 		AccountLinkClass a = em.find(AccountLinkClass.class, indexHash);
 		
 		if(a!=null){
+			x.setPayerAccount(a.getPayerAccount());
+			x.setPayeeAccount(a.getPayeeAccount());	
+			x.setIndexHash(indexHash);
 			if(a.getHash2FA().equals(hash2FA)){
 				if(a.checkTime()){
 					a.setValidLink(true);
 					x.setAddPayee2FA1Success(true);
 					x.setAddPayee2FA2Success(true);
-					x.setIndexHash(indexHash);
-					x.setPayerAccount(a.getPayerAccount());
-					x.setPayeeAccount(a.getPayeeAccount());
 				}
 				else{
 					System.out.println("<AccountLink><addAccountLink2FA2> timecheck fail");

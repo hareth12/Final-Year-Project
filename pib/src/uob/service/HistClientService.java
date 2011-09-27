@@ -196,7 +196,7 @@ public class HistClientService {
     	
 		if((idPib!=null)&&(!idPib.isEmpty())){
     		returnFromHist=sendRequestHistory("41|"+idPib+"|filler|filler|filler|filler|filler");
-    		System.out.println("returnFromRBK= "+returnFromHist);
+    		System.out.println("returnFromHist= "+returnFromHist);
     	}
 		
 		if(returnFromHist!=null){
@@ -213,8 +213,124 @@ public class HistClientService {
 			System.out.println("<HistClientService><41>returnFromHist is null");
 		}   	 
      }
+     
+     public void addPayeeSuccess(String idPib, long from, long to){ //opCode = 51
+    	 System.out.println("<HistClientService><51> method is called with idPib = "+idPib);
+    	 
+    	boolean addHistorySuccess=false;
+    	String returnFromHist = null;
+    	String opCodeString = null; 
+    	String fromString = Long.toString(from);
+    	String toString = Long.toString(to);
+    	
+		if((idPib!=null)&&(!idPib.isEmpty())){
+    		returnFromHist=sendRequestHistory("51|"+idPib+"|"+fromString+"|"+toString+"|filler|filler|filler|filler");
+    		System.out.println("returnFromHist= "+returnFromHist);
+    	}
+		
+		if(returnFromHist!=null){
+			String[] postParse = returnFromHist.split("[|]+");
+			opCodeString = postParse[0];
+			int j= postParse.length;
+			
+			//active
+			if(opCodeString.equals("59")){
+				addHistorySuccess=true;
+			}
+		}
+		else{
+			System.out.println("<HistClientService><51>returnFromHist is null");
+		}   	 
+     }
 
+     public void addPayeeNotSuccess(String idPib, long from, long to){ //opCode = 61
+    	 System.out.println("<HistClientService><61> method is called with idPib = "+idPib);
+    	 
+    	boolean addHistorySuccess=false;
+    	String returnFromHist = null;
+    	String opCodeString = null; 
+    	String fromString = Long.toString(from);
+    	String toString = Long.toString(to);
+    	
+		if((idPib!=null)&&(!idPib.isEmpty())){
+    		returnFromHist=sendRequestHistory("61|"+idPib+"|"+fromString+"|"+toString+"|filler|filler|filler|filler");
+    		System.out.println("returnFromHist= "+returnFromHist);
+    	}
+		
+		if(returnFromHist!=null){
+			String[] postParse = returnFromHist.split("[|]+");
+			opCodeString = postParse[0];
+			int j= postParse.length;
+			
+			//active
+			if(opCodeString.equals("69")){
+				addHistorySuccess=true;
+			}
+		}
+		else{
+			System.out.println("<HistClientService><61>returnFromHist is null");
+		}   	 
+     }
 
+     public void fundTransferSuccess(String idPib, long from, long to, double d){ //opCode = 71
+    	 System.out.println("<HistClientService><71> method is called with idPib = "+idPib);
+    	 
+    	boolean addHistorySuccess=false;
+    	String returnFromHist = null;
+    	String opCodeString = null; 
+    	String fromString = Long.toString(from);
+    	String toString = Long.toString(to);
+    	String amountString = Double.toString(d);
+    	
+		if((idPib!=null)&&(!idPib.isEmpty())){
+    		returnFromHist=sendRequestHistory("71|"+idPib+"|"+fromString+"|"+toString+"|"+amountString+"|filler|filler|filler");
+    		System.out.println("returnFromHist= "+returnFromHist);
+    	}
+		
+		if(returnFromHist!=null){
+			String[] postParse = returnFromHist.split("[|]+");
+			opCodeString = postParse[0];
+			int j= postParse.length;
+			
+			//active
+			if(opCodeString.equals("79")){
+				addHistorySuccess=true;
+			}
+		}
+		else{
+			System.out.println("<HistClientService><71>returnFromHist is null");
+		}   	 
+     }
+
+     public void fundTransferNotSuccess(String idPib, long from, long to, double d){ //opCode = 91
+    	 System.out.println("<HistClientService><91> method is called with idPib = "+idPib);
+    	 
+    	boolean addHistorySuccess=false;
+    	String returnFromHist = null;
+    	String opCodeString = null; 
+    	String fromString = Long.toString(from);
+    	String toString = Long.toString(to);
+    	String amountString = Double.toString(d);
+    	
+		if((idPib!=null)&&(!idPib.isEmpty())){
+    		returnFromHist=sendRequestHistory("91|"+idPib+"|"+fromString+"|"+toString+"|"+amountString+"|filler|filler|filler|filler");
+    		System.out.println("returnFromHist= "+returnFromHist);
+    	}
+		
+		if(returnFromHist!=null){
+			String[] postParse = returnFromHist.split("[|]+");
+			opCodeString = postParse[0];
+			int j= postParse.length;
+			
+			//active
+			if(opCodeString.equals("99")){
+				addHistorySuccess=true;
+			}
+		}
+		else{
+			System.out.println("<HistClientService><91>returnFromHist is null");
+		}   	 
+     }
 	public List<HistoryData> getHistory(String userName) { //opCode = 81
 		 System.out.println("<HistClientService><getHistory> method is called with idPib = "+userName);
     	 
@@ -242,19 +358,19 @@ public class HistClientService {
 				if(opCodeString.equals("89")){
 					int i=1;
 					while(i!=j){
-						System.out.println("<pib><HistClientService>timeString = "+postParse[i]);
+					//	System.out.println("<pib><HistClientService>timeString = "+postParse[i]);
 						timeString = postParse[i];
 						i++;
-						System.out.println("<pib><HistClientService>txnName = "+postParse[i]);
+					//	System.out.println("<pib><HistClientService>txnName = "+postParse[i]);
 						txnName = postParse[i];
 						i++;
-						System.out.println("<pib><HistClientService>amountString = "+postParse[i]);
+					//	System.out.println("<pib><HistClientService>amountString = "+postParse[i]);
 						amountString = postParse[i];
 						i++;
-						System.out.println("<pib><HistClientService>status = "+postParse[i]);
+					//	System.out.println("<pib><HistClientService>status = "+postParse[i]);
 						status = postParse[i];
 						i++;
-						System.out.println("<pib><HistClientService>txnNumberString = "+postParse[i]);
+					//	System.out.println("<pib><HistClientService>txnNumberString = "+postParse[i]);
 						txnNumberString = postParse[i];
 						i++;
 					

@@ -146,10 +146,35 @@ public class HistoryController implements MessageListener {
 					}
 					break;						
 				case 51:
+					if(parameter1!=null){
+						//merely renaming
+						String idPib = parameter1;
+						String fromS = parameter2;
+						String toS = parameter3;
+						addPayeeSuccess(idPib,fromS,toS);
+						replyToServlet("59");
+					}
 					break;	
 				case 61:
+					if(parameter1!=null){
+						//merely renaming
+						String idPib = parameter1;
+						String fromS = parameter2;
+						String toS = parameter3;
+						addPayeeNotSuccess(idPib,fromS,toS);
+						replyToServlet("69");
+					}
 					break;						
 				case 71:
+					if(parameter1!=null){
+						//merely renaming
+						String idPib = parameter1;
+						String fromS = parameter2;
+						String toS = parameter3;
+						String amount=parameter4;
+						fundTransferSuccess(idPib,fromS,toS,amount);
+						replyToServlet("79");
+					}
 					break;	
 				case 81:
 					if(parameter1!=null){
@@ -161,13 +186,46 @@ public class HistoryController implements MessageListener {
 							e.printStackTrace();
 						}
 					}
-					break;						
+					break;	
+				case 91:
+					if(parameter1!=null){
+						//merely renaming
+						String idPib = parameter1;
+						String fromS = parameter2;
+						String toS = parameter3;
+						String amount=parameter4;
+						
+			
+						fundTransferNotSuccess(idPib,fromS,toS,amount);
+						replyToServlet("99");
+					}
+					break;
 				case 99:
 					System.out.println("<historyController><preparse>failed");
 					break;
 			}	
 	}
 	
+	private void fundTransferNotSuccess(String idPib, String fromS, String toS, String amount) {
+		hist.fundTransferNotSuccess(idPib,fromS,toS,amount);
+		
+	}
+
+	private void fundTransferSuccess(String idPib, String fromS, String toS, String amount) {
+		hist.fundTransferSuccess(idPib,fromS,toS,amount);
+		
+	}
+
+	private void addPayeeNotSuccess(String idPib, String fromS, String toS) {
+		hist.addPayeeNotSuccess(idPib,fromS,toS);
+		
+	}
+
+	private void addPayeeSuccess(String idPib, String fromS, String toS) {
+		hist.addPayeeSuccess(idPib,fromS,toS);
+		
+	}
+
 	private void login2FANotSuccess(String idPib) {
 		hist.addLogin2FANotSuccess(idPib);
 	}
@@ -187,7 +245,6 @@ public class HistoryController implements MessageListener {
 	
 	private void getHistory(String idPib) throws Exception{ //opcode = 81
 		List<HistoryData> historyList = hist.getHistory(idPib);
-		System.out.println("ouside hist.gethistory");
 		if(!historyList.isEmpty()){
 			int i = 0;
 			String replyString = "89|";

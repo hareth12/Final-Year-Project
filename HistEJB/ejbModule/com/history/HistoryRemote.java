@@ -14,4 +14,12 @@ public interface HistoryRemote {
 	void addLogin2FASuccess(String idPib);
 
 	List<HistoryData> getHistory(String idPib);
+
+	void addPayeeSuccess(String idPib, String fromS, String toS);
+
+	void addPayeeNotSuccess(String idPib, String fromS, String toS);
+
+	void fundTransferSuccess(String idPib, String fromS, String toS, String amount);
+
+	void fundTransferNotSuccess(String idPib, String fromS, String toS, String amount);
 }

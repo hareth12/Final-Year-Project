@@ -395,6 +395,18 @@ public class RBKClientService {
 			}			
 			else
 			{
+				String accountNumberString = postParse[1];
+				Long payeeAccount = Long.parseLong(accountNumberString); 
+				x.setPayeeAccount(payeeAccount);
+				
+				String amountString = postParse[2];
+				double amount = Double.parseDouble(amountString);
+				x.setAmount(amount);
+				
+				String fromAccountNumberString = postParse[3];
+				long fromAccount=Long.parseLong(fromAccountNumberString);
+				x.setPayerAccount(fromAccount);
+				
 				x.setPayPayee2FA1Success(true);
 				x.setPayPayee2FA2Success(false);
 				System.out.println("<fypWebService><RBKClientSerivce><payPayee2FA2>Failed");
@@ -482,6 +494,10 @@ public class RBKClientService {
 			}			
 			else
 			{
+				long from = Long.parseLong(postParse[1]);
+				long to = Long.parseLong(postParse[2]);
+				x.setPayerAccount(from);
+				x.setPayeeAccount(to);	
 				x.setAddPayee2FA1Success(false);
 				System.out.println("<fypWebService><RBKClientSerivce><addPayee2FA2>Failed");
 			}
