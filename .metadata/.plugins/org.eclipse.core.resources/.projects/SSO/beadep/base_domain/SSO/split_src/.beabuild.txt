@@ -1,0 +1,4 @@
+C\:/Users/ngzhongqin/workspace/FinalYearProject/SSO/EarContent/APP-INF/classes = APP-INF/classes
+C\:/Users/ngzhongqin/workspace/FinalYearProject/SSOEJB/build/classes = SSOEJB.jar
+C\:/Users/ngzhongqin/workspace/FinalYearProject/LoginEJB/build/classes = LoginEJB.jar
+C\:/Users/ngzhongqin/workspace/FinalYearProject/TrustEJB/build/classes = TrustEJB.jar

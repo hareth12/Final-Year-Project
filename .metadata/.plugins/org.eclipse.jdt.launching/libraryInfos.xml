@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="C:\Oracle\Middleware\jrockit_160_24_D1.1.2-4" version="1.6.0_24">
+<bootpath>
+<entry path="C:\Oracle\Middleware\jrockit_160_24_D1.1.2-4\jre\lib\resources.jar"/>
+<entry path="C:\Oracle\Middleware\jrockit_160_24_D1.1.2-4\jre\lib\rt.jar"/>
+<entry path="C:\Oracle\Middleware\jrockit_160_24_D1.1.2-4\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Oracle\Middleware\jrockit_160_24_D1.1.2-4\jre\lib\jsse.jar"/>
+<entry path="C:\Oracle\Middleware\jrockit_160_24_D1.1.2-4\jre\lib\jce.jar"/>
+<entry path="C:\Oracle\Middleware\jrockit_160_24_D1.1.2-4\jre\lib\charsets.jar"/>
+<entry path="C:\Oracle\Middleware\jrockit_160_24_D1.1.2-4\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Oracle\Middleware\jrockit_160_24_D1.1.2-4\jre\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Oracle\Middleware\jrockit_160_24_D1.1.2-4\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

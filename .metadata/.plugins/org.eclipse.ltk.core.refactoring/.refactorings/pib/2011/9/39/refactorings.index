@@ -1,0 +1,8 @@
+1316661824670	Move 'default.css' to 'secured'
+1316708700212	Move 1 resources to 'login'
+1316710168179	Move 1 resources to 'WebContent'
+1316710185290	Rename resource 'login1.jsp'
+1316711859441	Move 1 resources to 'Login'
+1316711895838	Rename resource 'index.jsp'
+1316713800923	Rename resource 'LoginTimedOut.jsp'
+1316713816180	Rename resource 'timeout.jsp'

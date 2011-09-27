@@ -1,0 +1,32 @@
+package com.history;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class HistoryClass {
+	private String pibName;
+	private long time;
+	private String TxnName;
+	private double amount;
+	private String status; 
+	@Id
+	private long txnNumber;
+	public void setPibName(String pibName) {
+		this.pibName = pibName;
+	}
+	public String getPibName() {
+		return pibName;
+	}
+	public void setTime(long time) {
+		this.time = time;
+	}
+	public long getTime() {
+		return time;
+	}
+	
+
+	
+	
+	
+}

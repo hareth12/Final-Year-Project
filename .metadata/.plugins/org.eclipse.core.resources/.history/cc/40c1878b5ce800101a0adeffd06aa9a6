@@ -1,0 +1,18 @@
+package com.history;
+
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class History
+ */
+@Stateless
+public class History implements HistoryRemote {
+
+    /**
+     * Default constructor. 
+     */
+    public History() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

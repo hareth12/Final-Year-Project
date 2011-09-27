@@ -1,0 +1,11 @@
+package uob.data;
+
+public class HistoryData {
+	private String idPib;
+	private long time;
+	private String TxnName;
+	private double amount;
+	private String status; 
+	@Id
+	private long txnNumber;
+}

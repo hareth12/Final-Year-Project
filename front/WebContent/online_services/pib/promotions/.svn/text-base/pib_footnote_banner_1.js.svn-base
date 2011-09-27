@@ -1,0 +1,1 @@
+document.write('<a href="/personal/cards/credit/credit_card_security_alert.html"><img src="/assets/images/cards/credit_card_alert_230x90.jpg" border="0" alt="Important Notice: Credit Card Security and You"/></a>');

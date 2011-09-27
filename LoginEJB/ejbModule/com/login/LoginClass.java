@@ -1,0 +1,117 @@
+
+package com.login;
+
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class LoginClass {
+	@Id
+	private String idPib;
+	private int idCustomer;
+	private String password;
+	private String telephone;
+	private String hash2FA;
+	private String pre2FAHash;
+	private long timeStarted;
+	private long timeToEnd;	
+	
+	public LoginClass(){}
+	
+	public LoginClass(String idPib, int idCustomer, String password, String telephone){
+		this.setIdPib(idPib);
+		this.setIdCustomer(idCustomer);
+		this.setPassword(password);
+		this.setTelephone(telephone);
+		this.hash2FA=null;
+		this.pre2FAHash=null;
+		long timeToEnd = System.currentTimeMillis()+180000;
+		long timeStarted = System.currentTimeMillis();	
+		this.timeStarted=timeStarted;
+		this.timeToEnd=timeToEnd;
+	}
+	
+	public void updateTime(){
+		long timeToEnd = System.currentTimeMillis()+180000;
+		long timeStarted = System.currentTimeMillis();
+		this.setTimeStarted(timeStarted);
+		this.setTimeToEnd(timeToEnd);
+	}
+	
+	public boolean checkTime(){
+		System.out.println("<login><checkTime>time to end: "+this.timeToEnd);
+		System.out.println("<login><checkTime>System     : "+System.currentTimeMillis());
+		if(this.timeToEnd>System.currentTimeMillis())
+			return true;
+		else
+			return false;
+	}
+	
+
+	public void setIdPib(String idPib) {
+		this.idPib = idPib;
+	}
+
+	public String getIdPib() {
+		return idPib;
+	}
+
+	public void setIdCustomer(int idCustomer) {
+		this.idCustomer = idCustomer;
+	}
+
+	public int getIdCustomer() {
+		return idCustomer;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+
+	public String getTelephone() {
+		return telephone;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setHash2FA(String hash2FA) {
+		this.hash2FA = hash2FA;
+	}
+
+	public String getHash2FA() {
+		return hash2FA;
+	}
+
+	public void setPre2FAHash(String pre2FAHash) {
+		this.pre2FAHash = pre2FAHash;
+	}
+
+	public String getPre2FAHash() {
+		return pre2FAHash;
+	}
+
+	public void setTimeStarted(long timeStarted) {
+		this.timeStarted = timeStarted;
+	}
+
+	public long getTimeStarted() {
+		return timeStarted;
+	}
+
+	public void setTimeToEnd(long timeToEnd) {
+		this.timeToEnd = timeToEnd;
+	}
+
+	public long getTimeToEnd() {
+		return timeToEnd;
+	}
+	
+	
+}

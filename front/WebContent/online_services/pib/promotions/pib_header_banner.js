@@ -1,0 +1,1 @@
+document.write('<a href="https://pib.uob.com.sg/personal/promotions/lifestyle/pib/promotions_win_500_dollars_daily.html?s_cid=935"><img src="/online_services/pib/assets/images/pib_post_login_masthead.jpg" width="755" height="100" border="0" /></a>');

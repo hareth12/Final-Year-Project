@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Psuedo Bank Personal Internal Banking</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="Tom@Lwis (http://www.lwis.net/free-css-drop-down-menu/)" />
+<meta name="keywords" content="css, dropdowns, dropdown menu, drop-down, menu, navigation, nav, horizontal, vertical left-to-right, vertical right-to-left, horizontal linear, horizontal upwards, cross browser, internet explorer, ie, firefox, safari, opera, browser, lwis" />
+<meta name="description" content="Simple vertical left-to-right direction css drop-down menu demo using clean, standards-friendly, free, easy, cross browser framework for css drop-down menus" />
+<link href="../asset/secured/helper.css" media="screen" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+
+/* Layout */
+@import "../asset/secured/dropdown.css";
+@import "../asset/secured/dropdown.vertical.css";
+
+/* Theme */
+@import "../asset/secured/default.css";
+
+</style>
+
+
+</head>
+<body>
+
+<h1>Welcome to Psuedo Bank Personal Internal Banking</h1>
+
+<ul id="nav" class="dropdown dropdown-vertical">
+    <li><a href="./">Home</a></li>
+    <li class="dir">Account Information
+        <ul>
+            <li><a href="./">Account Summary</a></li>
+            <li><a href="./">Online Activity History</a></li>
+            <li class="dir"><a href="./">Manage My Accounts</a>
+                <ul>
+                    <li><a href="./">Account Summary View</a></li>
+                    <li><a href="./">Account Alias</a></li>
+                    <li><a href="./">Link Accounts</a></li>
+                    <li><a href="./">Delink Accounts</a></li>
+                    <li><a href="./">Cheuque Status Enquiry</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li class="dir">Funds Transfer
+        <ul>
+            <li><a href="./">Add Payee</a></li>
+            <li><a href="./">Manage Payees</a></li>
+            <li><a href="./">Make Transfer</a></li>
+        </ul>
+    </li>
+    <li class="dir">View Rates
+        <ul>
+            <li class="dir"><a href="./">View Unit Trust Prices</a></li>  
+            <li><a href="./">View Foreign Exchange Rates</a></li>
+            <li><a href="./">View Gold & Silver Rates</a></li>
+        </ul>
+    </li>
+    <li class="dir"><a href="./">Contact Us</a>
+        <ul>
+            <li><a href="./">Enquiry Form</a></li>
+            <li><a href="./">Map &amp; Driving Directions</a></li>
+            <li><a href="./">Your Feedback</a></li>
+        </ul>
+    </li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/160/trunk/chinese2/WebContent/addPayee
+END
+addPayee2FA1.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/160/trunk/chinese2/WebContent/addPayee/addPayee2FA1.jsp
+END
+addPayeeSuccess.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/160/trunk/chinese2/WebContent/addPayee/addPayeeSuccess.jsp
+END
+addPayee2FA1Action.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/160/trunk/chinese2/WebContent/addPayee/addPayee2FA1Action.jsp
+END
+addPayee2FA1Action2.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/160/trunk/chinese2/WebContent/addPayee/addPayee2FA1Action2.jsp
+END
+addPayeeNotSuccessful.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/160/trunk/chinese2/WebContent/addPayee/addPayeeNotSuccessful.jsp
+END

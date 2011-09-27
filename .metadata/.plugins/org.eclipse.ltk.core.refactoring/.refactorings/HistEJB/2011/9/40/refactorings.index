@@ -1,0 +1,8 @@
+1317054206414	Encapsulate field 'pibName'
+1317054210233	Encapsulate field 'time'
+1317054214098	Encapsulate field 'amount'
+1317054220181	Encapsulate field 'status'
+1317054233252	Encapsulate field 'TxnName'
+1317054239575	Encapsulate field 'txnNumber'
+1317134464140	Rename field 'pibName'
+1317134485481	Rename local variable 'pibName'

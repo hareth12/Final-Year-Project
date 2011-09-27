@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/35/trunk/LoginEJB2/ejbModule/META-INF
+END
+weblogic-ejb-jar.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/35/trunk/LoginEJB2/ejbModule/META-INF/weblogic-ejb-jar.xml
+END
+ejb-jar.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/35/trunk/LoginEJB2/ejbModule/META-INF/ejb-jar.xml
+END
+persistence.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/35/trunk/LoginEJB2/ejbModule/META-INF/persistence.xml
+END
+MANIFEST.MF
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/35/trunk/LoginEJB2/ejbModule/META-INF/MANIFEST.MF
+END

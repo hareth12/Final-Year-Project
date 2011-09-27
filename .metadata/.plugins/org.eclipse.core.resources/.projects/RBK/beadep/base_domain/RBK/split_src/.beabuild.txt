@@ -1,0 +1,4 @@
+C\:/Users/ngzhongqin/workspace/FinalYearProject/RBK/EarContent/APP-INF/classes = APP-INF/classes
+C\:/Users/ngzhongqin/workspace/FinalYearProject/RBKEJB/build/classes = RBKEJB.jar
+C\:/Users/ngzhongqin/workspace/FinalYearProject/AccountLink/build/classes = AccountLink.jar
+C\:/Users/ngzhongqin/workspace/FinalYearProject/AccountEJB/build/classes = AccountEJB.jar

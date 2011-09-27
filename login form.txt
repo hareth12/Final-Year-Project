@@ -1,0 +1,4 @@
+ <input type="text" name="SECSEC01{actionForm.userName}" id="userName" class="form-short" maxlength="16" size="26" disabled autocomplete="off" style="text-transform:uppercase" onkeypress="if(event.keyCode==13) { return false; }; return disableCtrlKeyCombination(event);" onkeydown="return disableCtrlKeyCombination(event);" onblur="javascript:userNameToUpper()">
+ 
+ 
+ <input type="password" name="SECSEC01{actionForm.password}" id="PASSWORD1" class="form-short" maxlength="24" size="26" disabled="" autocomplete="off"/>

@@ -1,0 +1,8 @@
+package com.history;
+import javax.ejb.Remote;
+
+@Remote
+public interface HistoryRemote {
+	void getHistory(String pibName);
+	boolean addLogin1FA(String pibName);
+}

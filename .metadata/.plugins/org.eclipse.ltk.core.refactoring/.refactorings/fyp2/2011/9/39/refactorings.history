@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 6 packages to &apos;pib/src&apos;&#x0D;&#x0A;- Original project: &apos;fyp2&apos;&#x0D;&#x0A;- Destination element: &apos;pib/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     fyp2/src/uob.addPayee&#x0D;&#x0A;     fyp2/src/uob.enquiry&#x0D;&#x0A;     fyp2/src/uob.fundTransfer&#x0D;&#x0A;     fyp2/src/uob.service&#x0D;&#x0A;     fyp2/src/uob.login&#x0D;&#x0A;     fyp2/src/uob.data" description="Copy packages" destination="=pib/src" element1="/src&lt;uob.addPayee" element2="/src&lt;uob.enquiry" element3="/src&lt;uob.fundTransfer" element4="/src&lt;uob.service" element5="/src&lt;uob.login" element6="/src&lt;uob.data" flags="589830" fragments="6" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1316667645793" version="1.0"/>
+</session>

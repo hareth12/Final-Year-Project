@@ -1,0 +1,28 @@
+package com.history;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class HistoryClass {
+	private String hash2FA;
+	private String pre2FAHash;
+	private long timeStarted;
+	private long timeToEnd;
+	private double amountPending;
+	private String telephone;
+	private String fromType;
+	private String toType;
+	
+	private boolean validLink;
+	private String idPib;
+	private long payeeAccount;
+	private long payerAccount;
+	@Id
+	private String indexHash;
+	
+	public AccountLinkClass(){}
+	
+	
+	
+}
