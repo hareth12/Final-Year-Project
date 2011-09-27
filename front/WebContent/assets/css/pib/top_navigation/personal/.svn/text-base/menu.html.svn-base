@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="/assets/css/pib/top_navigation/personal/menu.css" rel="stylesheet" type="text/css" media="all" />
+        <style type="text/css">
+        <!--
+        #menu {width: 940px; margin: 0px 0px 0px 0px; background:url('/assets/images/common/top_menu_bg.jpg') no-repeat;}
+        .no-link-main-menu {color:#D5D5D5;font-weight:bold;display:block;border-bottom:2px solid #46699F;line-height:25px;}
+        -->
+        </style>
+    </head>
+
+    <body>
+            <div id="menu">
+                <div id="main-menu">
+                    <ul id="banking-section">
+                        <li id="personal-banking" class="main-selected"><a href="/personal/index.html" target="_top">Personal Banking</a></li>
+                        <li id="business-banking"><span class="no-link-main-menu">Business Banking</span></li>
+                        <li id="corporate-banking"><span class="no-link-main-menu">Corporate &amp; Institutional Banking</span></li>
+                        <li id="investor-relations"><span class="no-link-main-menu">Investor Relations</span></li>
+                        <li id="about-uob"><span class="no-link-main-menu">About UOB</span></li>
+                    </ul>
+                    <ul id="banking-type">
+                        <li id="privilege-banking"><a href="/privilege/index.html" target="_top">Privilege Banking</a></li>
+                        <li id="private-banking"><a href="/private/index.html" target="_top">Private Banking</a></li>
+                    </ul>
+                </div>
+                <div style="clear:both;"></div>
+                <div id="sub-menu">
+                    <ul>
+                        <li><a href="/personal/deposits/index.html" target="_top">Deposits</a> |</li>
+                        <li><a href="/personal/cards/index.html" target="_top">Cards</a> |</li>
+                        <li><a href="/personal/loans/index.html" target="_top">Loans</a> |</li>
+                        <li><a href="/personal/insurance/index.html" target="_top">Insurance</a> |</li>
+                        <li><a href="/personal/investments/index.html" target="_top">Investments</a> |</li> 
+                        <li><a href="/personal/ebanking/index.html" target="_top">eBanking</a> |</li>
+                        <li><a href="/personal/promotions/index.html" target="_top">Promotions</a></li>
+                    </ul></div>
+                    </div>
+                    </body>
+</html>

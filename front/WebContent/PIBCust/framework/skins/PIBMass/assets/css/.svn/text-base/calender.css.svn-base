@@ -1,0 +1,133 @@
+.select-free
+{
+	position:absolute;
+	z-index:10;
+	overflow:hidden;
+}
+.select-free iframe
+{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:-1;
+	filter:mask();
+}
+.PIBcpYearNavigation,
+    .PIBcpMonthNavigation
+            {
+            background-color:#7492B6;
+            text-align:center;
+            vertical-align:center;
+            text-decoration:none;
+            color:#FFFFFF;
+            font-weight:bold;
+            }
+    .PIBcpDayColumnHeader,
+    .PIBcpYearNavigation,
+    .PIBcpMonthNavigation,
+    .PIBcpCurrentMonthDate,
+    .PIBcpCurrentMonthDateDisabled,
+    .PIBcpOtherMonthDate,
+    .PIBcpOtherMonthDateDisabled,
+    .PIBcpCurrentDate,
+    .PIBcpCurrentDateDisabled,
+    .PIBcpTodayText,
+    .PIBcpTodayTextDisabled,
+    .PIBcpText
+            {
+            font-family:arial;
+            font-size:8pt;
+            text-align:center;
+            vertical-align:center;
+            }
+    TD.PIBcpDayColumnHeader
+            {
+            text-align:right;
+            border:solid thin #7492B6;
+            border-width:0 0 1 0;
+            text-align:center;
+            vertical-align:center;
+            }
+    .PIBcpCurrentMonthDate,
+    .PIBcpOtherMonthDate,
+    .PIBcpCurrentDate
+            {
+            text-align:right;
+            text-decoration:none;
+            text-align:center;
+            vertical-align:center;
+            }
+    .PIBcpCurrentMonthDateDisabled,
+    .PIBcpOtherMonthDateDisabled,
+    .PIBcpCurrentDateDisabled
+            {
+            color:#D0D0D0;
+            text-align:center;
+            vertical-align:center;
+            text-decoration:line-through;
+            }
+    .PIBcpCurrentMonthDate
+            {
+            color:#7492B6;
+            font-weight:bold;
+            text-align:center;
+            vertical-align:center;
+            }
+    .PIBcpCurrentDate
+            {
+            color: #FFFFFF;
+            font-weight:bold;
+            text-align:center;
+            vertical-align:center;
+            }
+    .PIBcpOtherMonthDate
+            {
+            color:#808080;
+            }
+    TD.PIBcpCurrentDate
+            {
+            color:#FFFFFF;
+            background-color: #7492B6;
+            border-width:1;
+            text-align:center;
+            vertical-align:center;
+            }
+    TD.PIBcpCurrentDateDisabled
+            {
+            border-width:1;
+            border:solid thin #FFAAAA;
+            text-align:center;
+            vertical-align:center;
+            }
+    TD.PIBcpTodayText,
+    TD.PIBcpTodayTextDisabled
+            {
+            border:solid thin #7492B6;
+            border-width:1 0 0 0;
+            text-align:center;
+            vertical-align:center;
+            }
+    A.PIBcpTodayText,
+    SPAN.PIBcpTodayTextDisabled
+            {
+            height:20px;
+            text-align:center;
+            vertical-align:center;
+            }
+    A.PIBcpTodayText
+            {
+            color:#7492B6;
+            font-weight:bold;
+            text-align:center;
+            vertical-align:center;
+            }
+    SPAN.PIBcpTodayTextDisabled
+            {
+            color:#D0D0D0;
+            text-align:center;
+            vertical-align:center;
+            }
+    .PIBcpBorder
+            {
+            border:solid thin #7492B6;
+            }

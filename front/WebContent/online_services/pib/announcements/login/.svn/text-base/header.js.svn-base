@@ -1,0 +1,13 @@
+document.write('<div id="site-logo-container">');
+document.write('<div id="site-logo">');
+document.write('<img src="/online_services/pib/assets/images/uob-logo.jpg"/>');
+document.write('</div>');
+document.write('<div id="site-welcome-login">');
+document.write('<a href="http://www.uob.com.sg/personal/index.html">Go to uob.com.sg <img src="/online_services/pib/assets/images/go_to_uob_arrows.gif"/></a>');
+document.write('</div>');
+document.write('</div>');
+document.write('<div id="site-animation">');
+document.write('<div id="site-flash">');
+document.write('<p><a href="http://get.adobe.com/flashplayer"><img src="/online_services/pib/assets/images/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>');
+document.write('</div>');
+document.write('</div>');

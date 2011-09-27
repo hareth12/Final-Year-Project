@@ -1,0 +1,95 @@
+<html>
+
+<head>
+
+<title>Announcements</title>
+<style>
+body, br, p, td
+{
+    color: #666;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    line-height: 1.1;
+}
+a { text-decoration: none; color: #666 }
+a:hover { text-decoration: underline; color: #004ca0; }
+
+a.morelink, a.morelink:hover
+{
+    color: #004ca0;
+    text-decoration: underline;
+    font-weight: normal;
+}
+.notes
+{
+    color: #666;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    line-height: 1.1;
+}
+
+</style>
+<script type="text/javascript">
+<!--
+function opensecuritywinpopup()
+{
+    window.open('https://pib.uob.com.sg/personal/ebanking/pib/Trojan_Horse_malware_targeting_Local_Banks.html','Bodyframe','toolbar=no,directories=no,scrollbars=yes,resizable=no, menubar=no,location=no,width=590,height=450,maximize=no,minimize=no');
+}
+//-->
+</script>
+</head>
+
+<body marginwidth="0" marginheight="0" topmargin="0" leftmargin="0">
+<table width="715" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    <td><img src="/online_services/pib/assets/images/awards.gif"></td>
+  </tr>
+  <tr><td>&nbsp;</td></tr><tr>
+        <td>
+<b>Announcements</b>
+<br>
+<table width=100% height=2 cellpadding=0 cellspacing=0 bgcolor=#004F9E>
+<tr>
+<td></td>
+</tr>
+</table>
+<br>
+ <table cellspacing="1" cellpadding="15" width="715" border="0">
+        <tbody>
+           <tr bgcolor="#cbe3ff">
+             <td bgcolor="#7692B7" style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px"><font color="#FFFFFF"><strong>
+Access UOB Personal Internet Banking on Safari via iPhone 4 and iPad <b><font color="red"><em>New!</em></font></b></strong></font></td>
+           </tr>
+           <tr bgcolor="#cbe3ff">
+             <td style="PADDING-RIGHT: 5px; PADDING-LEFT: 10px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px"><p>Did you know that now, you can login to UOB Personal Internet Banking via <strong><a href="http://www.uob.com.sg" target="_blank">uob.com.sg</a></strong> on your Safari browser*? <br>
+                 <br>
+With UOB Personal Internet Banking, you can check your account transactions, pay bills, transfer funds and <a href="http://www.uob.com.sg/personal/ebanking/pib/services.html" target="_blank" class="morelink">more</a>. Discover the benefits of online banking and enjoy fast, convenient banking access at your fingertips today.<br>
+<br>
+* Configuration that supports UOB Personal Internet Banking<br>
+&bull;  iPhone 4 Safari browser on iOS 4.1 <br>
+&bull; iPad Safari browser on iOS 3.2.2 <br>
+             </p></td>
+           </tr>
+        </tbody>
+      </table>
+ <br>
+ <b>Important Security Alert</b> <br>
+      <p>There are recent media reports of a Trojan Horse malware which targets local banks. <a href="javascript:opensecuritywinpopup();" class="morelink"><em>read more</em></a>.<br>
+        <br>
+        <b>      <br>
+      Update on Two-Factor Authentication (2FA) Authorisation Above Threshold Limit <font color="red"><em>New Service!</em></font></strong></b> <br>
+      <br>
+      Customers are currently required to provide Two-Factor Authentication (2FA) authorisation when performing Bill Payment, Funds Transfer, eNETS or Remittance above a limit of S$1,000 via UOB Personal Internet Banking.</p>
+<p> You can now choose your preferred threshold limit for invoking 2FA authorisation when performing Bill Payment, Funds Transfer, eNETS or Remittance via UOB Personal Internet Banking. <em><a href="http://www.uob.com.sg/personal/ebanking/pib/whatsnew.html" target="_blank" class="morelink">Click here</a> to view the limits available for selection</em>. </p>
+      <p>You can also opt to receive SMS/email notification alerts when you perform transactions above the threshold limit. The threshold limit for receiving the notification alerts is also customisable. </p>
+      <p>To change the threshold limit for 2FA authorisation and/or SMS/email alert notification, please click on<em><strong> Customer Service > Manage Notification and Authorisation</strong></em> upon login to UOB Personal Internet Banking.</p>
+      <p> If you have more enquiries, please call our 24-hour hotline at 1800 222 2121 (or +65 6222 2121 when calling from overseas). </p>
+   <br>
+             <br>
+     
+&nbsp;
+</td>
+</tr>
+</table>
+</body>
+</html>

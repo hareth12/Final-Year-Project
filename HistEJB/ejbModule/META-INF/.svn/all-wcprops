@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/fyp/!svn/ver/27/HistEJB/ejbModule/META-INF
+END
+weblogic-ejb-jar.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/fyp/!svn/ver/27/HistEJB/ejbModule/META-INF/weblogic-ejb-jar.xml
+END
+MANIFEST.MF
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/fyp/!svn/ver/27/HistEJB/ejbModule/META-INF/MANIFEST.MF
+END
+persistence.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/fyp/!svn/ver/27/HistEJB/ejbModule/META-INF/persistence.xml
+END
