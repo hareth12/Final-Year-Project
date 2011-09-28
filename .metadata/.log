@@ -2978,3 +2978,498 @@ java.lang.NullPointerException
 
 !ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 03:30:45.769
 !MESSAGE Publishing finished.
+
+!ENTRY org.eclipse.jdt.core 4 2 2011-09-28 03:53:10.215
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.core".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.emf.ecore.util.BasicFeatureMap.remove(BasicFeatureMap.java:1773)
+	at org.eclipse.emf.ecore.util.FeatureMapUtil$FeatureEList.remove(FeatureMapUtil.java:834)
+	at org.eclipse.emf.ecore.util.EcoreUtil.remove(EcoreUtil.java:3072)
+	at org.eclipse.jst.jee.model.internal.EJBAnnotationReader.processRemoveBean(EJBAnnotationReader.java:537)
+	at org.eclipse.jst.jee.model.internal.EJBAnnotationReader.processRemovedCompilationUnit(EJBAnnotationReader.java:479)
+	at org.eclipse.jst.jee.model.internal.EJBAnnotationReader.processChangedBean(EJBAnnotationReader.java:589)
+	at org.eclipse.jst.jee.model.internal.EJBAnnotationReader.processChangedCompilationUnit(EJBAnnotationReader.java:565)
+	at org.eclipse.jst.jee.model.internal.common.AbstractAnnotationModelProvider.recursevilyProcessCompilationUnits(AbstractAnnotationModelProvider.java:535)
+	at org.eclipse.jst.jee.model.internal.common.AbstractAnnotationModelProvider.recursevilyProcessCompilationUnits(AbstractAnnotationModelProvider.java:544)
+	at org.eclipse.jst.jee.model.internal.common.AbstractAnnotationModelProvider.recursevilyProcessPackages(AbstractAnnotationModelProvider.java:501)
+	at org.eclipse.jst.jee.model.internal.common.AbstractAnnotationModelProvider.recursevilyProcessPackages(AbstractAnnotationModelProvider.java:509)
+	at org.eclipse.jst.jee.model.internal.common.AbstractAnnotationModelProvider.processChangedProjectChildren(AbstractAnnotationModelProvider.java:483)
+	at org.eclipse.jst.jee.model.internal.common.AbstractAnnotationModelProvider.processChangedProject(AbstractAnnotationModelProvider.java:474)
+	at org.eclipse.jst.jee.model.internal.common.AbstractAnnotationModelProvider.internalPostChange(AbstractAnnotationModelProvider.java:439)
+	at org.eclipse.jst.jee.model.internal.common.AbstractAnnotationModelProvider.elementChanged(AbstractAnnotationModelProvider.java:430)
+	at org.eclipse.jdt.internal.core.DeltaProcessor$3.run(DeltaProcessor.java:1558)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.notifyListeners(DeltaProcessor.java:1548)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.firePostChangeDelta(DeltaProcessor.java:1382)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.fire(DeltaProcessor.java:1358)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:769)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.discardWorkingCopy(CompilationUnit.java:491)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.disposeFileInfo(CompilationUnitDocumentProvider.java:1213)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.disconnect(TextFileDocumentProvider.java:653)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.disconnect(CompilationUnitDocumentProvider.java:1286)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.disposeDocumentProvider(AbstractTextEditor.java:4360)
+	at org.eclipse.ui.texteditor.AbstractDecoratedTextEditor.disposeDocumentProvider(AbstractDecoratedTextEditor.java:1427)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.dispose(AbstractTextEditor.java:4242)
+	at org.eclipse.ui.texteditor.AbstractDecoratedTextEditor.dispose(AbstractDecoratedTextEditor.java:368)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.dispose(JavaEditor.java:2683)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.dispose(CompilationUnitEditor.java:1467)
+	at org.eclipse.ui.internal.WorkbenchPartReference.doDisposePart(WorkbenchPartReference.java:737)
+	at org.eclipse.ui.internal.EditorReference.doDisposePart(EditorReference.java:327)
+	at org.eclipse.ui.internal.WorkbenchPartReference.dispose(WorkbenchPartReference.java:684)
+	at org.eclipse.ui.internal.WorkbenchPage.disposePart(WorkbenchPage.java:1721)
+	at org.eclipse.ui.internal.WorkbenchPage.handleDeferredEvents(WorkbenchPage.java:1426)
+	at org.eclipse.ui.internal.WorkbenchPage.deferUpdates(WorkbenchPage.java:1410)
+	at org.eclipse.ui.internal.WorkbenchPage.closeEditors(WorkbenchPage.java:1384)
+	at org.eclipse.ui.internal.WorkbenchPage.closeAllEditors(WorkbenchPage.java:1188)
+	at org.eclipse.ui.internal.WorkbenchPage.dispose(WorkbenchPage.java:1770)
+	at org.eclipse.ui.internal.WorkbenchWindow.closeAllPages(WorkbenchWindow.java:867)
+	at org.eclipse.ui.internal.WorkbenchWindow.hardClose(WorkbenchWindow.java:1702)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:734)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$0(WorkbenchWindow.java:710)
+	at org.eclipse.ui.internal.WorkbenchWindow$5.run(WorkbenchWindow.java:832)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:830)
+	at org.eclipse.jface.window.WindowManager.close(WindowManager.java:109)
+	at org.eclipse.ui.internal.Workbench$18.run(Workbench.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1103)
+	at org.eclipse.ui.internal.Workbench.access$15(Workbench.java:1032)
+	at org.eclipse.ui.internal.Workbench$25.run(Workbench.java:1276)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1274)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1246)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:731)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$0(WorkbenchWindow.java:710)
+	at org.eclipse.ui.internal.WorkbenchWindow$5.run(WorkbenchWindow.java:832)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:830)
+	at org.eclipse.jface.window.Window.handleShellCloseEvent(Window.java:741)
+	at org.eclipse.jface.window.Window$3.shellClosed(Window.java:687)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1062)
+	at org.eclipse.swt.widgets.Decorations.closeWidget(Decorations.java:308)
+	at org.eclipse.swt.widgets.Decorations.WM_CLOSE(Decorations.java:1665)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4164)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2454)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:497)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4253)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2454)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:497)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4253)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2459)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3655)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:620)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1408)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1384)
+
+!ENTRY org.eclipse.jdt.core 4 4 2011-09-28 03:53:10.215
+!MESSAGE Exception occurred in listener of Java element change notification
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.emf.ecore.util.BasicFeatureMap.remove(BasicFeatureMap.java:1773)
+	at org.eclipse.emf.ecore.util.FeatureMapUtil$FeatureEList.remove(FeatureMapUtil.java:834)
+	at org.eclipse.emf.ecore.util.EcoreUtil.remove(EcoreUtil.java:3072)
+	at org.eclipse.jst.jee.model.internal.EJBAnnotationReader.processRemoveBean(EJBAnnotationReader.java:537)
+	at org.eclipse.jst.jee.model.internal.EJBAnnotationReader.processRemovedCompilationUnit(EJBAnnotationReader.java:479)
+	at org.eclipse.jst.jee.model.internal.EJBAnnotationReader.processChangedBean(EJBAnnotationReader.java:589)
+	at org.eclipse.jst.jee.model.internal.EJBAnnotationReader.processChangedCompilationUnit(EJBAnnotationReader.java:565)
+	at org.eclipse.jst.jee.model.internal.common.AbstractAnnotationModelProvider.recursevilyProcessCompilationUnits(AbstractAnnotationModelProvider.java:535)
+	at org.eclipse.jst.jee.model.internal.common.AbstractAnnotationModelProvider.recursevilyProcessCompilationUnits(AbstractAnnotationModelProvider.java:544)
+	at org.eclipse.jst.jee.model.internal.common.AbstractAnnotationModelProvider.recursevilyProcessPackages(AbstractAnnotationModelProvider.java:501)
+	at org.eclipse.jst.jee.model.internal.common.AbstractAnnotationModelProvider.recursevilyProcessPackages(AbstractAnnotationModelProvider.java:509)
+	at org.eclipse.jst.jee.model.internal.common.AbstractAnnotationModelProvider.processChangedProjectChildren(AbstractAnnotationModelProvider.java:483)
+	at org.eclipse.jst.jee.model.internal.common.AbstractAnnotationModelProvider.processChangedProject(AbstractAnnotationModelProvider.java:474)
+	at org.eclipse.jst.jee.model.internal.common.AbstractAnnotationModelProvider.internalPostChange(AbstractAnnotationModelProvider.java:439)
+	at org.eclipse.jst.jee.model.internal.common.AbstractAnnotationModelProvider.elementChanged(AbstractAnnotationModelProvider.java:430)
+	at org.eclipse.jdt.internal.core.DeltaProcessor$3.run(DeltaProcessor.java:1558)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.notifyListeners(DeltaProcessor.java:1548)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.firePostChangeDelta(DeltaProcessor.java:1382)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.fire(DeltaProcessor.java:1358)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:769)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.discardWorkingCopy(CompilationUnit.java:491)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.disposeFileInfo(CompilationUnitDocumentProvider.java:1213)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.disconnect(TextFileDocumentProvider.java:653)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.disconnect(CompilationUnitDocumentProvider.java:1286)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.disposeDocumentProvider(AbstractTextEditor.java:4360)
+	at org.eclipse.ui.texteditor.AbstractDecoratedTextEditor.disposeDocumentProvider(AbstractDecoratedTextEditor.java:1427)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.dispose(AbstractTextEditor.java:4242)
+	at org.eclipse.ui.texteditor.AbstractDecoratedTextEditor.dispose(AbstractDecoratedTextEditor.java:368)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.dispose(JavaEditor.java:2683)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.dispose(CompilationUnitEditor.java:1467)
+	at org.eclipse.ui.internal.WorkbenchPartReference.doDisposePart(WorkbenchPartReference.java:737)
+	at org.eclipse.ui.internal.EditorReference.doDisposePart(EditorReference.java:327)
+	at org.eclipse.ui.internal.WorkbenchPartReference.dispose(WorkbenchPartReference.java:684)
+	at org.eclipse.ui.internal.WorkbenchPage.disposePart(WorkbenchPage.java:1721)
+	at org.eclipse.ui.internal.WorkbenchPage.handleDeferredEvents(WorkbenchPage.java:1426)
+	at org.eclipse.ui.internal.WorkbenchPage.deferUpdates(WorkbenchPage.java:1410)
+	at org.eclipse.ui.internal.WorkbenchPage.closeEditors(WorkbenchPage.java:1384)
+	at org.eclipse.ui.internal.WorkbenchPage.closeAllEditors(WorkbenchPage.java:1188)
+	at org.eclipse.ui.internal.WorkbenchPage.dispose(WorkbenchPage.java:1770)
+	at org.eclipse.ui.internal.WorkbenchWindow.closeAllPages(WorkbenchWindow.java:867)
+	at org.eclipse.ui.internal.WorkbenchWindow.hardClose(WorkbenchWindow.java:1702)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:734)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$0(WorkbenchWindow.java:710)
+	at org.eclipse.ui.internal.WorkbenchWindow$5.run(WorkbenchWindow.java:832)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:830)
+	at org.eclipse.jface.window.WindowManager.close(WindowManager.java:109)
+	at org.eclipse.ui.internal.Workbench$18.run(Workbench.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1103)
+	at org.eclipse.ui.internal.Workbench.access$15(Workbench.java:1032)
+	at org.eclipse.ui.internal.Workbench$25.run(Workbench.java:1276)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1274)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1246)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:731)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$0(WorkbenchWindow.java:710)
+	at org.eclipse.ui.internal.WorkbenchWindow$5.run(WorkbenchWindow.java:832)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:830)
+	at org.eclipse.jface.window.Window.handleShellCloseEvent(Window.java:741)
+	at org.eclipse.jface.window.Window$3.shellClosed(Window.java:687)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1062)
+	at org.eclipse.swt.widgets.Decorations.closeWidget(Decorations.java:308)
+	at org.eclipse.swt.widgets.Decorations.WM_CLOSE(Decorations.java:1665)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4164)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2454)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:497)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4253)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2454)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:497)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4253)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2459)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3655)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:620)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1408)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1384)
+!SESSION 2011-09-28 12:21:45.418 -----------------------------------------------
+eclipse.buildId=M20110210-1200
+java.version=1.6.0_24
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2011-09-28 12:22:30.689
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-09-28 12:22:30.689
+!MESSAGE A conflict occurred for ALT+CTRL+I:
+Binding(ALT+CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.egit.ui.team.Ignore,Ignore,
+		,
+		Category(org.eclipse.egit.ui.commandCategory,Git,null,true),
+		org.eclipse.egit.ui.internal.actions.IgnoreActionHandler,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.AddToSVNIgnoreCommand,Add to svn:ignore...,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-09-28 12:22:30.689
+!MESSAGE A conflict occurred for ALT+CTRL+A:
+Binding(ALT+CTRL+A,
+	ParameterizedCommand(Command(oracle.eclipse.tools.common.services.ui.dependency,Show Dependencies,
+		Show dependencies for the selected item.,
+		Category(oracle.eclipse.tools.common.services.ui.dependency.category,Dependencies,Dependency Related Commands,true),
+		,
+		[Lorg.eclipse.ui.internal.commands.Parameter;@23f90c6,,true),[Lorg.eclipse.core.commands.Parameterization;@207ce14),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+A,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.ShowAnnotationCommand,Show Annotation...,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-09-28 12:22:30.689
+!MESSAGE A conflict occurred for ALT+CTRL+C:
+Binding(ALT+CTRL+C,
+	ParameterizedCommand(Command(org.eclipse.egit.ui.team.Commit,Commit,
+		,
+		Category(org.eclipse.egit.ui.commandCategory,Git,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+C,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.CommitCommand,Commit...,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-09-28 12:22:30.689
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(com.python.pydev.analysis.actions.pyGlobalsBrowserWorkbench,Python Show Class Browser,
+		Show Class Browser,
+		Category(org.python.pydev.ui.category.source,Pydev - Editor,Pydev editor category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:22:39.659
+!MESSAGE Started WebLogic Server Monitor [base_domain@localhost:7001, Version:10.3.5.0]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:11.898
+!MESSAGE Server watcher[Oracle WebLogic Server 11gR1 PatchSet 4 at localhost [base_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:16.126
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:16.126
+!MESSAGE Elapsed time 2293ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:16.126
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 11gR1 PatchSet 4 at localhost [base_domain]]@49738383
+
+!ENTRY org.eclipse.osgi 2 0 2011-09-28 12:24:22.023
+!MESSAGE While loading class "org.eclipse.datatools.sqltools.internal.core.SQLDevToolsConfigRegistryImpl$1", thread "Thread[Thread-22,5,main]" timed out waiting (5000ms) for thread "Thread[Worker-8,5,main]" to finish starting bundle "org.eclipse.datatools.sqltools.editor.core_1.0.0.v201001150815 [257]". To avoid deadlock, thread "Thread[Thread-22,5,main]" is proceeding but "org.eclipse.datatools.sqltools.internal.core.SQLDevToolsConfigRegistryImpl$1" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: State change in progress for bundle "reference:file:plugins/org.eclipse.datatools.sqltools.editor.core_1.0.0.v201001150815.jar" by thread "Worker-8".
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1077)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:282)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:418)
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:266)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:106)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:453)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:394)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:469)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:422)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:109)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:246)
+	at org.eclipse.datatools.sqltools.internal.core.SQLDevToolsConfigRegistryImpl.access$1(SQLDevToolsConfigRegistryImpl.java:134)
+	at org.eclipse.datatools.sqltools.internal.core.SQLDevToolsConfigRegistryImpl$2.run(SQLDevToolsConfigRegistryImpl.java:256)
+Caused by: org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1077)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:282)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:417)
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:265)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:106)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:453)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:393)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:469)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:422)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	... 3 more
+Root exception:
+org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1077)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:282)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:417)
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:265)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:106)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:453)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:393)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:469)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:422)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:246)
+	at org.eclipse.datatools.sqltools.internal.core.SQLDevToolsConfigRegistryImpl.access$1(SQLDevToolsConfigRegistryImpl.java:134)
+	at org.eclipse.datatools.sqltools.internal.core.SQLDevToolsConfigRegistryImpl$2.run(SQLDevToolsConfigRegistryImpl.java:256)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:24.097
+!MESSAGE Module not changed:[pib]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:24.144
+!MESSAGE Module not changed:[RBK]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:24.144
+!MESSAGE Module not changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:24.144
+!MESSAGE Module not changed:[RBK,AccountLink]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:24.144
+!MESSAGE Module not changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:24.144
+!MESSAGE Module not changed:[SSO]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:24.144
+!MESSAGE Module not changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:24.144
+!MESSAGE Module not changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:24.144
+!MESSAGE Module not changed:[SSO,TrustEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:24.144
+!MESSAGE Module not changed:[HIST]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:24.144
+!MESSAGE Module not changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:24.144
+!MESSAGE Module not changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:24.160
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:24.503
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:24.846
+!MESSAGE Module Status: 
+-pib
+-RBK
+--RBKEJB
+---AccountLink
+----AccountEJB
+-SSO
+--SSOEJB
+---LoginEJB
+----TrustEJB
+-HIST
+--HistEJB
+---HistController
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:25.501
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:25.704
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:26.671
+!MESSAGE Waiting on ProgressObject:@41271857
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:26.968
+!MESSAGE ProgressObject completed :@41271857
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:26.983
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:26.983
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:26.999
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:27.342
+!MESSAGE Waiting on ProgressObject:@40151482
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:27.670
+!MESSAGE ProgressObject completed :@40151482
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:27.670
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:27.685
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:27.982
+!MESSAGE Waiting on ProgressObject:@40798443
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:28.153
+!MESSAGE ProgressObject completed :@40798443
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:28.153
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:28.153
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-28 12:24:28.153
+!MESSAGE Publishing finished.

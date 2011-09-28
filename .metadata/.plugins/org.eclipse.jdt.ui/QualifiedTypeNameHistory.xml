@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="uob.data.HistoryData"/>
+<fullyQualifiedTypeName name="com.history.HistoryClass"/>
+<fullyQualifiedTypeName name="com.history.HistoryData"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="java.util.Comparator"/>
 <fullyQualifiedTypeName name="uob.service.HistClientService"/>
 </qualifiedTypeNameHistroy>
