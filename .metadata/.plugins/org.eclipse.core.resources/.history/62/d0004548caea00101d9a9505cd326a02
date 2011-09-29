@@ -1,0 +1,18 @@
+package com.CustomerEJB;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+
+@Entity
+public class CustomerClass implements Serializable{
+	@Id
+	private String idPib;
+	private double currentBalance;
+	private double availableBalance;
+	private String accountType;
+	private String idPib;
+	
+	}

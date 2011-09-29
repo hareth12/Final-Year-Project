@@ -16,8 +16,8 @@ public class AccountClass implements Serializable{
 	private String accountType;
 	private String idPib;
 	
-	public AccountClass(int accountNumber){
-		this.accountNumber=accountNumber;
+	public AccountClass(long accountNumber2){
+		this.accountNumber=accountNumber2;
 		this.setCurrentBalance(0);
 		this.setAvailableBalance(0);
 		this.setAccountType("UniPlus");

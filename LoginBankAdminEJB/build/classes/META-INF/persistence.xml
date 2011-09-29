@@ -1,0 +1,14 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+
+  <persistence-unit name="LoginBankAdmin-unit">
+    <jta-data-source>accountDataSource</jta-data-source>
+    <non-jta-data-source>accountDataSource</non-jta-data-source>
+    <class>com.account</class>
+    
+     <properties>
+      <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
+    </properties>
+    
+    
+  </persistence-unit>
+</persistence>

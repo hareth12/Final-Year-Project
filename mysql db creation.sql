@@ -46,6 +46,48 @@ CREATE  TABLE `fyp`.`accountLinkClass` (
   PRIMARY KEY (`cookieHash`) );
   
   
+  CREATE  TABLE `fyp`.`LoginBankAdminClass` (
+
+  `idBankAdmin` VARCHAR(45) NOT NULL ,
+
+  `password` VARCHAR(45) NOT NULL ,
+
+  PRIMARY KEY (`idBankAdmin`) );
+  
+
+CREATE  TABLE `fyp`.`CustomerClass` (
+
+  `idPib` VARCHAR(45) NOT NULL ,
+
+  `name` VARCHAR(45) NULL ,
+
+  `address` VARCHAR(45) NULL ,
+
+  `mobile` VARCHAR(45) NULL ,
+
+  `hometelephone` VARCHAR(45) NULL ,
+
+  `telephone2FA` VARCHAR(45) NULL ,
+
+  `icnumber` VARCHAR(45) NULL ,
+
+  PRIMARY KEY (`idPib`) );
+
+
+  
+  CREATE  TABLE `fyp`.`trustBankAdminClass` (
+
+  `cookieHash` VARCHAR(45) NOT NULL ,
+
+  `loginName` VARCHAR(45) NOT NULL ,
+
+  `timestarted` BIGINT(20) NOT NULL ,
+
+  `timetoend` BIGINT(20) NOT NULL ,
+
+  PRIMARY KEY (`cookieHash`) );
+
+
   
 
   

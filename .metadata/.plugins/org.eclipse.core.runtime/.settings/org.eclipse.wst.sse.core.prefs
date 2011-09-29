@@ -1,4 +1,4 @@
-#Tue Sep 27 21:33:02 SGT 2011
-task-tag-projects-already-scanned=AccountEJB,AccountLink,LoginEJB,RBK,RBKEJB,SSO,SSOEJB,TrustEJB,chinese,fyp2,front,pib,HIST,HistEJB,HistController
+#Fri Sep 30 01:37:14 SGT 2011
+task-tag-projects-already-scanned=AccountEJB,AccountLink,LoginEJB,RBK,RBKEJB,SSO,SSOEJB,TrustEJB,chinese,fyp2,front,pib,HIST,HistEJB,HistController,pibChinese,LoginBankAdminEJB,RBKBankAdminEJB,SSOBankAdminEJB,TrustBankAdminEJB,bankAdmin
 eclipse.preferences.version=1
 modelmanager.maxWaitDuringConcurrentLoad=30000

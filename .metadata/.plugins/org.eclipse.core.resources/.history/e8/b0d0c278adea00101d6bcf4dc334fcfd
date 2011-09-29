@@ -1,0 +1,161 @@
+package uobBankAdmin.service;
+
+
+import java.util.Hashtable;
+
+import javax.jms.Destination;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.Queue;
+import javax.jms.QueueConnection;
+import javax.jms.QueueConnectionFactory;
+import javax.jms.QueueReceiver;
+import javax.jms.QueueSender;
+import javax.jms.QueueSession;
+import javax.jms.TextMessage;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+import uobBankAdmin.data.SSOData;
+
+
+public class SSOClientService {
+	
+	private QueueConnection requestorQueueConnection = null;
+	private QueueSender requestorQueueSender = null;
+	private QueueSession requestorSession = null;
+	private InitialContext ctx;
+	private Hashtable requestorHashTable = new Hashtable();
+    
+	private QueueConnection replyQueueConnection = null;
+	private Destination replyQueue;
+	private QueueReceiver replyReceiver=null;
+	private QueueSession replySession = null;
+	
+	//======================
+	public String sendRequestSSO(String message){
+   	 requestorHashTable.put(Context.INITIAL_CONTEXT_FACTORY, "weblogic.jndi.WLInitialContextFactory");
+   	 requestorHashTable.put(Context.PROVIDER_URL,"t3://localhost:7001");
+   	 String returnString=null;
+   	 
+        try {
+       	 ctx = new InitialContext(requestorHashTable);
+	         Queue queue = (Queue) ctx.lookup("SSOBankAdminQueue");
+	         QueueConnectionFactory requestorFactory = (QueueConnectionFactory) ctx.lookup("SSOBankAdminConnectionFactory");
+	         requestorQueueConnection = requestorFactory.createQueueConnection();
+	         requestorSession = requestorQueueConnection.createQueueSession(false, QueueSession.AUTO_ACKNOWLEDGE);
+	         
+	         QueueConnectionFactory replyFactory = (QueueConnectionFactory) ctx.lookup("SSOBankAdminReplyConnectionFactory");
+	         replyQueueConnection = replyFactory.createQueueConnection();	 
+	         replySession = replyQueueConnection.createQueueSession(false, QueueSession.AUTO_ACKNOWLEDGE);
+	         replyQueue = (Destination) ctx.lookup("SSOBankAdminReplyQueue");
+	         replyReceiver = replySession.createReceiver((Queue) replyQueue);
+	       
+	         
+	         
+	         TextMessage msg = requestorSession.createTextMessage();	      
+	         msg.setText(message);
+	         msg.setJMSReplyTo(replyQueue);
+	         requestorQueueSender = requestorSession.createSender(queue);
+	         requestorQueueSender.send(msg);
+	         System.out.println("reply to: "+msg.getJMSMessageID());
+          
+	         System.out.println("Message sent successfully to remote queue.");
+	         
+	         returnString = receiveSync();
+	         requestorSession.close(); // this is important.
+	         replySession.close();
+		} catch (NamingException e) {
+			
+			e.printStackTrace();
+		} catch (JMSException e) {
+			
+			e.printStackTrace();
+		}
+		
+		
+		return returnString;
+		
+    }
+	//=======
+   
+    private String receiveSync() throws JMSException{
+   	 System.out.println("<fypWebService><Login><receiveSync>"); 
+   	 String returnString=null;
+   	 replyQueueConnection.start();
+   	 Message msg = replyReceiver.receive();
+   	 TextMessage tmsg = (TextMessage) msg;
+   	 replyQueueConnection.close();
+   	
+   	 if(msg==null)
+   		 System.out.println("msg is null");
+   	 else{
+   		 System.out.println("msg is not null");
+   	 	 System.out.println("content of reply:  "+tmsg.getText());
+   	 	 
+   	 	 returnString=tmsg.getText();
+   	 	 }
+   		 return returnString;
+    }
+	
+	//======================
+    
+    public boolean checkTrust(String userHash){  //opcode = 51
+    	boolean trustSuccess = false;
+    	String returnFromSSO = sendRequestSSO("51|"+userHash+"|filler|filler");
+    	if(returnFromSSO.equals("59||"))
+    		trustSuccess=true;
+    	
+    	return trustSuccess;
+    }
+
+	public SSOData login(String userName, String password) {
+		SSOData ssoData = new SSOData();
+    	String opCodeString=null;
+		String returnFromSSO=null;
+		ssoData.setLoginSuccess(false);
+		
+		if((userName!=null)&&(password!=null)&&!userName.isEmpty()&&!password.isEmpty()){
+			returnFromSSO=sendRequestSSO("11|"+userName+"|"+password+"|filler");
+			System.out.println("returnFromSSO= "+returnFromSSO);
+		}
+		else{
+			System.out.println("<ssoClientService><login1FA>idPib/password is null/empty.0");
+		}
+		
+		if(returnFromSSO!=null){
+			String[] postParse=returnFromSSO.split("[|]+");
+			opCodeString=postParse[0];
+			
+			if(opCodeString.equals("19")){
+				//add parameter 1 & 2 into here 
+				String cookie = postParse[2]; //for renaming purpose
+				ssoData.setCookieHash(cookie);
+				System.out.println("<SSOClientService><login1FA>cookie = "+cookie);
+				ssoData.setIs2FA(false);
+				ssoData.setLoginSuccess(true);
+				return ssoData;
+				
+			}
+			else{
+				//if(opCodeString.equals("10")
+				//this is commented out to catch other cases
+				//only opCodeString="12" will work
+				ssoData.setIs2FA(false);
+				ssoData.setLoginSuccess(false);
+				ssoData.setLogin2FA1Success(false);
+				ssoData.setLogin2FA2Success(false);
+				ssoData.setCookieHash(null);
+				return ssoData;
+			}
+				
+		}
+		else{
+			System.out.println("<BankAdmin><ssoClientService><login>returnFromSSO is null");
+		}
+		ssoData.setCookieHash(null);
+		return ssoData;
+	}
+    
+}

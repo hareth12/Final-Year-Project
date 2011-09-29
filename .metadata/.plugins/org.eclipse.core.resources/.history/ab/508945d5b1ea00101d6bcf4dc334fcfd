@@ -1,0 +1,6 @@
+package com.SSOBankAdmin;
+
+public class SSODataBankAdmin {
+	private Boolean loginSuccess;
+	private String cookieHash;
+}

@@ -6,6 +6,9 @@
 		<project>LoginEJB</project>
 		<project>SSOEJB</project>
 		<project>TrustEJB</project>
+		<project>SSOBankAdminEJB</project>
+		<project>LoginBankAdminEJB</project>
+		<project>TrustBankAdminEJB</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

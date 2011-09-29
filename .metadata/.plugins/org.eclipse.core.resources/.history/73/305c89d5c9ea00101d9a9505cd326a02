@@ -1,0 +1,5 @@
+package com.CustomerEJB;
+
+public class CustomerClass {
+
+}

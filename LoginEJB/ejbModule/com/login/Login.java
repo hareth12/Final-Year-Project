@@ -29,11 +29,6 @@ public class Login implements LoginRemote {
 		// TODO Auto-generated method stub
 		LoginClass x= em.find(LoginClass.class, idPib);
 		if(x!=null){
-			/*
-			System.out.println("customer ID :"+x.getIdCustomer());
-			System.out.println("PIB ID      :"+x.getIdPib());
-			System.out.println("pin         :"+x.getPin());
-			*/
 			if(x.getPassword().equals(password))
 				return true;
 			else
@@ -114,6 +109,19 @@ public class Login implements LoginRemote {
 		return sb.toString();
 		
 	}
+	
+	private int randomCustomerNumberGenerator(){
+		
+		String AB = "0123456789";
+		Random rnd = new Random();
+		StringBuilder sb = new StringBuilder(6);
+		for( int i = 0; i < 6; i++ ) 
+		      sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );		
+		String resultString=sb.toString();	
+		int resultInt=Integer.parseInt(resultString);	
+		
+		return resultInt;
+	}
 
 	@Override
 	public boolean login2FA2(String idPib, String hash2FA) throws Exception {
@@ -175,6 +183,23 @@ public class Login implements LoginRemote {
 			}				
 		System.out.println(idPib+" not found in db");
 		return ssoData;
+	}
+
+	@Override
+	public boolean createPIBaccount(String idPib, String telephone) {
+		LoginClass x = em.find(LoginClass.class,idPib);
+		if(x==null){
+			x = new LoginClass();
+			x.setIdPib(idPib);
+			int a = randomCustomerNumberGenerator();
+			x.setIdCustomer(a);
+			x.setTelephone(telephone);
+			String password = hashGenerator(6);
+			x.setPassword(password);
+			em.persist(x);
+			return true;
+		}
+		return false;
 	}
 
 }

@@ -1,0 +1,453 @@
+package com.rbkBankAdmin;
+
+import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.List;
+import java.util.Properties;
+
+import javax.ejb.ActivationConfigProperty;
+import javax.ejb.EJB;
+import javax.ejb.MessageDriven;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.MessageListener;
+import javax.jms.Queue;
+import javax.jms.QueueConnection;
+import javax.jms.QueueConnectionFactory;
+import javax.jms.QueueSender;
+import javax.jms.QueueSession;
+import javax.jms.TextMessage;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+ 
+/**
+ * Message-Driven Bean implementation class for: RBK
+ * 
+ */
+@MessageDriven(mappedName = "RBKQueue", activationConfig = { @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue") })
+public class RBK implements MessageListener {
+	QueueConnection cnn = null;
+    QueueSender sender = null;
+    QueueSession session = null;
+    InitialContext ctx;
+    Hashtable ht = new Hashtable();
+	
+    
+    //==========
+	private void replyToServlet(String message){	
+        try {
+        	ht.put(Context.INITIAL_CONTEXT_FACTORY, "weblogic.jndi.WLInitialContextFactory");
+        	ht.put(Context.PROVIDER_URL,"t3://localhost:7001");
+
+            ctx = new InitialContext(ht);
+            Queue queue = (Queue) ctx.lookup("RBKReplyQueue");
+            QueueConnectionFactory factory = (QueueConnectionFactory) ctx.lookup("RBKReplyConnectionFactory");
+            cnn = factory.createQueueConnection();
+            session = cnn.createQueueSession(false, QueueSession.AUTO_ACKNOWLEDGE);
+            TextMessage msg = session.createTextMessage();
+
+            msg.setText(message);
+            sender = session.createSender(queue);
+            sender.send(msg);
+            
+           
+            System.out.println("<rbk><replyToServlet>");
+            session.close(); // this is important.
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+	}
+	//==========
+	
+	
+	@EJB (mappedName="Account")
+	AccountRemote acct;
+	
+	@EJB(mappedName="AccountLink")
+	AccountLinkRemote accountLink;
+	
+	/**
+	 * Default constructor.
+	 */
+	public RBK() {
+		
+	}
+
+	/**
+	 * @see MessageListener#onMessage(Message)
+	 */
+	public void onMessage(Message message) {
+		TextMessage tmsg = null;
+		tmsg = (TextMessage) message;
+		int opCode = 99;
+		String parameter1 = null;
+		String parameter2 = null;
+		String parameter3 = null;
+		String parameter4 = null;
+		String parameter5 = null;
+		String parameter6 = null;
+		
+		//parsing message into opcode, and parameters
+		String preParse;
+		try {
+			preParse = tmsg.getText();
+			String[] postParse=preParse.split("[|]+");
+			opCode=Integer.parseInt(postParse[0]);
+
+			parameter1=postParse[1];
+			parameter2=postParse[2];
+			parameter3=postParse[3];
+			parameter4=postParse[4];
+			parameter5=postParse[5];
+			parameter6=postParse[6];
+			
+		} catch (JMSException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		// TODO Auto-generated method stub
+		System.out.println("<rbk>");
+		
+			switch(opCode){
+				case 11:
+				try {
+						if(parameter1!=null){
+							//merely renaming
+							String idPib = parameter1;
+							getAccount(idPib);				
+						}
+						
+					} catch (Exception e1) {
+						e1.printStackTrace();
+						System.out.println("<rbk><getAccount>failed");
+					}
+					break;
+					
+				case 21:
+					try{
+						if(parameter1!=null){
+							//merely renaming
+							String idPib = parameter1;
+							getPayee(idPib);
+						}
+					}catch(Exception e1){
+						e1.printStackTrace();
+						System.out.println("<rbk><getPayee>failed");
+					}
+					break;
+				case 31:
+					try{
+						if(parameter1!=null){
+							//merely renaming
+							String fromAccountString = parameter1;
+							long fromAccount = Long.parseLong(fromAccountString);
+							getAccountLink(fromAccount);
+						}
+					}catch(Exception e1){
+						e1.printStackTrace();
+						System.out.println("<rbk><getAccountLink>failed");
+					}
+					break;	
+				case 41:
+					try{
+						if(parameter1!=null && parameter2!=null){
+							//merely renaming
+							String payeeIndexHash = parameter1;
+							String amountString =parameter2;
+							double amount = Double.parseDouble(amountString);
+							
+							payPayee2FA1(payeeIndexHash,amount);
+						}
+					}catch(Exception e1){
+						e1.printStackTrace();
+						System.out.println("<rbk><payPayee2FA1>failed");
+					}
+					break;	
+					
+				case 51:
+					try{
+						if(parameter1!=null && parameter2!=null){
+							//merely renaming
+							String indexHash = parameter1;
+							String hash2FA =parameter2;
+							
+							payPayee2FA2(indexHash,hash2FA);
+						}
+					}catch(Exception e1){
+						e1.printStackTrace();
+						System.out.println("<rbk><payPayee2FA2>failed");
+					}
+					break;	
+					
+				case 61:
+					try{
+						if(parameter1!=null && parameter2!=null && parameter3!=null){
+							//merely renaming
+							String idPib = parameter1;
+							String fromString = parameter2;
+							String toString =parameter3;
+							String telephone= parameter4;
+							String fromType=parameter5;
+							String toType=parameter6;
+							
+							long from = Long.parseLong(fromString);
+							long to = Long.parseLong(toString);
+							addPayee2FA1(idPib,from,to,telephone,fromType,toType);
+						}
+					}catch(Exception e1){
+						e1.printStackTrace();
+						System.out.println("<rbk><addPayee2FA1>failed");
+					}
+					break;	
+					
+				case 71:
+					try{
+						if(parameter1!=null && parameter2!=null){
+							//merely renaming
+							String indexHash = parameter1;
+							String hash2FA = parameter2;
+
+							addPayee2FA2(indexHash,hash2FA);
+						}
+					}catch(Exception e1){
+						e1.printStackTrace();
+						System.out.println("<rbk><addPayee2FA2>failed");
+					}
+					break;	
+				
+				case 81:
+					try{
+						if(parameter1!=null){
+							//merely renaming
+							String indexHash = parameter1;
+
+							getToAccountNumber(indexHash);
+						}
+					}catch(Exception e1){
+						e1.printStackTrace();
+						System.out.println("<rbk><getToAccountNumber>failed");
+					}
+					break;	
+					
+				case 99:
+					System.out.println("<rbk><preparse>failed");
+					break;
+			}
+		
+			
+	}
+	
+	private void getAccountLink(long fromAccount)  throws Exception{ //opCode 31
+		List<AccountLinkDataStructure> x = accountLink.getAccountLink(fromAccount);
+		if(!x.isEmpty()){
+			int i = 0;
+			String replyString = "39|";
+			int size = x.size();
+			String holdingString = null;
+			
+			while(i!=size){
+				holdingString = x.get(i).getPayerAccountType();
+				replyString = replyString + holdingString+"|";
+				holdingString = Long.toString(x.get(i).getPayerAccount());
+				replyString = replyString + holdingString+"|";
+				holdingString = x.get(i).getPayeeAccountType();
+				replyString = replyString + holdingString+"|";
+				holdingString =Long.toString(x.get(i).getPayeeAccount());
+				replyString = replyString + holdingString+"|";
+				holdingString = x.get(i).getAccountLinkHash();
+				replyString = replyString + holdingString+"|";
+				
+				i++;
+			}
+			
+			replyToServlet(replyString);
+		}else
+		{
+			replyToServlet("30||");
+		}
+	}
+
+	private void getToAccountNumber(String indexHash) throws Exception { //Opcode =81
+		System.out.println("<rbk><getToAccountNumber>inside Method");
+		String replyString = "89|";
+
+		long x = accountLink.getToAccountNumber(indexHash);
+		String xString = Long.toString(x);
+		if(x>0){
+			replyToServlet("89|"+xString);
+		}
+		else{
+			System.out.println("<rbk><getToAccountNumber>failed because x<0");
+			replyToServlet("80||");
+		}
+		
+	}
+
+	private void addPayee2FA2(String indexHash, String hash2FA) throws Exception { //OpCode = 71
+		System.out.println("<rbk><addPayee2FA2>inside Method");
+		String replyString = "79|";
+
+		AddPayee2FAData x = accountLink.addAccountLink2FA2(indexHash, hash2FA);
+		System.out.println("<rbk><addPayee2FA2>outside");
+		System.out.println("<rbk><addPayee2FA2>addpayee2FA2Success = "+x.getAddPayee2FA2Success());
+		System.out.println("<rbk><addPayee2FA2>account from        = "+x.getPayerAccount());
+		System.out.println("<rbk><addPayee2FA2>account to          = "+x.getPayeeAccount());
+		
+		if(x.getAddPayee2FA2Success()){
+			replyString=replyString+Long.toString(x.getPayerAccount())+"|";
+			replyString=replyString+Long.toString(x.getPayeeAccount())+"|";
+			replyToServlet(replyString);
+		}
+		else
+		{
+			System.out.println("<rbk><addPayee2FA2>failed because addPayee2FA2Success == false");
+			replyString = "70|";
+			replyString=replyString+Long.toString(x.getPayerAccount())+"|";
+			replyString=replyString+Long.toString(x.getPayeeAccount())+"|";
+			replyToServlet(replyString);
+		}
+			
+	}
+	
+	private void addPayee2FA1(String idPib, long from, long to,String telephone,String fromType,String toType) throws Exception { //OpCode =61
+		System.out.println("<rbk><addPayee2FA1>inside Method");
+		System.out.println("<rbk><addPayee2FA1>inside Method fromType = "+fromType);
+		System.out.println("<rbk><addPayee2FA1>inside Method toType = "+toType);
+		String replyString = "69|";
+		
+		AddPayee2FAData x = accountLink.addAccountLink2FA1(idPib, from, to,telephone,fromType,toType);
+		System.out.println("<rbk><addPayee2FA1>outside");
+		System.out.println("<rbk><addPayee2FA1>addpayee2FA1Success = "+x.getAddPayee2FA1Success());
+		System.out.println("<rbk><addPayee2FA1>preHash = "+x.getPreHash());
+		System.out.println("<rbk><addPayee2FA1>indexHash = "+x.getIndexHash());
+		
+		if(x.getAddPayee2FA1Success()){
+			replyString=replyString+x.getPreHash()+"|";
+			replyString=replyString+x.getIndexHash()+"|";
+			replyToServlet(replyString);
+		}
+		else
+		{
+			System.out.println("<rbk><addPayee2FA1>failed because addPayee2FA1Success == false");
+			replyToServlet("60||");
+		}
+		
+	}
+
+	private void payPayee2FA2(String indexHash, String hash2FA) throws Exception{ //opcode = 51
+		System.out.println("<rbk><payPayee2FA2>inside Method");
+		String replyString = "59|";
+		
+		payPayee2FAData x = accountLink.payPayee2FA2(indexHash, hash2FA);
+	
+		if(x.getPayPayee2FA2Success()){
+			
+			if(acct.fundTransfer(x.getPayerAccount(),x.getPayeeAccount(),x.getAmount()))
+			{
+				System.out.println("<rbk><payPayee2FA2>account Number = "+x.getPayeeAccount());
+				replyString = replyString + x.getPayeeAccount()+"|";
+				System.out.println("<rbk><payPayee2FA2>amount = "+x.getAmount());
+				String amountString = Double.toString(x.getAmount());
+				replyString = replyString + amountString+"|";
+				replyString = replyString + x.getPayerAccount()+"|";
+				replyToServlet(replyString);
+			}
+			else{		
+				System.out.println("<rbk><payPayee2FA2>failed because acct.FundTransfer failed");
+				replyString = "50|";
+				replyString = replyString + x.getPayeeAccount()+"|";
+				System.out.println("<rbk><payPayee2FA2>amount = "+x.getAmount());
+				String amountString = Double.toString(x.getAmount());
+				replyString = replyString + amountString+"|";
+				replyString = replyString + x.getPayerAccount()+"|";
+				replyToServlet(replyString);
+			}
+		}
+		else{
+			System.out.println("<rbk><payPayee2FA2>failed because payPayee2FA2Success == false");
+			replyString = "50|";
+			replyString = replyString + x.getPayeeAccount()+"|";
+			System.out.println("<rbk><payPayee2FA2>amount = "+x.getAmount());
+			String amountString = Double.toString(x.getAmount());
+			replyString = replyString + amountString+"|";
+			replyString = replyString + x.getPayerAccount()+"|";
+			replyToServlet(replyString);
+		}
+	}
+
+	private void payPayee2FA1(String payeeIndexHash, double amount) throws Exception { //opcode = 41
+		System.out.println("<rbk><payPayee2FA1>inside Method");
+		String replyString = "49|";
+		
+		payPayee2FAData x = accountLink.payPayee2FA1(payeeIndexHash, amount);
+		if(x.getPayPayee2FA1Success()){
+			System.out.println("<rbk><payPayee2FA1>account Number = "+x.getPayeeAccount());
+			replyString = replyString + x.getPayeeAccount()+"|";
+			System.out.println("<rbk><payPayee2FA1>preHash = "+x.getPreHash());
+			replyString = replyString + x.getPreHash()+"|";
+			replyToServlet(replyString);
+		}
+		else{
+			System.out.println("<rbk><payPayee2FA1>failed because payPayee2FA1Success == false");
+			replyToServlet("40||");
+		}
+	}
+
+	private void getAccount(String idPib) throws Exception{ //opcode = 11
+		List<AccountClass> accountList = acct.getAccount(idPib);
+		if(!accountList.isEmpty()){
+			int i = 0;
+			String replyString = "19|";
+			int size = accountList.size();
+			String holdingString = null;
+			
+			while(i!=size){
+				holdingString = Long.toString(accountList.get(i).getAccountNumber());
+				replyString = replyString + holdingString+"|";
+				replyString = replyString + accountList.get(i).getAccountType()+"|";
+				holdingString = Double.toString(accountList.get(i).getCurrentBalance());
+				replyString = replyString + holdingString+"|";
+				holdingString = Double.toString(accountList.get(i).getAvailableBalance());
+				replyString = replyString + holdingString+"|";
+				i++;
+			}
+			
+			replyToServlet(replyString);
+		}else
+		{
+			replyToServlet("10||");
+		}
+		
+	}
+
+	private void getPayee(String idPib)throws Exception{ //opCode = 29
+		System.out.println("<RBK><getPayee> at first");
+		List<AccountLinkDataStructure> payeeList = accountLink.getPayee(idPib);
+		System.out.println("<RBK><getPayee> after getPayee");
+		if((payeeList!=null)&&!(payeeList.isEmpty())){
+			int i = 0;
+			String replyString = "29|";
+			int size = payeeList.size();
+			String holdingString = null;
+			
+			System.out.println("<RBK><getPayee> inside Active area");
+			while(i!=size){
+				holdingString = Long.toString(payeeList.get(i).getPayeeAccount());
+				replyString = replyString + holdingString + "|";
+				replyString = replyString + payeeList.get(i).getAccountLinkHash();
+				replyString = replyString + "|";
+				i++;
+			}
+			
+			replyToServlet(replyString);
+		}else
+		{
+			replyToServlet("20||");
+		}
+	
+	}
+}
+

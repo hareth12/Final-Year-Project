@@ -8,4 +8,7 @@
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="java.util.Comparator"/>
 <fullyQualifiedTypeName name="uob.service.HistClientService"/>
+<fullyQualifiedTypeName name="uobBankAdmin.data.SSOData"/>
+<fullyQualifiedTypeName name="uobBankAdmin.service.SSOClientService"/>
+<fullyQualifiedTypeName name="uobBankAdmin.service.RBKClientService"/>
 </qualifiedTypeNameHistroy>

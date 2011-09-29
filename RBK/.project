@@ -6,6 +6,7 @@
 		<project>AccountEJB</project>
 		<project>AccountLink</project>
 		<project>RBKEJB</project>
+		<project>RBKBankAdminEJB</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

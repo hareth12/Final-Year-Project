@@ -1,0 +1,3 @@
+C\:/Users/ngzhongqin/workspace/FinalYearProject/ICH/EarContent/APP-INF/classes = APP-INF/classes
+C\:/Users/ngzhongqin/workspace/FinalYearProject/ICHBankAdminEJB/build/classes = ICHBankAdminEJB.jar
+C\:/Users/ngzhongqin/workspace/FinalYearProject/CustomerEJB/build/classes = CustomerEJB.jar

@@ -9,5 +9,14 @@
 <module>
    <ejb>TrustEJB.jar</ejb>
 </module>
+<module>
+   <ejb>SSOBankAdminEJB.jar</ejb>
+</module>
+<module>
+   <ejb>LoginBankAdminEJB.jar</ejb>
+</module>
+<module>
+   <ejb>TrustBankAdminEJB.jar</ejb>
+</module>
 
 </application> 

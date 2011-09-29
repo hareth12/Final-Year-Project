@@ -20,26 +20,9 @@ public class Account implements AccountRemote {
 	
 	@PersistenceContext(unitName="account-unit")
 	private EntityManager em;
+
 	
-	public int createNewAccount(double initialBalance){
-		int accountNumber=randomAccountNumberGenerator();
-		AccountClass x= em.find(AccountClass.class, accountNumber);
-		
-		while(x!=null){
-			accountNumber=randomAccountNumberGenerator();
-			x= em.find(AccountClass.class, accountNumber);
-		}//a unique random 10 digit integer is found account number
-		
-		x = new AccountClass(accountNumber);
-		x.setAvailableBalance(initialBalance);
-		x.setCurrentBalance(initialBalance);
-		
-		em.merge(x);
-		
-		return accountNumber;
-	}
-	
-	private int randomAccountNumberGenerator(){
+	private long randomAccountNumberGenerator(){
 		
 		String AB = "0123456789";
 		Random rnd = new Random();
@@ -47,7 +30,7 @@ public class Account implements AccountRemote {
 		for( int i = 0; i < 10; i++ ) 
 		      sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );		
 		String resultString=sb.toString();	
-		int resultInt=Integer.parseInt(resultString);	
+		long resultInt=Long.parseLong(resultString);	
 		
 		return resultInt;
 	}
@@ -135,6 +118,25 @@ public class Account implements AccountRemote {
 		
 		
 		return fundTransferSuccess;
+	}
+
+	public long createNewAccount(String idPib, String accountType,double initialBalance) {
+		
+		long accountNumber=randomAccountNumberGenerator();
+		AccountClass x= em.find(AccountClass.class, accountNumber);
+		
+		while(x!=null){
+			accountNumber=randomAccountNumberGenerator();
+			x= em.find(AccountClass.class, accountNumber);
+		}//a unique random 10 digit integer is found account number
+		
+		x = new AccountClass(accountNumber);
+		x.setAvailableBalance(initialBalance);
+		x.setCurrentBalance(initialBalance);
+		x.setIdPib(idPib);
+		em.merge(x);
+		
+		return accountNumber;
 	}
 	
 	

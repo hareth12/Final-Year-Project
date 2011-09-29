@@ -5,7 +5,7 @@ import javax.ejb.Remote;
 
 @Remote
 public interface AccountRemote {
-	public int createNewAccount(double initialBalance) throws Exception;
+	public long createNewAccount(String idPib, String accountType, double initialBalance);
 		
 	public List<AccountClass> getAccount(String idPib) throws Exception;
 

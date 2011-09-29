@@ -1,0 +1,116 @@
+package com.trustBankAdmin;
+
+import java.sql.Time;
+import java.util.Random;
+
+import javax.ejb.Stateful;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+/**
+ * Session Bean implementation class Account
+ */
+@Stateful(mappedName="TrustBankAdmin")
+public class TrustBankAdmin implements TrustBankAdminRemote {
+
+	
+	@PersistenceContext(unitName="trustBankAdmin-unit")
+	private EntityManager em;
+
+	private String hashGenerator(int len){
+		String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+		Random rnd = new Random();
+		StringBuilder sb = new StringBuilder(len);
+		for( int i = 0; i < len; i++ ) 
+		      sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );		
+		return sb.toString();
+		
+	}
+
+	@Override
+	public boolean check(String hash){
+		// TODO Auto-generated method stub
+		TrustClass t = em.find(TrustClass.class, hash);
+		
+		if(t!=null){
+			if(hash.equals(t.getCookieHash())){
+				if(t.checkTime()){
+					if(!t.isIs2FA()){
+						t.updateTime();
+						em.persist(t);
+						return true;
+					}
+				}
+			}
+		}
+		
+		return false;
+	}
+
+	@Override
+	public boolean check2FA(String hash) throws Exception {
+		// TODO Auto-generated method stub
+		TrustClass t = em.find(TrustClass.class, hash);
+		
+		if(t!=null){
+			if(hash.equals(t.getCookieHash())){
+				if(t.checkTime()){
+					if(t.isIs2FA()){
+						t.updateTime();
+						em.persist(t);
+						return true;
+					}else
+						System.out.println("<Trust><check2FA> 2FA boolean check fail");
+				}else
+					System.out.println("<Trust><check2FA> time check fail");
+			}else
+				System.out.println("<Trust><check2FA> cookie check fail");
+		}else
+			System.out.println("<Trust><check2FA> cookie not found");
+		
+		return false;
+	}
+
+	@Override
+	public String newLogin1FA(String loginName) throws Exception {
+		// TODO Auto-generated method stub
+		TrustClass t;
+		String cookieHash = hashGenerator(40);
+		t = new TrustClass(cookieHash, loginName,false);
+		em.persist(t);
+		
+		return cookieHash;
+	}
+
+	@Override
+	public void newLogin2FA(String cookieHash,String loginName) throws Exception {
+		System.out.println("<Trust><newLogin2FA> is2FA set to true");
+		TrustClass t = em.find(TrustClass.class, cookieHash);
+		if(t!=null){
+			t.setIs2FA(true);
+			em.persist(t);
+		}
+		else{
+			t = new TrustClass(cookieHash, loginName,true);
+			em.persist(t);
+		}
+	}
+
+	@Override
+	public String getIdPib(String hash) throws Exception {
+		TrustClass t = em.find(TrustClass.class, hash);
+		if(t!=null){
+			return t.getLoginName();
+		}
+		return null;
+	}
+
+	@Override
+	public void removeTrust(String userHash) throws Exception {
+			TrustClass x = em.find(TrustClass.class, userHash);
+			if(x!=null){
+				em.remove(x);
+		
+			}
+	}
+}

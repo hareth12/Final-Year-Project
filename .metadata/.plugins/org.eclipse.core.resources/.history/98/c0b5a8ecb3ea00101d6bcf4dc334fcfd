@@ -1,0 +1,62 @@
+package com.trustBankAdmin;
+
+import java.sql.Time;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class TrustBankAdminClass {
+	@Id
+	private String cookieHash;
+	private String loginName;
+	
+	public TrustBankAdminClass(){}
+	
+	public void setCookieHash(String cookieHash) {
+		this.cookieHash = cookieHash;
+	}
+	public String getCookieHash() {
+		return cookieHash;
+	}
+	public void setLoginName(String loginName) {
+		this.loginName = loginName;
+	}
+	public String getLoginName() {
+		return loginName;
+	}
+	public void setTimeStarted(long timeStarted) {
+		this.timeStarted = timeStarted;
+	}
+	public long getTimeStarted() {
+		return timeStarted;
+	}
+	public void setTimeToEnd(long timeToEnd) {
+		this.timeToEnd = timeToEnd;
+	}
+	public long getTimeToEnd() {
+		return timeToEnd;
+	}
+
+	public void setIs2FA(boolean is2FABoolean) {
+		if(is2FABoolean){
+			this.is2FA = 1;
+		}
+		else
+			this.is2FA=0;
+	}
+
+	public boolean isIs2FA() {
+		System.out.print("<TrustClass><isIs2FA>is2FA = " + this.is2FA);
+		boolean returnBool = false;
+		if(this.is2FA==1){
+			returnBool=true;
+		}
+		else
+			returnBool= false;
+		return returnBool;
+	}
+	
+
+	
+}

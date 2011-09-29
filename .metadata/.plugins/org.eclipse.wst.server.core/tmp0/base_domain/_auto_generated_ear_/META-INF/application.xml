@@ -2,14 +2,8 @@
    <display-name>_auto_generated_ear_</display-name>
    <module>
    <web>
-       <web-uri>pibChinese.war</web-uri>
-       <context-root>pibChinese</context-root>
-   </web>
-</module>
-<module>
-   <web>
-       <web-uri>pib.war</web-uri>
-       <context-root>pib</context-root>
+       <web-uri>bankAdmin.war</web-uri>
+       <context-root>bankAdmin</context-root>
    </web>
 </module>
 

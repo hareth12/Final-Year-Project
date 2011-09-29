@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="SSO">
+        <wb-resource deploy-path="/" source-path="/EarContent"/>
+        <dependent-module archiveName="SSOEJB.jar" deploy-path="/" handle="module:/resource/SSOEJB/SSOEJB">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="LoginEJB.jar" deploy-path="/" handle="module:/resource/LoginEJB/LoginEJB">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="LoginEJBClient.jar" deploy-path="/" handle="module:/resource/LoginEJBClient/LoginEJBClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="TrustEJB.jar" deploy-path="/" handle="module:/resource/TrustEJB/TrustEJB">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="SSOBankAdminEJB.jar" deploy-path="/" handle="module:/resource/SSOBankAdminEJB/SSOBankAdminEJB">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="LoginBankAdminEJB.jar" deploy-path="/" handle="module:/resource/LoginBankAdminEJB/LoginBankAdminEJB">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

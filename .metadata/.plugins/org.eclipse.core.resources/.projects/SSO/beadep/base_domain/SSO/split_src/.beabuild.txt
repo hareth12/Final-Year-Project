@@ -2,3 +2,6 @@ C\:/Users/ngzhongqin/workspace/FinalYearProject/SSO/EarContent/APP-INF/classes =
 C\:/Users/ngzhongqin/workspace/FinalYearProject/SSOEJB/build/classes = SSOEJB.jar
 C\:/Users/ngzhongqin/workspace/FinalYearProject/LoginEJB/build/classes = LoginEJB.jar
 C\:/Users/ngzhongqin/workspace/FinalYearProject/TrustEJB/build/classes = TrustEJB.jar
+C\:/Users/ngzhongqin/workspace/FinalYearProject/SSOBankAdminEJB/build/classes = SSOBankAdminEJB.jar
+C\:/Users/ngzhongqin/workspace/FinalYearProject/LoginBankAdminEJB/build/classes = LoginBankAdminEJB.jar
+C\:/Users/ngzhongqin/workspace/FinalYearProject/TrustBankAdminEJB/build/classes = TrustBankAdminEJB.jar

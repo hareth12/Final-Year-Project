@@ -1,0 +1,77 @@
+package uobBankAdmin.account;
+
+import java.io.IOException;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import uobBankAdmin.service.RBKClientService;
+import uobBankAdmin.service.SSOClientService;
+
+
+public class AccountCreation extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    public AccountCreation() {
+        super();
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Boolean validCookieBool = false;
+		Cookie[] cookies = request.getCookies();
+		String userHash = getClientHash(cookies);
+		SSOClientService ssocs = new SSOClientService();
+		RBKClientService rbkcs = new RBKClientService();
+
+	
+		if(userHash!=null){
+			if(ssocs.checkTrust(userHash)){
+				validCookieBool=true;
+				System.out.println("<bankAdmin><AccountCreation>userHash = "+userHash);
+			}	
+		}
+		else{
+			System.out.println("<bankAdmin><AccountCreation>userHash from Client is null!");
+		}
+		
+		
+		if(validCookieBool){
+			String userName=ssocs.getLoginName(userHash);
+			System.out.println("<bankAdmin><AccountCreation>userName= "+userName);
+			
+			long x = rbkcs.createNewAccount("Uniplus", "zhongqin", 100);
+			System.out.println("<bankAdmin><AccountCreation>account = "+x);
+			
+			boolean idNotTaken = ssocs.createPIBaccount("jack", "90497848");
+			System.out.println("<bankAdmin><AccountCreation>idNotTaken = "+idNotTaken);
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/Account/accountCreation1.jsp");
+			if (dispatcher != null) dispatcher.forward(request, response);
+		}
+		else{
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/Login/timedOut.jsp");
+			if (dispatcher != null) dispatcher.forward(request, response);
+		}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	}
+	
+	private String getClientHash(Cookie[] cookies){
+		 for(int i=0; i<cookies.length; i++) {
+		      Cookie cookie = cookies[i];
+		      System.out.println("cookieName = "+ cookie.getName());
+		     
+		      if (cookie.getName().equals("AdminUserHash")){
+		    	  System.out.println("returning = "+cookie.getValue());
+		    	  return(cookie.getValue());
+		      }
+		       
+		    }
+		return null;
+		
+	}
+}

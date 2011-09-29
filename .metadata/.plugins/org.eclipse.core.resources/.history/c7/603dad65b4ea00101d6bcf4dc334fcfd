@@ -1,0 +1,73 @@
+package com.trustBankAdmin;
+
+import java.sql.Time;
+import java.util.Random;
+
+import javax.ejb.Stateful;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+/**
+ * Session Bean implementation class Account
+ */
+@Stateful(mappedName="TrustBankAdmin")
+public class TrustBankAdmin implements TrustBankAdminRemote {
+
+	
+	@PersistenceContext(unitName="trustBankAdmin-unit")
+	private EntityManager em;
+
+	private String hashGenerator(int len){
+		String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+		Random rnd = new Random();
+		StringBuilder sb = new StringBuilder(len);
+		for( int i = 0; i < len; i++ ) 
+		      sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );		
+		return sb.toString();
+		
+	}
+
+	public boolean check(String hash){
+		TrustBankAdminClass t = em.find(TrustBankAdminClass.class, hash);
+		
+		if(t!=null){
+			if(hash.equals(t.getCookieHash())){
+				if(t.checkTime()){
+						t.updateTime();
+						em.persist(t);
+						return true;
+					}
+				}
+			}
+		return false;
+	}
+
+	public String newLoginString (String loginName){
+		// TODO Auto-generated method stub
+		TrustBankAdminClass t;
+		String cookieHash = hashGenerator(40);
+		t = new TrustBankAdminClass(cookieHash, loginName);
+		em.persist(t);
+		
+		return cookieHash;
+	}
+	
+
+	@Override
+	public String getIdBankAdmin(String hash) throws Exception {
+		TrustClass t = em.find(TrustClass.class, hash);
+		if(t!=null){
+			return t.getLoginName();
+		}
+		return null;
+	}
+
+	@Override
+	public void removeTrust(String userHash) throws Exception {
+			TrustClass x = em.find(TrustClass.class, userHash);
+			if(x!=null){
+				em.remove(x);
+		
+			}
+	}
+}

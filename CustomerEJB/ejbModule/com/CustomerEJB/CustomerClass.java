@@ -1,0 +1,78 @@
+package com.CustomerEJB;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+
+@Entity
+public class CustomerClass implements Serializable{
+	@Id
+	private String idPib;
+	private String name;
+	private String address;
+	private String mobile;
+	private String homeTelephone;
+	private String telephone2FA;
+	private String ICNumber;
+	
+	public CustomerClass(){}
+
+	public void setIdPib(String idPib) {
+		this.idPib = idPib;
+	}
+
+	public String getIdPib() {
+		return idPib;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setHomeTelephone(String homeTelephone) {
+		this.homeTelephone = homeTelephone;
+	}
+
+	public String getHomeTelephone() {
+		return homeTelephone;
+	}
+
+	public void setTelephone2FA(String telephone2FA) {
+		this.telephone2FA = telephone2FA;
+	}
+
+	public String getTelephone2FA() {
+		return telephone2FA;
+	}
+
+	public void setICNumber(String iCNumber) {
+		ICNumber = iCNumber;
+	}
+
+	public String getICNumber() {
+		return ICNumber;
+	};
+	
+	}

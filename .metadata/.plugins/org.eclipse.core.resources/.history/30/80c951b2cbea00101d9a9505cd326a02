@@ -1,0 +1,5 @@
+package uobBankAdmin.service;
+
+public class ICHClientService {
+
+}
