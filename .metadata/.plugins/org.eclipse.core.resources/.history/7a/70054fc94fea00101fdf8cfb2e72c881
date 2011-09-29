@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Psuedo Bank Personal Internal Banking</title>
+<link href="/pibChinese/asset/secured/helper.css" media="screen" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+
+/* Layout */
+@import "/pibChinese/asset/secured/dropdown.css";
+@import "/pibChinese/asset/secured/dropdown.vertical.css";
+
+/* Theme */
+@import "/pibChinese/asset/secured/default.css";
+
+</style>
+
+</head>
+<body>
+<div id="wrap">  <!-- This wrap div needs to encompass everything except the footer div at bottom -->
+<h1>&#27426;&#36814;&#20266;&#38134;&#34892;&#20010;&#20154;&#32593;&#19978;&#38134;&#34892;</h1>
+
+<ul id="nav" class="dropdown dropdown-vertical">
+    <li><a href="/pibChinese/Landing1FA">Home</a></li>
+    <li class="dir">Account Information
+        <ul>
+            <li><a href="/pibChinese/AccountEnquiry1FA">Account Summary</a></li>
+            <li class="dir"><a href="./">Manage My Accounts</a>
+                <ul>
+                    <li><a href="./">Account Summary View</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li class="dir">View Rates
+        <ul>
+            <li><a href="./">View Unit Trust Prices</a></li>
+            <li><a href="./">View Foreign Exchange Rates</a></li>
+            <li><a href="./">View Gold & Silver Rates</a></li>
+        </ul>
+    </li>
+    <li class="dir">Customer Service
+        <ul>
+            <li><a href="./">Change Password</a></li> 
+        </ul>
+    </li>
+</ul>
+<div id="main">
+Welcome <%=((String)request.getAttribute("userName")) %>!
+
+</div>
+
+</div>
+
+	<div class="footer">
+		<div id="foot"> <!-- this extra div is just centering the fixed width area of the footer content -->
+	        <p>&#29256;&#26435;&#25152;&#26377;&#169;2011&#20266;&#38134;&#34892;&#12290;&#20445;&#30041;&#25152;&#26377;&#26435;&#21033;&#12290;</p>
+	    </div>
+	</div>
+
+
+
+</body>
+</html>
