@@ -12,7 +12,12 @@
     <div class="container">
         <div id="topcorners"><div class="cleft"></div><div class="cright"></div></div>
         <div id="content">
-            
+                <form method="post" action="/pibChinese/Index">
+            	<select name="language" onchange='this.form.submit()'>	 
+				  <option value="english">English</option>
+				  <option value="chinese">&#20013;&#25991;</option>
+				</select>
+				</form>
 
 
 
