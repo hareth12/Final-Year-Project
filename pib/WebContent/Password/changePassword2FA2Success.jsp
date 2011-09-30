@@ -61,6 +61,7 @@
             <li><a href="/pib/ChangePassword2FA">Change Password</a></li>
         </ul>
     </li>
+    <li><a href="/pib/Logout">Logout</a></li>
 </ul>
 	<div id="main">
 	<strong> Your Password has been changed.</strong>

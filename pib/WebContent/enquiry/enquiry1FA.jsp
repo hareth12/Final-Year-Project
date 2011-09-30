@@ -44,6 +44,7 @@
             <li><a href="/pib/ChangePassword1FA">Change Password</a></li> 
         </ul>
     </li>
+    <li><a href="/pib/Logout">Logout</a></li>
 </ul>
 <div id="main">
 		<table style="text-align: center; width: 80%;" border="1" cellpadding="2" cellspacing="2">
