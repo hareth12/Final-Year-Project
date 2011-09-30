@@ -44,15 +44,6 @@ public class AccountCreation extends HttpServlet {
 			String userName=ssocs.getLoginName(userHash);
 			System.out.println("<bankAdmin><AccountCreation>userName= "+userName);
 			
-			//long x = rbkcs.createNewAccount("Uniplus", "jack", 1000);
-			//System.out.println("<bankAdmin><AccountCreation>account = "+x);
-			
-			//boolean idNotTaken = ssocs.createPIBaccount("jack", "90497848");
-			//System.out.println("<bankAdmin><AccountCreation>idNotTaken = "+idNotTaken);
-			
-			boolean custCreatedBool = ichcs.createNewCustomer("jack", "name", "address", "90497848", "90497848", "90497848", "21380");
-			System.out.println("<bankAdmin><AccountCreation>custCreatedBool = "+custCreatedBool);
-			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/Account/accountCreation1.jsp");
 			if (dispatcher != null) dispatcher.forward(request, response);
 		}

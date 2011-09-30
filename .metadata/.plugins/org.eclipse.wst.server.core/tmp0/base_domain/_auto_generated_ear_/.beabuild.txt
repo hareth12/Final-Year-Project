@@ -1,3 +1,9 @@
 C\:/Users/ngzhongqin/workspace/FinalYearProject/bankAdmin/WebContent = bankAdmin.war
 C\:/Users/ngzhongqin/workspace/FinalYearProject/bankAdmin/build/weboutput = bankAdmin.war
 C\:/Users/ngzhongqin/workspace/FinalYearProject/bankAdmin/build/classes = bankAdmin.war/WEB-INF/classes
+C\:/Users/ngzhongqin/workspace/FinalYearProject/pib/WebContent = pib.war
+C\:/Users/ngzhongqin/workspace/FinalYearProject/pib/build/weboutput = pib.war
+C\:/Users/ngzhongqin/workspace/FinalYearProject/pib/build/classes = pib.war/WEB-INF/classes
+C\:/Users/ngzhongqin/workspace/FinalYearProject/pibChinese/WebContent = pibChinese.war
+C\:/Users/ngzhongqin/workspace/FinalYearProject/pibChinese/build/weboutput = pibChinese.war
+C\:/Users/ngzhongqin/workspace/FinalYearProject/pibChinese/build/classes = pibChinese.war/WEB-INF/classes

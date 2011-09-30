@@ -6,16 +6,16 @@
 <meta name="author" content="Tom@Lwis (http://www.lwis.net/free-css-drop-down-menu/)" />
 <meta name="keywords" content="css, dropdowns, dropdown menu, drop-down, menu, navigation, nav, horizontal, vertical left-to-right, vertical right-to-left, horizontal linear, horizontal upwards, cross browser, internet explorer, ie, firefox, safari, opera, browser, lwis" />
 <meta name="description" content="Simple vertical left-to-right direction css drop-down menu demo using clean, standards-friendly, free, easy, cross browser framework for css drop-down menus" />
-<link href="/pib/asset/secured/helper.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/bankAdmin/asset/secured/helper.css" media="screen" rel="stylesheet" type="text/css" />
 
 <style type="text/css">
 
 /* Layout */
-@import "/pib/asset/secured/dropdown.css";
-@import "/pib/asset/secured/dropdown.vertical.css";
+@import "/bankAdmin/asset/secured/dropdown.css";
+@import "/bankAdmin/asset/secured/dropdown.vertical.css";
 
 /* Theme */
-@import "/pib/asset/secured/default.css";
+@import "/bankAdmin/asset/secured/default.css";
 
 </style>
 
@@ -62,9 +62,27 @@
     </li>
 </ul>
 	<div id="main">
-	Welcome <%=((String)request.getAttribute("userName")) %>!   
+	Account Creation
 	<br></br>
-	AccountCreation 1
+	
+		<form name="input" action="/bankAdmin/AccountCreation2" method="post">
+		Name: <input type="text" name="name" />  <br></br>
+		Address: <input type="text" name="address" /> <br></br>
+		Mobile Number: <input type="text" name="mobile" /> <br></br>
+		Home Telephone: <input type="text" name="home" /> <br></br>
+		IC Number: <input type="text" name="icNumber" /> <br></br>
+		PIB ID <input type="text" name="idPib" /> <br></br>
+		<br></br>
+		Account Type: <select name="accountType">	 
+				  <option value="Uniplus">Uniplus</option>
+				</select> <br></br>
+		Deposit Amount: <input type="text" name="deposit" /> <br></br>
+		<input type="submit" value="Submit" />
+		</form>
+	
+	
+
+
 	</div>
 
 </div>

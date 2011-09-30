@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Psuedo Bank Personal Internal Banking</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="Tom@Lwis (http://www.lwis.net/free-css-drop-down-menu/)" />
+<meta name="keywords" content="css, dropdowns, dropdown menu, drop-down, menu, navigation, nav, horizontal, vertical left-to-right, vertical right-to-left, horizontal linear, horizontal upwards, cross browser, internet explorer, ie, firefox, safari, opera, browser, lwis" />
+<meta name="description" content="Simple vertical left-to-right direction css drop-down menu demo using clean, standards-friendly, free, easy, cross browser framework for css drop-down menus" />
+<link href="/pib/asset/secured/helper.css" media="screen" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+
+/* Layout */
+@import "/pib/asset/secured/dropdown.css";
+@import "/pib/asset/secured/dropdown.vertical.css";
+
+/* Theme */
+@import "/pib/asset/secured/default.css";
+
+</style>
+
+
+</head>
+<body>
+<div id="wrap">  <!-- This wrap div needs to encompass everything except the footer div at bottom -->
+<h1>Welcome to Psuedo Bank PIB Bank Admin</h1>
+
+<ul id="nav" class="dropdown dropdown-vertical">
+    <li><a href="#">Home</a></li>
+    <li class="dir">Accounts
+        <ul>
+            <li><a href="/bankAdmin/AccountCreation">Accounts Creation</a></li>
+            <li><a href="#">Accounts Enquiry</a></li>
+                <ul>
+                    <li><a href="./">1</a></li>
+                    <li><a href="./">2</a></li>
+                    <li><a href="./">3</a></li>
+                    <li><a href="./">4</a></li>
+                    <li><a href="./">5</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li class="dir">A
+        <ul>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+        </ul>
+    </li>
+    <li class="dir">C
+        <ul>
+            <li><a href="./">1</a></li>  
+            <li><a href="./">2</a></li>
+            <li><a href="./">3</a></li>
+        </ul>
+    </li>
+    <li class="dir">D</a>
+        <ul>
+            <li><a href="./">1</a></li>
+        </ul>
+    </li>
+</ul>
+	<div id="main">
+	Account Creation
+	<br></br>
+	
+		<form name="input" action="html_form_action.asp" method="get">
+		Name: <input type="text" name="name" />  <br></br>
+		Address: <input type="text" name="address" /> <br></br>
+		Mobile Number: <input type="text" name="mobile" /> <br></br>
+		Home Telephone: <input type="text" name="home" /> <br></br>
+		IC Number: <input type="text" name="user" /> <br></br>
+		<br></br>
+		Account Type: <select name="accountType">	 
+				  <option value="Uniplus">Uniplus</option>
+				</select> <br></br>
+		Name: <input type="text" name="user" /> <br></br>
+		<input type="submit" value="Submit" />
+		</form>
+	
+	
+
+
+	</div>
+
+</div>
+
+<div class="footer">
+	<div id="foot"> <!-- this extra div is just centering the fixed width area of the footer content -->
+
+    <p>Copyright &copy; 2011 Pseudo Bank. All rights reserved.</p>
+    </div>
+</div>
+
+</body>
+
+
+</html>

@@ -29,4 +29,14 @@
     <servlet-name>AccountCreation</servlet-name>
     <url-pattern>/AccountCreation</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AccountCreation2</display-name>
+    <servlet-name>AccountCreation2</servlet-name>
+    <servlet-class>uobBankAdmin.account.AccountCreation2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AccountCreation2</servlet-name>
+    <url-pattern>/AccountCreation2</url-pattern>
+  </servlet-mapping>
 </web-app>

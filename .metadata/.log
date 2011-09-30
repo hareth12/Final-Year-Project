@@ -1500,3 +1500,3016 @@ weblogic.ejb.container.compliance.ComplianceException: No business interface, co
 
 !ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 03:33:24.266
 !MESSAGE Deployment manager created :[Oracle WebLogic Server 11gR1 PatchSet 4 at localhost [base_domain]]@55427875
+!SESSION 2011-09-30 09:42:49.936 -----------------------------------------------
+eclipse.buildId=M20110210-1200
+java.version=1.6.0_24
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.core.resources 2 10035 2011-09-30 09:43:06.690
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jst.jsp.core 4 4 2011-09-30 09:43:42.492
+!MESSAGE A workspace crash was detected. The previous session did not exit normally. Not using saved taglib indexes.
+
+!ENTRY org.eclipse.jface 2 0 2011-09-30 09:43:54.224
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-09-30 09:43:54.224
+!MESSAGE A conflict occurred for ALT+CTRL+I:
+Binding(ALT+CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.egit.ui.team.Ignore,Ignore,
+		,
+		Category(org.eclipse.egit.ui.commandCategory,Git,null,true),
+		org.eclipse.egit.ui.internal.actions.IgnoreActionHandler,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.AddToSVNIgnoreCommand,Add to svn:ignore...,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-09-30 09:43:54.224
+!MESSAGE A conflict occurred for ALT+CTRL+A:
+Binding(ALT+CTRL+A,
+	ParameterizedCommand(Command(oracle.eclipse.tools.common.services.ui.dependency,Show Dependencies,
+		Show dependencies for the selected item.,
+		Category(oracle.eclipse.tools.common.services.ui.dependency.category,Dependencies,Dependency Related Commands,true),
+		,
+		[Lorg.eclipse.ui.internal.commands.Parameter;@20543ff,,true),[Lorg.eclipse.core.commands.Parameterization;@20543cf),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+A,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.ShowAnnotationCommand,Show Annotation...,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-09-30 09:43:54.224
+!MESSAGE A conflict occurred for ALT+CTRL+C:
+Binding(ALT+CTRL+C,
+	ParameterizedCommand(Command(org.eclipse.egit.ui.team.Commit,Commit,
+		,
+		Category(org.eclipse.egit.ui.commandCategory,Git,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+C,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.CommitCommand,Commit...,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-09-30 09:43:54.224
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(com.python.pydev.analysis.actions.pyGlobalsBrowserWorkbench,Python Show Class Browser,
+		Show Class Browser,
+		Category(org.python.pydev.ui.category.source,Pydev - Editor,Pydev editor category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:44:45.002
+!MESSAGE Started WebLogic Server Monitor [base_domain@localhost:7001, Version:10.3.5.0]
+
+!ENTRY oracle.eclipse.tools.common.services 4 2 2011-09-30 09:45:11.896
+!MESSAGE Problems occurred when invoking code from plug-in: "oracle.eclipse.tools.common.services".
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 4 2011-09-30 09:45:11.912
+!MESSAGE URI is not absolute
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 2 2011-09-30 09:45:12.270
+!MESSAGE Problems occurred when invoking code from plug-in: "oracle.eclipse.tools.common.services".
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 4 2011-09-30 09:45:12.270
+!MESSAGE URI is not absolute
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 2 2011-09-30 09:45:12.270
+!MESSAGE Problems occurred when invoking code from plug-in: "oracle.eclipse.tools.common.services".
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 4 2011-09-30 09:45:12.286
+!MESSAGE URI is not absolute
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 2 2011-09-30 09:45:12.286
+!MESSAGE Problems occurred when invoking code from plug-in: "oracle.eclipse.tools.common.services".
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 4 2011-09-30 09:45:12.286
+!MESSAGE URI is not absolute
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 2 2011-09-30 09:45:12.302
+!MESSAGE Problems occurred when invoking code from plug-in: "oracle.eclipse.tools.common.services".
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 4 2011-09-30 09:45:12.302
+!MESSAGE URI is not absolute
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 2 2011-09-30 09:45:12.754
+!MESSAGE Problems occurred when invoking code from plug-in: "oracle.eclipse.tools.common.services".
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 4 2011-09-30 09:45:12.754
+!MESSAGE URI is not absolute
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 2 2011-09-30 09:45:12.770
+!MESSAGE Problems occurred when invoking code from plug-in: "oracle.eclipse.tools.common.services".
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 4 2011-09-30 09:45:12.770
+!MESSAGE URI is not absolute
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 2 2011-09-30 09:45:12.770
+!MESSAGE Problems occurred when invoking code from plug-in: "oracle.eclipse.tools.common.services".
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 4 2011-09-30 09:45:12.770
+!MESSAGE URI is not absolute
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 2 2011-09-30 09:45:14.174
+!MESSAGE Problems occurred when invoking code from plug-in: "oracle.eclipse.tools.common.services".
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 4 2011-09-30 09:45:14.174
+!MESSAGE URI is not absolute
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 2 2011-09-30 09:45:14.392
+!MESSAGE Problems occurred when invoking code from plug-in: "oracle.eclipse.tools.common.services".
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 4 2011-09-30 09:45:14.408
+!MESSAGE URI is not absolute
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 2 2011-09-30 09:45:14.408
+!MESSAGE Problems occurred when invoking code from plug-in: "oracle.eclipse.tools.common.services".
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 4 2011-09-30 09:45:14.408
+!MESSAGE URI is not absolute
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 2 2011-09-30 09:45:14.423
+!MESSAGE Problems occurred when invoking code from plug-in: "oracle.eclipse.tools.common.services".
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 4 2011-09-30 09:45:14.423
+!MESSAGE URI is not absolute
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 2 2011-09-30 09:45:14.423
+!MESSAGE Problems occurred when invoking code from plug-in: "oracle.eclipse.tools.common.services".
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.common.services 4 4 2011-09-30 09:45:14.423
+!MESSAGE URI is not absolute
+!STACK 0
+java.lang.IllegalArgumentException: URI is not absolute
+	at java.net.URI.toURL(URI.java:1080)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectReferencedResources(TagCollector.java:322)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectUri(TagCollector.java:229)
+	at oracle.eclipse.tools.webtier.common.services.collection.TagCollector.collectArtifacts(TagCollector.java:155)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector$JSPVisitor.visit(JSPTagCollector.java:283)
+	at oracle.eclipse.tools.webtier.jsp.collection.JSPTagCollector.visit(JSPTagCollector.java:163)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:198)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant$Visitor.visit(StructuredModelCollectionParticipant.java:176)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:35)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMElement.accept(VisitableDOMElement.java:39)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMDocument.accept(VisitableDOMDocument.java:43)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:53)
+	at oracle.eclipse.tools.common.services.dependency.structuredmodel.internal.VisitableDOMModel.accept(VisitableDOMModel.java:49)
+	at oracle.eclipse.tools.webtier.common.services.collection.internal.StructuredModelCollectionParticipant.collect(StructuredModelCollectionParticipant.java:126)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList$4.run(CollectionParticipantList.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.CollectionParticipantList.collect(CollectionParticipantList.java:102)
+	at oracle.eclipse.tools.common.services.dependency.model.internal.ResourceSetCommand.execute(ResourceSetCommand.java:64)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob$SafeRunnable.run(QueueManagerJob.java:354)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at oracle.eclipse.tools.common.services.resources.internal.QueueManagerJob$CommandSetJob.run(QueueManagerJob.java:268)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:41.908
+!MESSAGE Server watcher[Oracle WebLogic Server 11gR1 PatchSet 4 at localhost [base_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:45.512
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:45.512
+!MESSAGE Elapsed time 2122ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:45.512
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 11gR1 PatchSet 4 at localhost [base_domain]]@53200939
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.307
+!MESSAGE Module not changed:[RBK]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.307
+!MESSAGE Module changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.323
+!MESSAGE Module not changed:[RBK,AccountLink]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.323
+!MESSAGE Module changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.323
+!MESSAGE Module changed:[RBK,RBKBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.323
+!MESSAGE Module not changed:[SSO]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.323
+!MESSAGE Module changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.323
+!MESSAGE Module changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.338
+!MESSAGE Module not changed:[SSO,TrustEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.338
+!MESSAGE Module changed:[SSO,SSOBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.338
+!MESSAGE Module not changed:[SSO,LoginBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.338
+!MESSAGE Module not changed:[SSO,TrustBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.338
+!MESSAGE Module not changed:[HIST]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.338
+!MESSAGE Module not changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.338
+!MESSAGE Module not changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.338
+!MESSAGE Module changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.338
+!MESSAGE Module not changed:[ICH]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.338
+!MESSAGE Module changed:[ICH,ICHBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.338
+!MESSAGE Module changed:[ICH,CustomerEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.338
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.479
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.900
+!MESSAGE Module changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.916
+!MESSAGE Module changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.916
+!MESSAGE Module changed:[RBK,RBKBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.916
+!MESSAGE Module changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.916
+!MESSAGE Module changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.916
+!MESSAGE Module changed:[SSO,SSOBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.916
+!MESSAGE Module changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.916
+!MESSAGE Module changed:[ICH,ICHBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.916
+!MESSAGE Module changed:[ICH,CustomerEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.916
+!MESSAGE Module Status: 
+-RBK
+--RBKEJB (change) (redeploy)
+---AccountLink
+----AccountEJB (change) (redeploy)
+-----RBKBankAdminEJB (change) (redeploy)
+-SSO
+--SSOEJB (change) (redeploy)
+---LoginEJB (change) (redeploy)
+----TrustEJB
+-----SSOBankAdminEJB (change) (redeploy)
+------LoginBankAdminEJB
+-------TrustBankAdminEJB
+-HIST
+--HistEJB
+---HistController
+-bankAdmin (change) (redeploy)
+-ICH
+--ICHBankAdminEJB (change) (redeploy)
+---CustomerEJB (change) (redeploy)
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:46.962
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:47.181
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:47.789
+!MESSAGE Waiting on ProgressObject:@46087970
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:47.945
+!MESSAGE ProgressObject completed :@46087970
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:47.961
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:47.961
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:47.961
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:48.320
+!MESSAGE Waiting on ProgressObject:@45988880
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:48.647
+!MESSAGE ProgressObject completed :@45988880
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:48.663
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:48.663
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:48.944
+!MESSAGE Waiting on ProgressObject:@46661114
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:49.100
+!MESSAGE ProgressObject completed :@46661114
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:49.100
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:49.100
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:49.115
+!MESSAGE ***dm.redeploy (redeploy) RBK
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:49.396
+!MESSAGE ***dm.redeploy (redeploy) RBK
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:49.692
+!MESSAGE Waiting on ProgressObject:@46821036
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:50.145
+!MESSAGE ProgressObject completed :@46821036
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:50.145
+!MESSAGE ***dm.start (startModule) RBK
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:50.472
+!MESSAGE Waiting on ProgressObject:@44169937
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:50.488
+!MESSAGE ProgressObject completed :@44169937
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:50.488
+!MESSAGE Started RBK
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:50.488
+!MESSAGE RBK redeployed successfully on [{Target=AdminServer, WebLogicTargetType=server, Name=RBK}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:50.488
+!MESSAGE ***dm.redeploy (redeploy) SSO
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:50.488
+!MESSAGE ***dm.redeploy (redeploy) SSO
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:50.894
+!MESSAGE Waiting on ProgressObject:@36887456
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:51.689
+!MESSAGE ProgressObject completed :@36887456
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:51.689
+!MESSAGE ***dm.start (startModule) SSO
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:51.970
+!MESSAGE Waiting on ProgressObject:@45818848
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:51.986
+!MESSAGE ProgressObject completed :@45818848
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:51.986
+!MESSAGE Started SSO
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:51.986
+!MESSAGE SSO redeployed successfully on [{Target=AdminServer, WebLogicTargetType=server, Name=SSO}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:51.986
+!MESSAGE ***dm.redeploy (redeploy) ICH
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:51.986
+!MESSAGE ***dm.redeploy (redeploy) ICH
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:52.298
+!MESSAGE Waiting on ProgressObject:@46984793
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:52.516
+!MESSAGE ProgressObject completed :@46984793
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:52.516
+!MESSAGE ***dm.start (startModule) ICH
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:52.859
+!MESSAGE Waiting on ProgressObject:@46360579
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:52.984
+!MESSAGE ProgressObject completed :@46360579
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:52.984
+!MESSAGE Started ICH
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:52.984
+!MESSAGE ICH redeployed successfully on [{Target=AdminServer, WebLogicTargetType=server, Name=ICH}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 09:51:53.000
+!MESSAGE Publishing finished.
+
+!ENTRY org.eclipse.core.jobs 4 2 2011-09-30 10:13:36.847
+!MESSAGE An internal error occurred during: "Updating status for Oracle WebLogic Server 11gR1 PatchSet 4 at localhost [base_domain]...".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.wst.server.core.internal.Server.getModules(Server.java:2321)
+	at org.eclipse.wst.server.core.internal.Server.visit(Server.java:2761)
+	at oracle.eclipse.tools.weblogic.server.internal.WeblogicServerBehaviour.handleResourceChange(WeblogicServerBehaviour.java:345)
+	at org.eclipse.wst.server.core.internal.Server$ResourceChangeJob.run(Server.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:34.596
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 11gR1 PatchSet 4 at localhost [base_domain]]@53200939
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:56.370
+!MESSAGE Server watcher[Oracle WebLogic Server 11gR1 PatchSet 4 at localhost [base_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:58.944
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:58.944
+!MESSAGE Elapsed time 1342ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:58.944
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 11gR1 PatchSet 4 at localhost [base_domain]]@57902423
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.599
+!MESSAGE Module not changed:[RBK]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.599
+!MESSAGE Module not changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.599
+!MESSAGE Module not changed:[RBK,AccountLink]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.599
+!MESSAGE Module not changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.599
+!MESSAGE Module not changed:[RBK,RBKBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.599
+!MESSAGE Module not changed:[SSO]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.599
+!MESSAGE Module not changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.599
+!MESSAGE Module not changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.599
+!MESSAGE Module not changed:[SSO,TrustEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.599
+!MESSAGE Module not changed:[SSO,SSOBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.599
+!MESSAGE Module not changed:[SSO,LoginBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.599
+!MESSAGE Module not changed:[SSO,TrustBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.599
+!MESSAGE Module not changed:[HIST]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.599
+!MESSAGE Module not changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.599
+!MESSAGE Module not changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.599
+!MESSAGE Module changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.599
+!MESSAGE Module not changed:[ICH]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.599
+!MESSAGE Module not changed:[ICH,ICHBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.599
+!MESSAGE Module not changed:[ICH,CustomerEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.599
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.708
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.973
+!MESSAGE Module changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.973
+!MESSAGE Module Status: 
+-RBK
+--RBKEJB
+---AccountLink
+----AccountEJB
+-----RBKBankAdminEJB
+-SSO
+--SSOEJB
+---LoginEJB
+----TrustEJB
+-----SSOBankAdminEJB
+------LoginBankAdminEJB
+-------TrustBankAdminEJB
+-HIST
+--HistEJB
+---HistController
+-bankAdmin (change) (redeploy)
+-ICH
+--ICHBankAdminEJB
+---CustomerEJB
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:45:59.973
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:46:00.082
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:46:00.488
+!MESSAGE Waiting on ProgressObject:@55900400
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:46:00.675
+!MESSAGE ProgressObject completed :@55900400
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:46:00.675
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:46:00.691
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:46:00.691
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:46:01.003
+!MESSAGE Waiting on ProgressObject:@54952761
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:46:01.346
+!MESSAGE ProgressObject completed :@54952761
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:46:01.362
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:46:01.362
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:46:01.767
+!MESSAGE Waiting on ProgressObject:@54520159
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:46:01.861
+!MESSAGE ProgressObject completed :@54520159
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:46:01.861
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:46:01.861
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:46:01.861
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.297
+!MESSAGE Module not changed:[RBK]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.297
+!MESSAGE Module not changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.297
+!MESSAGE Module not changed:[RBK,AccountLink]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.297
+!MESSAGE Module not changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.297
+!MESSAGE Module not changed:[RBK,RBKBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.297
+!MESSAGE Module not changed:[SSO]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.297
+!MESSAGE Module not changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.297
+!MESSAGE Module not changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.297
+!MESSAGE Module not changed:[SSO,TrustEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.297
+!MESSAGE Module not changed:[SSO,SSOBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.297
+!MESSAGE Module not changed:[SSO,LoginBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.297
+!MESSAGE Module not changed:[SSO,TrustBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.297
+!MESSAGE Module not changed:[HIST]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.297
+!MESSAGE Module not changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.297
+!MESSAGE Module not changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.297
+!MESSAGE Module changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.297
+!MESSAGE Module not changed:[ICH]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.297
+!MESSAGE Module not changed:[ICH,ICHBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.297
+!MESSAGE Module not changed:[ICH,CustomerEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.297
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.531
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.827
+!MESSAGE Module changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.827
+!MESSAGE Module Status: 
+-RBK
+--RBKEJB
+---AccountLink
+----AccountEJB
+-----RBKBankAdminEJB
+-SSO
+--SSOEJB
+---LoginEJB
+----TrustEJB
+-----SSOBankAdminEJB
+------LoginBankAdminEJB
+-------TrustBankAdminEJB
+-HIST
+--HistEJB
+---HistController
+-bankAdmin (change) (redeploy)
+-ICH
+--ICHBankAdminEJB
+---CustomerEJB
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:40.827
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:41.139
+!MESSAGE Waiting on ProgressObject:@35867554
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:41.311
+!MESSAGE ProgressObject completed :@35867554
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:41.311
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:41.326
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:41.326
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:41.747
+!MESSAGE Waiting on ProgressObject:@51397943
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:42.059
+!MESSAGE ProgressObject completed :@51397943
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:42.075
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:42.075
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:42.309
+!MESSAGE Waiting on ProgressObject:@51923179
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:42.465
+!MESSAGE ProgressObject completed :@51923179
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:42.465
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:42.465
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:47:42.465
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.452
+!MESSAGE Module not changed:[RBK]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.452
+!MESSAGE Module not changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.452
+!MESSAGE Module not changed:[RBK,AccountLink]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.452
+!MESSAGE Module not changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.452
+!MESSAGE Module not changed:[RBK,RBKBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.452
+!MESSAGE Module not changed:[SSO]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.452
+!MESSAGE Module not changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.452
+!MESSAGE Module not changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.452
+!MESSAGE Module not changed:[SSO,TrustEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.452
+!MESSAGE Module not changed:[SSO,SSOBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.468
+!MESSAGE Module not changed:[SSO,LoginBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.468
+!MESSAGE Module not changed:[SSO,TrustBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.468
+!MESSAGE Module not changed:[HIST]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.468
+!MESSAGE Module not changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.468
+!MESSAGE Module not changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.468
+!MESSAGE Module changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.468
+!MESSAGE Module not changed:[ICH]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.468
+!MESSAGE Module not changed:[ICH,ICHBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.468
+!MESSAGE Module not changed:[ICH,CustomerEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.468
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:18.639
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:19.045
+!MESSAGE Module changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:19.045
+!MESSAGE Module Status: 
+-RBK
+--RBKEJB
+---AccountLink
+----AccountEJB
+-----RBKBankAdminEJB
+-SSO
+--SSOEJB
+---LoginEJB
+----TrustEJB
+-----SSOBankAdminEJB
+------LoginBankAdminEJB
+-------TrustBankAdminEJB
+-HIST
+--HistEJB
+---HistController
+-bankAdmin (change) (redeploy)
+-ICH
+--ICHBankAdminEJB
+---CustomerEJB
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:19.060
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:19.357
+!MESSAGE Waiting on ProgressObject:@51126150
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:19.528
+!MESSAGE ProgressObject completed :@51126150
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:19.544
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:19.544
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:19.560
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:19.840
+!MESSAGE Waiting on ProgressObject:@56000464
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:20.168
+!MESSAGE ProgressObject completed :@56000464
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:20.184
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:20.184
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:20.418
+!MESSAGE Waiting on ProgressObject:@54989586
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:20.449
+!MESSAGE ProgressObject completed :@54989586
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:20.449
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:20.449
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:49:20.464
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.619
+!MESSAGE Module not changed:[RBK]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.619
+!MESSAGE Module not changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.619
+!MESSAGE Module not changed:[RBK,AccountLink]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.619
+!MESSAGE Module not changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.619
+!MESSAGE Module not changed:[RBK,RBKBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.619
+!MESSAGE Module not changed:[SSO]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.619
+!MESSAGE Module not changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.619
+!MESSAGE Module not changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.619
+!MESSAGE Module not changed:[SSO,TrustEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.619
+!MESSAGE Module not changed:[SSO,SSOBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.619
+!MESSAGE Module not changed:[SSO,LoginBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.619
+!MESSAGE Module not changed:[SSO,TrustBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.619
+!MESSAGE Module not changed:[HIST]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.619
+!MESSAGE Module not changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.619
+!MESSAGE Module not changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.619
+!MESSAGE Module not changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.619
+!MESSAGE Module not changed:[ICH]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.619
+!MESSAGE Module not changed:[ICH,ICHBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.619
+!MESSAGE Module not changed:[ICH,CustomerEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.619
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:39.791
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:40.087
+!MESSAGE Module Status: 
+-RBK
+--RBKEJB
+---AccountLink
+----AccountEJB
+-----RBKBankAdminEJB
+-SSO
+--SSOEJB
+---LoginEJB
+----TrustEJB
+-----SSOBankAdminEJB
+------LoginBankAdminEJB
+-------TrustBankAdminEJB
+-HIST
+--HistEJB
+---HistController
+-bankAdmin
+-ICH
+--ICHBankAdminEJB
+---CustomerEJB
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:40.087
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:40.383
+!MESSAGE Waiting on ProgressObject:@51874844
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:40.586
+!MESSAGE ProgressObject completed :@51874844
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:40.586
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:40.586
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:40.602
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:40.883
+!MESSAGE Waiting on ProgressObject:@55278420
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:41.210
+!MESSAGE ProgressObject completed :@55278420
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:41.210
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:41.210
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:41.460
+!MESSAGE Waiting on ProgressObject:@54259108
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:41.507
+!MESSAGE ProgressObject completed :@54259108
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:41.507
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:41.507
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 10:50:41.507
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:31.831
+!MESSAGE Module not changed:[RBK]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:31.841
+!MESSAGE Module not changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:31.841
+!MESSAGE Module not changed:[RBK,AccountLink]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:31.841
+!MESSAGE Module not changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:31.841
+!MESSAGE Module not changed:[RBK,RBKBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:31.841
+!MESSAGE Module not changed:[SSO]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:31.841
+!MESSAGE Module not changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:31.841
+!MESSAGE Module not changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:31.841
+!MESSAGE Module not changed:[SSO,TrustEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:31.841
+!MESSAGE Module not changed:[SSO,SSOBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:31.841
+!MESSAGE Module not changed:[SSO,LoginBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:31.841
+!MESSAGE Module not changed:[SSO,TrustBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:31.841
+!MESSAGE Module not changed:[HIST]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:31.841
+!MESSAGE Module not changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:31.841
+!MESSAGE Module not changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:31.841
+!MESSAGE Module changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:31.851
+!MESSAGE Module not changed:[ICH]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:31.851
+!MESSAGE Module not changed:[ICH,ICHBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:31.851
+!MESSAGE Module not changed:[ICH,CustomerEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:31.851
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:32.011
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:32.291
+!MESSAGE Module changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:32.291
+!MESSAGE Module Status: 
+-RBK
+--RBKEJB
+---AccountLink
+----AccountEJB
+-----RBKBankAdminEJB
+-SSO
+--SSOEJB
+---LoginEJB
+----TrustEJB
+-----SSOBankAdminEJB
+------LoginBankAdminEJB
+-------TrustBankAdminEJB
+-HIST
+--HistEJB
+---HistController
+-bankAdmin (change) (redeploy)
+-ICH
+--ICHBankAdminEJB
+---CustomerEJB
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:32.291
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:32.621
+!MESSAGE Waiting on ProgressObject:@52558903
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:32.781
+!MESSAGE ProgressObject completed :@52558903
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:32.791
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:32.801
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:32.801
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:33.221
+!MESSAGE Waiting on ProgressObject:@52014989
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:33.531
+!MESSAGE ProgressObject completed :@52014989
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:33.541
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:33.541
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:33.801
+!MESSAGE Waiting on ProgressObject:@56458501
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:33.941
+!MESSAGE ProgressObject completed :@56458501
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:33.941
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:33.941
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:03:33.941
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.514
+!MESSAGE Module not changed:[RBK]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.514
+!MESSAGE Module not changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.514
+!MESSAGE Module not changed:[RBK,AccountLink]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.514
+!MESSAGE Module not changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.514
+!MESSAGE Module not changed:[RBK,RBKBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.514
+!MESSAGE Module not changed:[SSO]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.514
+!MESSAGE Module not changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.514
+!MESSAGE Module not changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.514
+!MESSAGE Module not changed:[SSO,TrustEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.514
+!MESSAGE Module not changed:[SSO,SSOBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.514
+!MESSAGE Module not changed:[SSO,LoginBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.514
+!MESSAGE Module not changed:[SSO,TrustBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.514
+!MESSAGE Module not changed:[HIST]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.514
+!MESSAGE Module not changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.514
+!MESSAGE Module not changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.514
+!MESSAGE Module changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.514
+!MESSAGE Module not changed:[ICH]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.514
+!MESSAGE Module not changed:[ICH,ICHBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.514
+!MESSAGE Module not changed:[ICH,CustomerEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.514
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:57.638
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:58.041
+!MESSAGE Module changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:58.041
+!MESSAGE Module Status: 
+-RBK
+--RBKEJB
+---AccountLink
+----AccountEJB
+-----RBKBankAdminEJB
+-SSO
+--SSOEJB
+---LoginEJB
+----TrustEJB
+-----SSOBankAdminEJB
+------LoginBankAdminEJB
+-------TrustBankAdminEJB
+-HIST
+--HistEJB
+---HistController
+-bankAdmin (change) (redeploy)
+-ICH
+--ICHBankAdminEJB
+---CustomerEJB
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:58.041
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:58.331
+!MESSAGE Waiting on ProgressObject:@53975509
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:58.491
+!MESSAGE ProgressObject completed :@53975509
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:58.491
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:58.501
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:58.501
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:58.811
+!MESSAGE Waiting on ProgressObject:@53146004
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:59.131
+!MESSAGE ProgressObject completed :@53146004
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:59.151
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:59.151
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:59.471
+!MESSAGE Waiting on ProgressObject:@52340779
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:59.621
+!MESSAGE ProgressObject completed :@52340779
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:59.621
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:59.621
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 11:05:59.621
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.219
+!MESSAGE Module not changed:[RBK]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.219
+!MESSAGE Module not changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.219
+!MESSAGE Module not changed:[RBK,AccountLink]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.219
+!MESSAGE Module not changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.219
+!MESSAGE Module not changed:[RBK,RBKBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.219
+!MESSAGE Module not changed:[SSO]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.219
+!MESSAGE Module not changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.219
+!MESSAGE Module not changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.219
+!MESSAGE Module not changed:[SSO,TrustEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.219
+!MESSAGE Module not changed:[SSO,SSOBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.219
+!MESSAGE Module not changed:[SSO,LoginBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.219
+!MESSAGE Module not changed:[SSO,TrustBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.219
+!MESSAGE Module not changed:[HIST]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.234
+!MESSAGE Module not changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.234
+!MESSAGE Module not changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.234
+!MESSAGE Module changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.234
+!MESSAGE Module not changed:[ICH]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.234
+!MESSAGE Module not changed:[ICH,ICHBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.234
+!MESSAGE Module not changed:[ICH,CustomerEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.234
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.375
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.765
+!MESSAGE Module changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.765
+!MESSAGE Module Status: 
+-RBK
+--RBKEJB
+---AccountLink
+----AccountEJB
+-----RBKBankAdminEJB
+-SSO
+--SSOEJB
+---LoginEJB
+----TrustEJB
+-----SSOBankAdminEJB
+------LoginBankAdminEJB
+-------TrustBankAdminEJB
+-HIST
+--HistEJB
+---HistController
+-bankAdmin (change) (redeploy)
+-ICH
+--ICHBankAdminEJB
+---CustomerEJB
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:52.780
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:53.077
+!MESSAGE Waiting on ProgressObject:@55482613
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:53.248
+!MESSAGE ProgressObject completed :@55482613
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:53.248
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:53.248
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:53.248
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:53.545
+!MESSAGE Waiting on ProgressObject:@53382123
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:53.825
+!MESSAGE ProgressObject completed :@53382123
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:53.841
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:53.841
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:54.106
+!MESSAGE Waiting on ProgressObject:@52431373
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:54.262
+!MESSAGE ProgressObject completed :@52431373
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:54.262
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:54.262
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:04:54.262
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.687
+!MESSAGE Module not changed:[RBK]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.687
+!MESSAGE Module not changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.687
+!MESSAGE Module not changed:[RBK,AccountLink]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.687
+!MESSAGE Module not changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.687
+!MESSAGE Module not changed:[RBK,RBKBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.687
+!MESSAGE Module not changed:[SSO]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.687
+!MESSAGE Module not changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.687
+!MESSAGE Module not changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.687
+!MESSAGE Module not changed:[SSO,TrustEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.687
+!MESSAGE Module not changed:[SSO,SSOBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.687
+!MESSAGE Module not changed:[SSO,LoginBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.687
+!MESSAGE Module not changed:[SSO,TrustBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.687
+!MESSAGE Module not changed:[HIST]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.687
+!MESSAGE Module not changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.687
+!MESSAGE Module not changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.687
+!MESSAGE Module changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.703
+!MESSAGE Module not changed:[ICH]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.703
+!MESSAGE Module not changed:[ICH,ICHBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.703
+!MESSAGE Module not changed:[ICH,CustomerEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.703
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:48.828
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:49.118
+!MESSAGE Module changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:49.119
+!MESSAGE Module Status: 
+-RBK
+--RBKEJB
+---AccountLink
+----AccountEJB
+-----RBKBankAdminEJB
+-SSO
+--SSOEJB
+---LoginEJB
+----TrustEJB
+-----SSOBankAdminEJB
+------LoginBankAdminEJB
+-------TrustBankAdminEJB
+-HIST
+--HistEJB
+---HistController
+-bankAdmin (change) (redeploy)
+-ICH
+--ICHBankAdminEJB
+---CustomerEJB
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:49.122
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:49.412
+!MESSAGE Waiting on ProgressObject:@49875443
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:49.584
+!MESSAGE ProgressObject completed :@49875443
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:49.588
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:49.591
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:49.596
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:50.554
+!MESSAGE Waiting on ProgressObject:@53494628
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:50.848
+!MESSAGE ProgressObject completed :@53494628
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:50.856
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:50.856
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:51.108
+!MESSAGE Waiting on ProgressObject:@56578537
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:51.135
+!MESSAGE ProgressObject completed :@56578537
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:51.135
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:51.136
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:11:51.136
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.448
+!MESSAGE Module not changed:[RBK]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.448
+!MESSAGE Module not changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.448
+!MESSAGE Module not changed:[RBK,AccountLink]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.448
+!MESSAGE Module not changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.448
+!MESSAGE Module not changed:[RBK,RBKBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.448
+!MESSAGE Module not changed:[SSO]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.448
+!MESSAGE Module not changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.448
+!MESSAGE Module not changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.464
+!MESSAGE Module not changed:[SSO,TrustEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.464
+!MESSAGE Module not changed:[SSO,SSOBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.464
+!MESSAGE Module not changed:[SSO,LoginBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.464
+!MESSAGE Module not changed:[SSO,TrustBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.464
+!MESSAGE Module not changed:[HIST]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.464
+!MESSAGE Module not changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.464
+!MESSAGE Module not changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.464
+!MESSAGE Module not changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.464
+!MESSAGE Module not changed:[ICH]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.464
+!MESSAGE Module not changed:[ICH,ICHBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.464
+!MESSAGE Module not changed:[ICH,CustomerEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.464
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.604
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.885
+!MESSAGE Module Status: 
+-RBK
+--RBKEJB
+---AccountLink
+----AccountEJB
+-----RBKBankAdminEJB
+-SSO
+--SSOEJB
+---LoginEJB
+----TrustEJB
+-----SSOBankAdminEJB
+------LoginBankAdminEJB
+-------TrustBankAdminEJB
+-HIST
+--HistEJB
+---HistController
+-bankAdmin
+-ICH
+--ICHBankAdminEJB
+---CustomerEJB
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:41.885
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:42.166
+!MESSAGE Waiting on ProgressObject:@51672226
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:42.353
+!MESSAGE ProgressObject completed :@51672226
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:42.353
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:42.353
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:42.368
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:42.665
+!MESSAGE Waiting on ProgressObject:@51354917
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:42.946
+!MESSAGE ProgressObject completed :@51354917
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:42.946
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:42.946
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:43.351
+!MESSAGE Waiting on ProgressObject:@51859629
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:43.382
+!MESSAGE ProgressObject completed :@51859629
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:43.382
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:43.382
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:13:43.382
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.092
+!MESSAGE Module not changed:[RBK]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.108
+!MESSAGE Module not changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.108
+!MESSAGE Module not changed:[RBK,AccountLink]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.108
+!MESSAGE Module not changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.108
+!MESSAGE Module not changed:[RBK,RBKBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.108
+!MESSAGE Module not changed:[SSO]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.108
+!MESSAGE Module not changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.108
+!MESSAGE Module not changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.108
+!MESSAGE Module not changed:[SSO,TrustEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.108
+!MESSAGE Module not changed:[SSO,SSOBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.108
+!MESSAGE Module not changed:[SSO,LoginBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.108
+!MESSAGE Module not changed:[SSO,TrustBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.108
+!MESSAGE Module not changed:[HIST]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.108
+!MESSAGE Module not changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.108
+!MESSAGE Module not changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.108
+!MESSAGE Module not changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.108
+!MESSAGE Module not changed:[ICH]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.108
+!MESSAGE Module not changed:[ICH,ICHBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.108
+!MESSAGE Module not changed:[ICH,CustomerEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.108
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.264
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.544
+!MESSAGE Module Status: 
+-RBK
+--RBKEJB
+---AccountLink
+----AccountEJB
+-----RBKBankAdminEJB
+-SSO
+--SSOEJB
+---LoginEJB
+----TrustEJB
+-----SSOBankAdminEJB
+------LoginBankAdminEJB
+-------TrustBankAdminEJB
+-HIST
+--HistEJB
+---HistController
+-bankAdmin
+-ICH
+--ICHBankAdminEJB
+---CustomerEJB
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.544
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:23.841
+!MESSAGE Waiting on ProgressObject:@53790244
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:24.044
+!MESSAGE ProgressObject completed :@53790244
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:24.044
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:24.044
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:24.059
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:24.356
+!MESSAGE Waiting on ProgressObject:@52686744
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:24.527
+!MESSAGE ProgressObject completed :@52686744
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:24.527
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:24.527
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:24.761
+!MESSAGE Waiting on ProgressObject:@57033586
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:24.964
+!MESSAGE ProgressObject completed :@57033586
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:24.964
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:24.964
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:15:24.964
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Module not changed:[RBK]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Module not changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Module not changed:[RBK,AccountLink]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Module not changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Module not changed:[RBK,RBKBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Module not changed:[SSO]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Module not changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Module not changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Module not changed:[SSO,TrustEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Module not changed:[SSO,SSOBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Module not changed:[SSO,LoginBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Module not changed:[SSO,TrustBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Module not changed:[HIST]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Module not changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Module not changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Module not changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Module not changed:[ICH]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Module not changed:[ICH,ICHBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Module not changed:[ICH,CustomerEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Found new module:[pib]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Found new module:[pibChinese]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:37.562
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 11gR1 PatchSet 4 at localhost [base_domain]]@57902423
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:38.810
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:38.810
+!MESSAGE Elapsed time 1232ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:38.810
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 11gR1 PatchSet 4 at localhost [base_domain]]@57712563
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:38.888
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:38.997
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:39.325
+!MESSAGE Module Status: 
+-RBK
+--RBKEJB
+---AccountLink
+----AccountEJB
+-----RBKBankAdminEJB
+-SSO
+--SSOEJB
+---LoginEJB
+----TrustEJB
+-----SSOBankAdminEJB
+------LoginBankAdminEJB
+-------TrustBankAdminEJB
+-HIST
+--HistEJB
+---HistController
+-bankAdmin
+-ICH
+--ICHBankAdminEJB
+---CustomerEJB
+-pib (add) (deploy)
+-pibChinese (add) (deploy)
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:39.325
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:39.356
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:39.762
+!MESSAGE Waiting on ProgressObject:@55231292
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:39.902
+!MESSAGE ProgressObject completed :@55231292
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:39.902
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:39.902
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:39.918
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:40.214
+!MESSAGE Waiting on ProgressObject:@52949550
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.088
+!MESSAGE ProgressObject completed :@52949550
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.103
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.103
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.493
+!MESSAGE Waiting on ProgressObject:@54824374
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.696
+!MESSAGE ProgressObject completed :@54824374
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.696
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.696
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.696
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.696
+!MESSAGE Module not changed:[RBK]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.696
+!MESSAGE Module not changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.696
+!MESSAGE Module not changed:[RBK,AccountLink]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.696
+!MESSAGE Module not changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.712
+!MESSAGE Module not changed:[RBK,RBKBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.712
+!MESSAGE Module not changed:[SSO]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.712
+!MESSAGE Module not changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.712
+!MESSAGE Module not changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.712
+!MESSAGE Module not changed:[SSO,TrustEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.712
+!MESSAGE Module not changed:[SSO,SSOBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.712
+!MESSAGE Module not changed:[SSO,LoginBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.712
+!MESSAGE Module not changed:[SSO,TrustBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.712
+!MESSAGE Module not changed:[HIST]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.712
+!MESSAGE Module not changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.712
+!MESSAGE Module not changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.712
+!MESSAGE Module not changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.712
+!MESSAGE Module not changed:[ICH]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.712
+!MESSAGE Module not changed:[ICH,ICHBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.712
+!MESSAGE Module not changed:[ICH,CustomerEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.712
+!MESSAGE Module not changed:[pib]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.712
+!MESSAGE Module not changed:[pibChinese]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:17:41.712
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module not changed:[RBK]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module not changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module not changed:[RBK,AccountLink]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module not changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module not changed:[RBK,RBKBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module not changed:[SSO]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module not changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module not changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module not changed:[SSO,TrustEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module not changed:[SSO,SSOBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module not changed:[SSO,LoginBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module not changed:[SSO,TrustBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module not changed:[HIST]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module not changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module not changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module not changed:[ICH]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module not changed:[ICH,ICHBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module not changed:[ICH,CustomerEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module not changed:[pib]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.852
+!MESSAGE Module not changed:[pibChinese]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.868
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:32.977
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:33.289
+!MESSAGE Module changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:33.289
+!MESSAGE Module Status: 
+-RBK
+--RBKEJB
+---AccountLink
+----AccountEJB
+-----RBKBankAdminEJB
+-SSO
+--SSOEJB
+---LoginEJB
+----TrustEJB
+-----SSOBankAdminEJB
+------LoginBankAdminEJB
+-------TrustBankAdminEJB
+-HIST
+--HistEJB
+---HistController
+-bankAdmin (change) (redeploy)
+-ICH
+--ICHBankAdminEJB
+---CustomerEJB
+-pib
+-pibChinese
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:33.305
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:33.601
+!MESSAGE Waiting on ProgressObject:@53120623
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:33.773
+!MESSAGE ProgressObject completed :@53120623
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:33.788
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:33.788
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:33.788
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:34.085
+!MESSAGE Waiting on ProgressObject:@51721775
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:34.506
+!MESSAGE ProgressObject completed :@51721775
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:34.521
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:34.521
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:34.911
+!MESSAGE Waiting on ProgressObject:@51298214
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:35.114
+!MESSAGE ProgressObject completed :@51298214
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:35.114
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:35.114
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 12:28:35.130
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.450
+!MESSAGE Module not changed:[RBK]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.450
+!MESSAGE Module not changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.450
+!MESSAGE Module not changed:[RBK,AccountLink]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.450
+!MESSAGE Module not changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.450
+!MESSAGE Module not changed:[RBK,RBKBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.450
+!MESSAGE Module not changed:[SSO]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.466
+!MESSAGE Module not changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.466
+!MESSAGE Module not changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.466
+!MESSAGE Module not changed:[SSO,TrustEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.466
+!MESSAGE Module not changed:[SSO,SSOBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.466
+!MESSAGE Module not changed:[SSO,LoginBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.466
+!MESSAGE Module not changed:[SSO,TrustBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.466
+!MESSAGE Module not changed:[HIST]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.466
+!MESSAGE Module not changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.466
+!MESSAGE Module not changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.466
+!MESSAGE Module changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.466
+!MESSAGE Module not changed:[ICH]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.466
+!MESSAGE Module not changed:[ICH,ICHBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.466
+!MESSAGE Module not changed:[ICH,CustomerEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.466
+!MESSAGE Module not changed:[pib]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.466
+!MESSAGE Module not changed:[pibChinese]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.481
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.606
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.918
+!MESSAGE Module changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.918
+!MESSAGE Module Status: 
+-RBK
+--RBKEJB
+---AccountLink
+----AccountEJB
+-----RBKBankAdminEJB
+-SSO
+--SSOEJB
+---LoginEJB
+----TrustEJB
+-----SSOBankAdminEJB
+------LoginBankAdminEJB
+-------TrustBankAdminEJB
+-HIST
+--HistEJB
+---HistController
+-bankAdmin (change) (redeploy)
+-ICH
+--ICHBankAdminEJB
+---CustomerEJB
+-pib
+-pibChinese
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:50.918
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:51.324
+!MESSAGE Waiting on ProgressObject:@54066780
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:51.605
+!MESSAGE ProgressObject completed :@54066780
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:51.620
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:51.620
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:51.636
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:51.917
+!MESSAGE Waiting on ProgressObject:@51107068
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:52.385
+!MESSAGE ProgressObject completed :@51107068
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:52.400
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:52.400
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:52.650
+!MESSAGE Waiting on ProgressObject:@54570983
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:52.837
+!MESSAGE ProgressObject completed :@54570983
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:52.837
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:52.837
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-09-30 13:00:52.837
+!MESSAGE Publishing finished.
