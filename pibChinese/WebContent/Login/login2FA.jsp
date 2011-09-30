@@ -15,6 +15,14 @@
            <p>
            <strong> &#24744;&#27880;&#20876;&#30340;&#25163;&#26426;&#23558;&#25509;&#25910;&#24744;&#30340;SMS- OTP&#12290;&#33509;&#35201;&#32487;&#32493;&#65292;&#35831;&#36755;&#20837;&#24744;&#30340;SMS- OTP&#65292;&#24182;&#28857;&#20987;&#8220;&#30331;&#24405;&#8221;.</strong>
            </p> 
+			
+			
+			<form name="f_0_11_1_3_1" method="get" action="/pibChinese/Login2FA">
+			<td style="padding-top: 10px;"><input class="bprimarypub80" type="submit" tabindex="4" value="&#33719;&#21462;&#26032;&#30340;SMS- OTP" />
+			</form>
+
+
+
 
                 <form name="f_0_11_1_3_1" method="post" action="/pibChinese/Login2FAAction">
                    <input type="hidden" value=<%= (String)request.getAttribute("userName")%> id="userName" name="userName" />

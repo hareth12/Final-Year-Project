@@ -58,9 +58,10 @@
     </li>
     <li class="dir">&#23458;&#25143;&#26381;&#21153;</a>
         <ul>
-            <li><a href="./">&#26356;&#25913;&#23494;&#30721;</a></li>
+            <li><a href="/pibChinese/ChangePassword2FA">&#26356;&#25913;&#23494;&#30721;</a></li>
         </ul>
     </li>
+    <li><a href="/pibChinese/Logout">&#30331;&#20986;</a></li>
 </ul>
 	<div id="main">
 	
