@@ -12,22 +12,19 @@
     <div class="container">
         <div id="topcorners"><div class="cleft"></div><div class="cright"></div></div>
         <div id="content">
-            
-
-
-
-
-            
-                <form name="f_0_11_1_3_1" method="post" action="/pib/LoginAction">
+           <p>
+           <strong> You should be receiving your SMS-OTP on your registered mobile phone. To continue, please enter your SMS-OTP and click on "Login"</strong>
+           </p> 
+			<form name="f_0_11_1_3_1" method="post" action="/pib/Login2FAAction">
+			</form>
+                <form name="f_0_11_1_3_1" method="post" action="/pib/Login2FAAction">
+                   <input type="hidden" value=<%= (String)request.getAttribute("userName")%> id="userName" name="userName" />
                     <table class="login" style="margin-left: auto; margin-right: auto;">
                         <tr>
-                            <td><p class="mtop0 mbottom025"><strong>You have logged out of Pseudo Bank PIB. </strong></p></td>
+                            <td><p class="mtop0 mbottom025"><strong><label for="email"><%=((String)request.getAttribute("preHash")) %></label></strong></p><input id="hash2FA" tabindex="1" class="inputtext" type="password" name="hash2FA" /></td>
                         </tr>
                         <tr>
-                            <td><p class="mtop0 mbottom025"><strong><label for="email">Username</label></strong></p><input id="userName" tabindex="1" class="inputtext" type="userName" name="userName" /></td>
-                        </tr>
-                        <tr>
-                            <td><p class="mtop05 mbottom025"><strong><label for="password">Password</label></strong></p><input tabindex="2" class="inputtext" type="password" name="passWord" id="passWord" /></td>
+                            <td><p class="mtop05 mbottom025"><strong></strong></td>
                         </tr>
                       
                         
@@ -45,7 +42,7 @@
 </div>
         <div id="footer">
     <p>
-        <a href="/pib">Home</a> <span>|</span>
+        <a href="#">Home</a> <span>|</span>
         <a href="#">Privacy Policy</a> <span>|</span>
         <a href="#">Terms of Service</a> <span>|</span>
 

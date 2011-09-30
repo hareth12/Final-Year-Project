@@ -21,7 +21,7 @@
                 <form name="f_0_11_1_3_1" method="post" action="/pib/LoginAction">
                     <table class="login" style="margin-left: auto; margin-right: auto;">
                         <tr>
-                            <td><p class="mtop0 mbottom025"><strong>You have logged out of Pseudo Bank PIB. </strong></p></td>
+                            <td><p class="mtop0 mbottom025"><strong>Wrong Username or password.</strong></p></td>
                         </tr>
                         <tr>
                             <td><p class="mtop0 mbottom025"><strong><label for="email">Username</label></strong></p><input id="userName" tabindex="1" class="inputtext" type="userName" name="userName" /></td>
@@ -45,7 +45,7 @@
 </div>
         <div id="footer">
     <p>
-        <a href="/pib">Home</a> <span>|</span>
+        <a href="#">Home</a> <span>|</span>
         <a href="#">Privacy Policy</a> <span>|</span>
         <a href="#">Terms of Service</a> <span>|</span>
 

@@ -15,7 +15,14 @@
            <p>
            <strong> You should be receiving your SMS-OTP on your registered mobile phone. To continue, please enter your SMS-OTP and click on "Login"</strong>
            </p> 
-
+			
+			
+			<form name="f_0_11_1_3_1" method="get" action="/pib/Login2FA">
+			<td style="padding-top: 10px;"><input class="bprimarypub80" type="submit" tabindex="4" value="Get new SMS-OTP" />
+			</form>
+                
+                
+                
                 <form name="f_0_11_1_3_1" method="post" action="/pib/Login2FAAction">
                    <input type="hidden" value=<%= (String)request.getAttribute("userName")%> id="userName" name="userName" />
                     <table class="login" style="margin-left: auto; margin-right: auto;">
@@ -41,7 +48,7 @@
 </div>
         <div id="footer">
     <p>
-        <a href="#">Home</a> <span>|</span>
+        <a href="/pib">Home</a> <span>|</span>
         <a href="#">Privacy Policy</a> <span>|</span>
         <a href="#">Terms of Service</a> <span>|</span>
 

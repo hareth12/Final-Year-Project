@@ -58,7 +58,7 @@
 </div>
         <div id="footer">
     <p>
-        <a href="#">Home</a> <span>|</span>
+        <a href="/pib">Home</a> <span>|</span>
         <a href="#">Privacy Policy</a> <span>|</span>
         <a href="#">Terms of Service</a> <span>|</span>
 
