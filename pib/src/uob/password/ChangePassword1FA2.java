@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import uob.service.HistClientService;
 import uob.service.SSOClientService;
 
 public class ChangePassword1FA2 extends HttpServlet {
@@ -31,6 +32,7 @@ public class ChangePassword1FA2 extends HttpServlet {
 		Cookie[] cookies = request.getCookies();
 		String userHash = getClientHash(cookies);
 		SSOClientService ssocs = new SSOClientService();
+		HistClientService hcs = new HistClientService();
 	
 		if(userHash!=null){
 			if(ssocs.checkTrust1FA(userHash)||ssocs.checkTrust2FA(userHash)){
@@ -52,11 +54,13 @@ public class ChangePassword1FA2 extends HttpServlet {
 			boolean b = ssocs.changePassword(userName, oldPassword, newPassword1, newPassword2);
 			
 			if(b){
+				hcs.changePasswordSuccess(userName);
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/Password/changePassword1FA2Success.jsp");
 				if (dispatcher != null) dispatcher.forward(request, response);
 			}
 			else
 			{
+				hcs.changePasswordFail(userName);
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/Password/changePassword1FA2Fail.jsp");
 				if (dispatcher != null) dispatcher.forward(request, response);
 			}

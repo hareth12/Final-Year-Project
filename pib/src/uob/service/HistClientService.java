@@ -397,8 +397,92 @@ public class HistClientService {
 				System.out.println("<histClientService><getAccount>returnFromHIST is null");
 			}
 			
-	    	return null;
-	    	 
+	    	return null;  	 
 	}
+	
+	
+	public void logout(String idPib){ //opCode = 111
+   	 System.out.println("<HistClientService><111> method is called with idPib = "+idPib);
+   	 
+   	String returnFromHist = null;
+   	String opCodeString = null; 
+
+   	
+   	
+		if((idPib!=null)&&(!idPib.isEmpty())){
+   		returnFromHist=sendRequestHistory("111|"+idPib+"|filler|filler|filler|filler|filler");
+   		System.out.println("returnFromHist= "+returnFromHist);
+   	}
+		
+		if(returnFromHist!=null){
+			String[] postParse = returnFromHist.split("[|]+");
+			opCodeString = postParse[0];
+			int j= postParse.length;
+			
+			//active
+			if(opCodeString.equals("119")){
+				System.out.println("<HistClientService><111>logout by "+idPib+" is recorded");
+			}
+		}
+		else{
+			System.out.println("<HistClientService><111>returnFromHist is null");
+		}   	 
+    }
+	
+	public void changePasswordSuccess(String idPib){ //opCode = 121
+	   	 System.out.println("<HistClientService><121> method is called with idPib = "+idPib);
+	   	 
+	   	String returnFromHist = null;
+	   	String opCodeString = null; 
+
+	   	
+	   	
+			if((idPib!=null)&&(!idPib.isEmpty())){
+	   		returnFromHist=sendRequestHistory("121|"+idPib+"|filler|filler|filler|filler|filler");
+	   		System.out.println("returnFromHist= "+returnFromHist);
+	   	}
+			
+			if(returnFromHist!=null){
+				String[] postParse = returnFromHist.split("[|]+");
+				opCodeString = postParse[0];
+				int j= postParse.length;
+				
+				//active
+				if(opCodeString.equals("129")){
+					System.out.println("<HistClientService><121>Change password success by "+idPib+" is recorded");
+				}
+			}
+			else{
+				System.out.println("<HistClientService><121>returnFromHist is null");
+			}   	 
+	    }
+	
+	public void changePasswordFail(String idPib){ //opCode = 131
+	   	 System.out.println("<HistClientService><131> method is called with idPib = "+idPib);
+	   	 
+	   	String returnFromHist = null;
+	   	String opCodeString = null; 
+
+	   	
+	   	
+			if((idPib!=null)&&(!idPib.isEmpty())){
+	   		returnFromHist=sendRequestHistory("131|"+idPib+"|filler|filler|filler|filler|filler");
+	   		System.out.println("returnFromHist= "+returnFromHist);
+	   	}
+			
+			if(returnFromHist!=null){
+				String[] postParse = returnFromHist.split("[|]+");
+				opCodeString = postParse[0];
+				int j= postParse.length;
+				
+				//active
+				if(opCodeString.equals("139")){
+					System.out.println("<HistClientService><121>Change password fail by "+idPib+" is recorded");
+				}
+			}
+			else{
+				System.out.println("<HistClientService><131>returnFromHist is null");
+			}   	 
+	    }
 }
 

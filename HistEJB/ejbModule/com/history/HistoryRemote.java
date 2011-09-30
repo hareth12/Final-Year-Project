@@ -22,4 +22,10 @@ public interface HistoryRemote {
 	void fundTransferSuccess(String idPib, String fromS, String toS, String amount);
 
 	void fundTransferNotSuccess(String idPib, String fromS, String toS, String amount);
+
+	void changePasswordFail(String idPib);
+
+	void changePasswordSuccess(String idPib);
+
+	void logout(String idPib);
 }

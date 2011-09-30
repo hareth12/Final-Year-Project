@@ -12161,3 +12161,880 @@ java.lang.IllegalArgumentException: URI is not absolute
 
 !ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:30:20.905
 !MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:35.639
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 11gR1 PatchSet 4 at localhost [base_domain]]@52447091
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:56.929
+!MESSAGE Server watcher[Oracle WebLogic Server 11gR1 PatchSet 4 at localhost [base_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.598
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.598
+!MESSAGE Elapsed time 1357ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.598
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 11gR1 PatchSet 4 at localhost [base_domain]]@62613759
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module not changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module changed:[pib]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module not changed:[pibChinese]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module not changed:[ICH]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module not changed:[ICH,ICHBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module not changed:[ICH,CustomerEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module not changed:[HIST]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module not changed:[SSO]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module not changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module not changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module not changed:[SSO,TrustEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module not changed:[SSO,SSOBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module not changed:[SSO,LoginBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module not changed:[SSO,TrustBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module not changed:[RBK]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module not changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module not changed:[RBK,AccountLink]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module not changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Module not changed:[RBK,RBKBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.723
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:58.863
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:59.191
+!MESSAGE Module changed:[pib]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:59.191
+!MESSAGE Module changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:59.191
+!MESSAGE Module changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:59.191
+!MESSAGE Module Status: 
+-bankAdmin
+-pib (change) (redeploy)
+-pibChinese
+-ICH
+--ICHBankAdminEJB
+---CustomerEJB
+-HIST
+--HistEJB (change) (redeploy)
+---HistController (change) (redeploy)
+-SSO
+--SSOEJB
+---LoginEJB
+----TrustEJB
+-----SSOBankAdminEJB
+------LoginBankAdminEJB
+-------TrustBankAdminEJB
+-RBK
+--RBKEJB
+---AccountLink
+----AccountEJB
+-----RBKBankAdminEJB
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:59.207
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:59.363
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:52:59.737
+!MESSAGE Waiting on ProgressObject:@52861469
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:00.080
+!MESSAGE ProgressObject completed :@52861469
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:00.080
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:00.096
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:00.096
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:00.751
+!MESSAGE Waiting on ProgressObject:@49743607
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:01.235
+!MESSAGE ProgressObject completed :@49743607
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:01.250
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:01.250
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:01.500
+!MESSAGE Waiting on ProgressObject:@53066051
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:01.578
+!MESSAGE ProgressObject completed :@53066051
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:01.578
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:01.578
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:01.578
+!MESSAGE ***dm.redeploy (redeploy) HIST
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:01.796
+!MESSAGE ***dm.redeploy (redeploy) HIST
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:02.077
+!MESSAGE Waiting on ProgressObject:@51970714
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:02.311
+!MESSAGE ProgressObject completed :@51970714
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:02.311
+!MESSAGE ***dm.start (startModule) HIST
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:02.685
+!MESSAGE Waiting on ProgressObject:@51677401
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:02.701
+!MESSAGE ProgressObject completed :@51677401
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:02.701
+!MESSAGE Started HIST
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:02.701
+!MESSAGE HIST redeployed successfully on [{Target=AdminServer, WebLogicTargetType=server, Name=HIST}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 01:53:02.701
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.147
+!MESSAGE Module not changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.147
+!MESSAGE Module changed:[pib]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.147
+!MESSAGE Module not changed:[pibChinese]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.147
+!MESSAGE Module not changed:[ICH]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.147
+!MESSAGE Module not changed:[ICH,ICHBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.147
+!MESSAGE Module not changed:[ICH,CustomerEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.147
+!MESSAGE Module not changed:[HIST]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.147
+!MESSAGE Module not changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.147
+!MESSAGE Module not changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.147
+!MESSAGE Module not changed:[SSO]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.147
+!MESSAGE Module not changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.147
+!MESSAGE Module not changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.147
+!MESSAGE Module not changed:[SSO,TrustEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.147
+!MESSAGE Module not changed:[SSO,SSOBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.147
+!MESSAGE Module not changed:[SSO,LoginBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.147
+!MESSAGE Module not changed:[SSO,TrustBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.147
+!MESSAGE Module not changed:[RBK]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.163
+!MESSAGE Module not changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.163
+!MESSAGE Module not changed:[RBK,AccountLink]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.163
+!MESSAGE Module not changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.163
+!MESSAGE Module not changed:[RBK,RBKBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.163
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.288
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.615
+!MESSAGE Module changed:[pib]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.615
+!MESSAGE Module Status: 
+-bankAdmin
+-pib (change) (redeploy)
+-pibChinese
+-ICH
+--ICHBankAdminEJB
+---CustomerEJB
+-HIST
+--HistEJB
+---HistController
+-SSO
+--SSOEJB
+---LoginEJB
+----TrustEJB
+-----SSOBankAdminEJB
+------LoginBankAdminEJB
+-------TrustBankAdminEJB
+-RBK
+--RBKEJB
+---AccountLink
+----AccountEJB
+-----RBKBankAdminEJB
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.615
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:37.912
+!MESSAGE Waiting on ProgressObject:@49814750
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:38.192
+!MESSAGE ProgressObject completed :@49814750
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:38.192
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:38.208
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:38.208
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:38.473
+!MESSAGE Waiting on ProgressObject:@54314569
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:38.941
+!MESSAGE ProgressObject completed :@54314569
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:38.957
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:38.957
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:39.222
+!MESSAGE Waiting on ProgressObject:@51902707
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:39.425
+!MESSAGE ProgressObject completed :@51902707
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:39.425
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:39.425
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:39.425
+!MESSAGE ***dm.redeploy (redeploy) ICH
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:39.425
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) ICH null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=ICH}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:39.737
+!MESSAGE Waiting on ProgressObject:@51294509
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:39.893
+!MESSAGE ProgressObject completed :@51294509
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:39.893
+!MESSAGE ***dm.deploy (deploy) ICH to targets [AdminServer/server]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:40.205
+!MESSAGE Waiting on ProgressObject:@49935615
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:40.470
+!MESSAGE ProgressObject completed :@49935615
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:40.470
+!MESSAGE ICH deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:40.486
+!MESSAGE Module ICH deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:40.486
+!MESSAGE ***dm.redeploy (redeploy) HIST
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:40.486
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) HIST null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=HIST}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:40.735
+!MESSAGE Waiting on ProgressObject:@53218894
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:40.860
+!MESSAGE ProgressObject completed :@53218894
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:40.860
+!MESSAGE ***dm.deploy (deploy) HIST to targets [AdminServer/server]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:41.297
+!MESSAGE Waiting on ProgressObject:@52291092
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:41.546
+!MESSAGE ProgressObject completed :@52291092
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:41.546
+!MESSAGE HIST deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:41.562
+!MESSAGE Module HIST deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:41.562
+!MESSAGE ***dm.redeploy (redeploy) SSO
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:41.562
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) SSO null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=SSO}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:41.812
+!MESSAGE Waiting on ProgressObject:@55454938
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:41.952
+!MESSAGE ProgressObject completed :@55454938
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:41.952
+!MESSAGE ***dm.deploy (deploy) SSO to targets [AdminServer/server]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:42.248
+!MESSAGE Waiting on ProgressObject:@51536373
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:42.716
+!MESSAGE ProgressObject completed :@51536373
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:42.716
+!MESSAGE SSO deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:42.716
+!MESSAGE Module SSO deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:42.716
+!MESSAGE ***dm.redeploy (redeploy) RBK
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:42.732
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) RBK null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=RBK}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:42.982
+!MESSAGE Waiting on ProgressObject:@54267914
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:43.138
+!MESSAGE ProgressObject completed :@54267914
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:43.138
+!MESSAGE ***dm.deploy (deploy) RBK to targets [AdminServer/server]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:43.450
+!MESSAGE Waiting on ProgressObject:@52658581
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:43.933
+!MESSAGE ProgressObject completed :@52658581
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:43.933
+!MESSAGE RBK deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:43.933
+!MESSAGE Module RBK deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:04:43.933
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:05:18.718
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 11gR1 PatchSet 4 at localhost [base_domain]]@62613759
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:05:40.018
+!MESSAGE Server watcher[Oracle WebLogic Server 11gR1 PatchSet 4 at localhost [base_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:05:41.600
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:05:41.601
+!MESSAGE Elapsed time 1274ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:05:41.601
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 11gR1 PatchSet 4 at localhost [base_domain]]@56207199
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.049
+!MESSAGE Module not changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.051
+!MESSAGE Module not changed:[pib]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.052
+!MESSAGE Module not changed:[pibChinese]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.054
+!MESSAGE Module not changed:[ICH]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.055
+!MESSAGE Module not changed:[ICH,ICHBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.055
+!MESSAGE Module not changed:[ICH,CustomerEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.056
+!MESSAGE Module not changed:[HIST]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.057
+!MESSAGE Module changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.059
+!MESSAGE Module not changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.059
+!MESSAGE Module not changed:[SSO]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.060
+!MESSAGE Module not changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.060
+!MESSAGE Module not changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.060
+!MESSAGE Module not changed:[SSO,TrustEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.061
+!MESSAGE Module not changed:[SSO,SSOBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.061
+!MESSAGE Module not changed:[SSO,LoginBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.061
+!MESSAGE Module not changed:[SSO,TrustBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.061
+!MESSAGE Module not changed:[RBK]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.062
+!MESSAGE Module not changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.062
+!MESSAGE Module not changed:[RBK,AccountLink]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.062
+!MESSAGE Module not changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.062
+!MESSAGE Module not changed:[RBK,RBKBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.063
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.192
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.515
+!MESSAGE Module changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.515
+!MESSAGE Module Status: 
+-bankAdmin
+-pib
+-pibChinese
+-ICH
+--ICHBankAdminEJB
+---CustomerEJB
+-HIST
+--HistEJB (change) (redeploy)
+---HistController
+-SSO
+--SSOEJB
+---LoginEJB
+----TrustEJB
+-----SSOBankAdminEJB
+------LoginBankAdminEJB
+-------TrustBankAdminEJB
+-RBK
+--RBKEJB
+---AccountLink
+----AccountEJB
+-----RBKBankAdminEJB
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.520
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:38.695
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:39.121
+!MESSAGE Waiting on ProgressObject:@52845706
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:39.393
+!MESSAGE ProgressObject completed :@52845706
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:39.403
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:39.407
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:39.414
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:39.724
+!MESSAGE Waiting on ProgressObject:@50837071
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:40.288
+!MESSAGE ProgressObject completed :@50837071
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:40.309
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:40.309
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:40.563
+!MESSAGE Waiting on ProgressObject:@53998087
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:40.785
+!MESSAGE ProgressObject completed :@53998087
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:40.786
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:40.786
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:40.786
+!MESSAGE ***dm.redeploy (redeploy) HIST
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:40.796
+!MESSAGE ***dm.redeploy (redeploy) HIST
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:41.049
+!MESSAGE Waiting on ProgressObject:@54467338
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:41.715
+!MESSAGE ProgressObject completed :@54467338
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:41.718
+!MESSAGE ***dm.start (startModule) HIST
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.008
+!MESSAGE Waiting on ProgressObject:@51729632
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.119
+!MESSAGE ProgressObject completed :@51729632
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.120
+!MESSAGE Started HIST
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.120
+!MESSAGE HIST redeployed successfully on [{Target=AdminServer, WebLogicTargetType=server, Name=HIST}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.121
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.156
+!MESSAGE Module not changed:[bankAdmin]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.157
+!MESSAGE Module not changed:[pib]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.158
+!MESSAGE Module not changed:[pibChinese]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.158
+!MESSAGE Module not changed:[ICH]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.159
+!MESSAGE Module not changed:[ICH,ICHBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.159
+!MESSAGE Module not changed:[ICH,CustomerEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.160
+!MESSAGE Module not changed:[HIST]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.160
+!MESSAGE Module not changed:[HIST,HistEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.161
+!MESSAGE Module not changed:[HIST,HistController]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.161
+!MESSAGE Module not changed:[SSO]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.162
+!MESSAGE Module not changed:[SSO,SSOEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.162
+!MESSAGE Module not changed:[SSO,LoginEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.162
+!MESSAGE Module not changed:[SSO,TrustEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.162
+!MESSAGE Module not changed:[SSO,SSOBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.162
+!MESSAGE Module not changed:[SSO,LoginBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.163
+!MESSAGE Module not changed:[SSO,TrustBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.163
+!MESSAGE Module not changed:[RBK]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.164
+!MESSAGE Module not changed:[RBK,RBKEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.164
+!MESSAGE Module not changed:[RBK,AccountLink]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.164
+!MESSAGE Module not changed:[RBK,AccountEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.164
+!MESSAGE Module not changed:[RBK,RBKBankAdminEJB]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.165
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.334
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.787
+!MESSAGE Module Status: 
+-bankAdmin
+-pib
+-pibChinese
+-ICH
+--ICHBankAdminEJB
+---CustomerEJB
+-HIST
+--HistEJB
+---HistController
+-SSO
+--SSOEJB
+---LoginEJB
+----TrustEJB
+-----SSOBankAdminEJB
+------LoginBankAdminEJB
+-------TrustBankAdminEJB
+-RBK
+--RBKEJB
+---AccountLink
+----AccountEJB
+-----RBKBankAdminEJB
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:42.792
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:43.081
+!MESSAGE Waiting on ProgressObject:@52465095
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:43.284
+!MESSAGE ProgressObject completed :@52465095
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:43.294
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:43.298
+!MESSAGE ***dm.getAvailableModules (initModuleNameCache)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:43.304
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:43.602
+!MESSAGE Waiting on ProgressObject:@50266230
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:44.024
+!MESSAGE ProgressObject completed :@50266230
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:44.034
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:44.034
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:44.288
+!MESSAGE Waiting on ProgressObject:@54914668
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:44.362
+!MESSAGE ProgressObject completed :@54914668
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:44.362
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:44.362
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:44.363
+!MESSAGE ***dm.redeploy (redeploy) ICH
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:44.365
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) ICH null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=ICH}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:44.660
+!MESSAGE Waiting on ProgressObject:@51554827
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:44.786
+!MESSAGE ProgressObject completed :@51554827
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:44.788
+!MESSAGE ***dm.deploy (deploy) ICH to targets [AdminServer/server]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:45.054
+!MESSAGE Waiting on ProgressObject:@54582398
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:45.290
+!MESSAGE ProgressObject completed :@54582398
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:45.291
+!MESSAGE ICH deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:45.291
+!MESSAGE Module ICH deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:45.292
+!MESSAGE ***dm.redeploy (redeploy) HIST
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:45.293
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) HIST null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=HIST}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:45.584
+!MESSAGE Waiting on ProgressObject:@52339502
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:45.709
+!MESSAGE ProgressObject completed :@52339502
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:45.712
+!MESSAGE ***dm.deploy (deploy) HIST to targets [AdminServer/server]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:46.108
+!MESSAGE Waiting on ProgressObject:@51529321
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:46.342
+!MESSAGE ProgressObject completed :@51529321
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:46.345
+!MESSAGE HIST deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:46.345
+!MESSAGE Module HIST deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:46.345
+!MESSAGE ***dm.redeploy (redeploy) SSO
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:46.347
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) SSO null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=SSO}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:46.643
+!MESSAGE Waiting on ProgressObject:@54444588
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:46.777
+!MESSAGE ProgressObject completed :@54444588
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:46.780
+!MESSAGE ***dm.deploy (deploy) SSO to targets [AdminServer/server]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:47.082
+!MESSAGE Waiting on ProgressObject:@50491342
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:47.656
+!MESSAGE ProgressObject completed :@50491342
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:47.660
+!MESSAGE SSO deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:47.660
+!MESSAGE Module SSO deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:47.660
+!MESSAGE ***dm.redeploy (redeploy) RBK
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:47.663
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) RBK null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=RBK}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:47.920
+!MESSAGE Waiting on ProgressObject:@53801149
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:48.057
+!MESSAGE ProgressObject completed :@53801149
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:48.060
+!MESSAGE ***dm.deploy (deploy) RBK to targets [AdminServer/server]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:48.484
+!MESSAGE Waiting on ProgressObject:@50818162
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:48.948
+!MESSAGE ProgressObject completed :@50818162
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:48.949
+!MESSAGE RBK deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:48.950
+!MESSAGE Module RBK deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2011-10-01 02:08:48.950
+!MESSAGE Publishing finished.

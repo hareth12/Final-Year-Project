@@ -143,7 +143,7 @@ public class History implements HistoryRemote {
         
 		Collections.sort(resultList, new Comparator<HistoryData>(){	 
             public int compare(HistoryData h1, HistoryData h2) {
-            	if (h1.getTime() > h2.getTime())
+            	if (h1.getTime() < h2.getTime())
             		return 1;
             	else 
             		return 0;
@@ -211,6 +211,51 @@ public class History implements HistoryRemote {
 		h.setStatus("2FA Auth. Failed");
 		h.setTxnNumber(txnNumber);
 		em.persist(h);
+	}
+
+	@Override
+	public void changePasswordFail(String idPib) {
+		long time = System.currentTimeMillis();
+		long txnNumber=txnNumberGenerator();		
+		HistoryClass h = new HistoryClass();
+		h.setAmount(0);
+		h.setIdPib(idPib);
+		h.setTime(time);
+		h.setTxnName("Change Password");
+		h.setStatus("Failed");
+		h.setTxnNumber(txnNumber);
+		em.persist(h);
+		
+	}
+
+	@Override
+	public void changePasswordSuccess(String idPib) {
+		long time = System.currentTimeMillis();
+		long txnNumber=txnNumberGenerator();		
+		HistoryClass h = new HistoryClass();
+		h.setAmount(0);
+		h.setIdPib(idPib);
+		h.setTime(time);
+		h.setTxnName("Change Password");
+		h.setStatus("Success");
+		h.setTxnNumber(txnNumber);
+		em.persist(h);
+		
+	}
+
+	@Override
+	public void logout(String idPib) {
+		long time = System.currentTimeMillis();
+		long txnNumber=txnNumberGenerator();		
+		HistoryClass h = new HistoryClass();
+		h.setAmount(0);
+		h.setIdPib(idPib);
+		h.setTime(time);
+		h.setTxnName("Logout");
+		h.setStatus("Success");
+		h.setTxnNumber(txnNumber);
+		em.persist(h);
+		
 	}
 
 }

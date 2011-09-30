@@ -1,0 +1,488 @@
+package uob.service;
+
+import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.List;
+
+import javax.jms.Destination;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.Queue;
+import javax.jms.QueueConnection;
+import javax.jms.QueueConnectionFactory;
+import javax.jms.QueueReceiver;
+import javax.jms.QueueSender;
+import javax.jms.QueueSession;
+import javax.jms.TextMessage;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+import uob.data.AccountClass;
+import uob.data.HistoryData;
+
+
+public class HistClientService {
+	private QueueConnection requestorQueueConnection = null;
+	private QueueSender requestorQueueSender = null;
+	private QueueSession requestorSession = null;
+	private InitialContext ctx;
+	private Hashtable requestorHashTable = new Hashtable();
+    
+	private QueueConnection replyQueueConnection = null;
+	private Destination replyQueue;
+	private QueueReceiver replyReceiver=null;
+	private QueueSession replySession = null;
+    //===========
+		
+	public HistClientService(){}
+	
+	
+     public String sendRequestHistory(String message){
+    	 requestorHashTable.put(Context.INITIAL_CONTEXT_FACTORY, "weblogic.jndi.WLInitialContextFactory");
+    	 requestorHashTable.put(Context.PROVIDER_URL,"t3://localhost:7001");
+    	 String returnString=null;
+    	 
+         try {
+        	 ctx = new InitialContext(requestorHashTable);
+	         Queue queue = (Queue) ctx.lookup("HistQueue");
+	         QueueConnectionFactory requestorFactory = (QueueConnectionFactory) ctx.lookup("HistConnectionFactory");
+	         requestorQueueConnection = requestorFactory.createQueueConnection();
+	         requestorSession = requestorQueueConnection.createQueueSession(false, QueueSession.AUTO_ACKNOWLEDGE);
+	         
+	         QueueConnectionFactory replyFactory = (QueueConnectionFactory) ctx.lookup("HistReplyConnectionFactory");
+	         replyQueueConnection = replyFactory.createQueueConnection();	 
+	         replySession = replyQueueConnection.createQueueSession(false, QueueSession.AUTO_ACKNOWLEDGE);
+	         replyQueue = (Destination) ctx.lookup("HistReplyQueue");
+	         replyReceiver = replySession.createReceiver((Queue) replyQueue);
+	       
+	         TextMessage msg = requestorSession.createTextMessage();	      
+	         msg.setText(message);
+	         msg.setJMSReplyTo(replyQueue);
+	         requestorQueueSender = requestorSession.createSender(queue);
+	         requestorQueueSender.send(msg);
+	         System.out.println("reply to: "+msg.getJMSMessageID());
+           
+	         System.out.println("Message sent successfully to remote queue.");
+	         
+	         returnString = receiveSync();
+	         requestorSession.close(); // this is important.
+	         replySession.close();
+		} catch (NamingException e) {
+			e.printStackTrace();
+		} catch (JMSException e) {
+			e.printStackTrace();
+		}
+			
+		
+		return returnString;
+		
+     }
+	//=======
+    
+     private String receiveSync() throws JMSException{
+    	 System.out.println("<pib><History><receiveSync>"); 
+    	 replyQueueConnection.start();
+    	 Message msg = replyReceiver.receive();
+    	 TextMessage tmsg = (TextMessage) msg;
+    	 replyQueueConnection.close();
+    	 String returnString = null;
+    	
+    	 if(msg==null)
+    		 System.out.println("msg is null");
+    	 else{
+    		 System.out.println("msg is not null");
+    	 	 System.out.println("content of reply:  "+tmsg.getText());
+    		 returnString = tmsg.getText();
+    		 return returnString;
+    		 }
+    	 return returnString;
+     }
+     
+     public void login1FASuccess(String idPib){ //opCode = 11
+    	 System.out.println("<HistClientService><addHistory> method is called with idPib = "+idPib);
+    	 
+    	boolean addHistorySuccess=false;
+    	String returnFromHist = null;
+    	String opCodeString = null; 
+    	long loginTime = System.currentTimeMillis();
+    	String loginTimeString = Long.toString(loginTime);
+    	
+    	
+		if((idPib!=null)&&(!idPib.isEmpty())){
+    		returnFromHist=sendRequestHistory("11|"+idPib+"|filler|filler|filler|filler|filler");
+    		System.out.println("returnFromHist= "+returnFromHist);
+    	}
+		
+		if(returnFromHist!=null){
+			String[] postParse = returnFromHist.split("[|]+");
+			opCodeString = postParse[0];
+			int j= postParse.length;
+			
+			//active
+			if(opCodeString.equals("19")){
+				addHistorySuccess=true;
+			}
+		}
+		else{
+			System.out.println("<HistClientService><addHistory>returnFromHist is null");
+		}   	 
+     }
+
+     public void login1FANotSuccess(String idPib){ //opCode = 21
+    	 System.out.println("<HistClientService><addHistory> method is called with idPib = "+idPib);
+    	 
+    	boolean addHistorySuccess=false;
+    	String returnFromHist = null;
+    	String opCodeString = null;  	
+    	
+		if((idPib!=null)&&(!idPib.isEmpty())){
+    		returnFromHist=sendRequestHistory("21|"+idPib+"|filler|filler|filler|filler|filler");
+    		System.out.println("returnFromHist= "+returnFromHist);
+    	}
+		
+		if(returnFromHist!=null){
+			String[] postParse = returnFromHist.split("[|]+");
+			opCodeString = postParse[0];
+			int j= postParse.length;
+			
+			//active
+			if(opCodeString.equals("29")){
+				addHistorySuccess=true;
+			}
+		}
+		else{
+			System.out.println("<HistClientService><addHistory>returnFromHist is null");
+		}   	 
+     }
+     
+     public void login2FASuccess(String idPib){ //opCode = 31
+    	 System.out.println("<HistClientService><31> method is called with idPib = "+idPib);
+    	 
+    	boolean addHistorySuccess=false;
+    	String returnFromHist = null;
+    	String opCodeString = null; 
+
+    	
+    	
+		if((idPib!=null)&&(!idPib.isEmpty())){
+    		returnFromHist=sendRequestHistory("31|"+idPib+"|filler|filler|filler|filler|filler");
+    		System.out.println("returnFromHist= "+returnFromHist);
+    	}
+		
+		if(returnFromHist!=null){
+			String[] postParse = returnFromHist.split("[|]+");
+			opCodeString = postParse[0];
+			int j= postParse.length;
+			
+			//active
+			if(opCodeString.equals("39")){
+				addHistorySuccess=true;
+			}
+		}
+		else{
+			System.out.println("<HistClientService><31>returnFromHist is null");
+		}   	 
+     }
+     
+     public void login2FANotSuccess(String idPib){ //opCode = 41
+    	 System.out.println("<HistClientService><41> method is called with idPib = "+idPib);
+    	 
+    	boolean addHistorySuccess=false;
+    	String returnFromHist = null;
+    	String opCodeString = null; 
+
+    	
+    	
+		if((idPib!=null)&&(!idPib.isEmpty())){
+    		returnFromHist=sendRequestHistory("41|"+idPib+"|filler|filler|filler|filler|filler");
+    		System.out.println("returnFromHist= "+returnFromHist);
+    	}
+		
+		if(returnFromHist!=null){
+			String[] postParse = returnFromHist.split("[|]+");
+			opCodeString = postParse[0];
+			int j= postParse.length;
+			
+			//active
+			if(opCodeString.equals("49")){
+				addHistorySuccess=true;
+			}
+		}
+		else{
+			System.out.println("<HistClientService><41>returnFromHist is null");
+		}   	 
+     }
+     
+     public void addPayeeSuccess(String idPib, long from, long to){ //opCode = 51
+    	 System.out.println("<HistClientService><51> method is called with idPib = "+idPib);
+    	 
+    	boolean addHistorySuccess=false;
+    	String returnFromHist = null;
+    	String opCodeString = null; 
+    	String fromString = Long.toString(from);
+    	String toString = Long.toString(to);
+    	
+		if((idPib!=null)&&(!idPib.isEmpty())){
+    		returnFromHist=sendRequestHistory("51|"+idPib+"|"+fromString+"|"+toString+"|filler|filler|filler|filler");
+    		System.out.println("returnFromHist= "+returnFromHist);
+    	}
+		
+		if(returnFromHist!=null){
+			String[] postParse = returnFromHist.split("[|]+");
+			opCodeString = postParse[0];
+			int j= postParse.length;
+			
+			//active
+			if(opCodeString.equals("59")){
+				addHistorySuccess=true;
+			}
+		}
+		else{
+			System.out.println("<HistClientService><51>returnFromHist is null");
+		}   	 
+     }
+
+     public void addPayeeNotSuccess(String idPib, long from, long to){ //opCode = 61
+    	 System.out.println("<HistClientService><61> method is called with idPib = "+idPib);
+    	 
+    	boolean addHistorySuccess=false;
+    	String returnFromHist = null;
+    	String opCodeString = null; 
+    	String fromString = Long.toString(from);
+    	String toString = Long.toString(to);
+    	
+		if((idPib!=null)&&(!idPib.isEmpty())){
+    		returnFromHist=sendRequestHistory("61|"+idPib+"|"+fromString+"|"+toString+"|filler|filler|filler|filler");
+    		System.out.println("returnFromHist= "+returnFromHist);
+    	}
+		
+		if(returnFromHist!=null){
+			String[] postParse = returnFromHist.split("[|]+");
+			opCodeString = postParse[0];
+			int j= postParse.length;
+			
+			//active
+			if(opCodeString.equals("69")){
+				addHistorySuccess=true;
+			}
+		}
+		else{
+			System.out.println("<HistClientService><61>returnFromHist is null");
+		}   	 
+     }
+
+     public void fundTransferSuccess(String idPib, long from, long to, double d){ //opCode = 71
+    	 System.out.println("<HistClientService><71> method is called with idPib = "+idPib);
+    	 
+    	boolean addHistorySuccess=false;
+    	String returnFromHist = null;
+    	String opCodeString = null; 
+    	String fromString = Long.toString(from);
+    	String toString = Long.toString(to);
+    	String amountString = Double.toString(d);
+    	
+		if((idPib!=null)&&(!idPib.isEmpty())){
+    		returnFromHist=sendRequestHistory("71|"+idPib+"|"+fromString+"|"+toString+"|"+amountString+"|filler|filler|filler");
+    		System.out.println("returnFromHist= "+returnFromHist);
+    	}
+		
+		if(returnFromHist!=null){
+			String[] postParse = returnFromHist.split("[|]+");
+			opCodeString = postParse[0];
+			int j= postParse.length;
+			
+			//active
+			if(opCodeString.equals("79")){
+				addHistorySuccess=true;
+			}
+		}
+		else{
+			System.out.println("<HistClientService><71>returnFromHist is null");
+		}   	 
+     }
+
+     public void fundTransferNotSuccess(String idPib, long from, long to, double d){ //opCode = 91
+    	 System.out.println("<HistClientService><91> method is called with idPib = "+idPib);
+    	 
+    	boolean addHistorySuccess=false;
+    	String returnFromHist = null;
+    	String opCodeString = null; 
+    	String fromString = Long.toString(from);
+    	String toString = Long.toString(to);
+    	String amountString = Double.toString(d);
+    	
+		if((idPib!=null)&&(!idPib.isEmpty())){
+    		returnFromHist=sendRequestHistory("91|"+idPib+"|"+fromString+"|"+toString+"|"+amountString+"|filler|filler|filler|filler");
+    		System.out.println("returnFromHist= "+returnFromHist);
+    	}
+		
+		if(returnFromHist!=null){
+			String[] postParse = returnFromHist.split("[|]+");
+			opCodeString = postParse[0];
+			int j= postParse.length;
+			
+			//active
+			if(opCodeString.equals("99")){
+				addHistorySuccess=true;
+			}
+		}
+		else{
+			System.out.println("<HistClientService><91>returnFromHist is null");
+		}   	 
+     }
+	public List<HistoryData> getHistory(String userName) { //opCode = 81
+		 System.out.println("<HistClientService><getHistory> method is called with idPib = "+userName);
+    	 
+	    	List<HistoryData> historyList = new ArrayList<HistoryData>();
+			String returnFromHist = null;
+			String opCodeString=null;
+			String timeString = null;
+			String txnName = null;
+			String amountString = null;
+			String status = null;
+			String txnNumberString = null;
+			
+			
+			if((userName!=null)&&(!userName.isEmpty())){
+				returnFromHist=sendRequestHistory("81|"+userName+"|filler|filler|filler|filler|filler");
+	    		System.out.println("returnFromHist= "+returnFromHist);
+	    	}
+			
+			if(returnFromHist!=null){
+				String[] postParse = returnFromHist.split("[|]+");
+				opCodeString = postParse[0];
+				int j= postParse.length;
+				
+				//active
+				if(opCodeString.equals("89")){
+					int i=1;
+					while(i!=j){
+					//	System.out.println("<pib><HistClientService>timeString = "+postParse[i]);
+						timeString = postParse[i];
+						i++;
+					//	System.out.println("<pib><HistClientService>txnName = "+postParse[i]);
+						txnName = postParse[i];
+						i++;
+					//	System.out.println("<pib><HistClientService>amountString = "+postParse[i]);
+						amountString = postParse[i];
+						i++;
+					//	System.out.println("<pib><HistClientService>status = "+postParse[i]);
+						status = postParse[i];
+						i++;
+					//	System.out.println("<pib><HistClientService>txnNumberString = "+postParse[i]);
+						txnNumberString = postParse[i];
+						i++;
+					
+						long time = Long.parseLong(timeString);
+						long txnNumber = Long.parseLong(txnNumberString);
+						double amount=Double.parseDouble(amountString);
+						
+						HistoryData h = new HistoryData();
+						h.setAmount(amount);
+						h.setIdPib(userName);
+						h.setStatus(status);
+						h.setTxnName(txnName);
+						h.setTime(time);
+						h.setTxnNumber(txnNumber);
+						
+						
+						historyList.add(h);
+		
+					}	
+				}
+					return historyList;
+			}
+			else{
+				System.out.println("<histClientService><getAccount>returnFromHIST is null");
+			}
+			
+	    	return null;  	 
+	}
+	
+	
+	public void logout(String idPib){ //opCode = 111
+   	 System.out.println("<HistClientService><111> method is called with idPib = "+idPib);
+   	 
+   	String returnFromHist = null;
+   	String opCodeString = null; 
+
+   	
+   	
+		if((idPib!=null)&&(!idPib.isEmpty())){
+   		returnFromHist=sendRequestHistory("111|"+idPib+"|filler|filler|filler|filler|filler");
+   		System.out.println("returnFromHist= "+returnFromHist);
+   	}
+		
+		if(returnFromHist!=null){
+			String[] postParse = returnFromHist.split("[|]+");
+			opCodeString = postParse[0];
+			int j= postParse.length;
+			
+			//active
+			if(opCodeString.equals("119")){
+				System.out.println("<HistClientService><111>logout by "+idPib+" is recorded");
+			}
+		}
+		else{
+			System.out.println("<HistClientService><111>returnFromHist is null");
+		}   	 
+    }
+	
+	public void changePasswordSuccess(String idPib){ //opCode = 121
+	   	 System.out.println("<HistClientService><111> method is called with idPib = "+idPib);
+	   	 
+	   	String returnFromHist = null;
+	   	String opCodeString = null; 
+
+	   	
+	   	
+			if((idPib!=null)&&(!idPib.isEmpty())){
+	   		returnFromHist=sendRequestHistory("121|"+idPib+"|filler|filler|filler|filler|filler");
+	   		System.out.println("returnFromHist= "+returnFromHist);
+	   	}
+			
+			if(returnFromHist!=null){
+				String[] postParse = returnFromHist.split("[|]+");
+				opCodeString = postParse[0];
+				int j= postParse.length;
+				
+				//active
+				if(opCodeString.equals("129")){
+					System.out.println("<HistClientService><121>Change password success by "+idPib+" is recorded");
+				}
+			}
+			else{
+				System.out.println("<HistClientService><121>returnFromHist is null");
+			}   	 
+	    }
+	
+	public void changePasswordFail(String idPib){ //opCode = 121
+	   	 System.out.println("<HistClientService><111> method is called with idPib = "+idPib);
+	   	 
+	   	String returnFromHist = null;
+	   	String opCodeString = null; 
+
+	   	
+	   	
+			if((idPib!=null)&&(!idPib.isEmpty())){
+	   		returnFromHist=sendRequestHistory("121|"+idPib+"|filler|filler|filler|filler|filler");
+	   		System.out.println("returnFromHist= "+returnFromHist);
+	   	}
+			
+			if(returnFromHist!=null){
+				String[] postParse = returnFromHist.split("[|]+");
+				opCodeString = postParse[0];
+				int j= postParse.length;
+				
+				//active
+				if(opCodeString.equals("129")){
+					System.out.println("<HistClientService><121>Change password success by "+idPib+" is recorded");
+				}
+			}
+			else{
+				System.out.println("<HistClientService><121>returnFromHist is null");
+			}   	 
+	    }
+}
+

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import uob.data.SSOData;
+import uob.service.HistClientService;
 import uob.service.SSOClientService;
 
 /**
@@ -32,8 +33,11 @@ public class Logout extends HttpServlet {
 		Cookie[] cookies = request.getCookies();
 		String userHash = getClientHash(cookies);
 		SSOClientService ssocs = new SSOClientService();
+		HistClientService hcs = new HistClientService();
 	
 		if(userHash!=null){
+			String idPib = ssocs.getLoginName(userHash);
+			hcs.logout(idPib);
 			ssocs.logout(userHash);	
 		}
 		else{

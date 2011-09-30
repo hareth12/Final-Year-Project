@@ -105,11 +105,9 @@ public class HistoryController implements MessageListener {
 			parameter6=postParse[6];
 			
 		} catch (JMSException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 
-		// TODO Auto-generated method stub
 		System.out.println("<historyController>");
 		
 			switch(opCode){
@@ -200,12 +198,57 @@ public class HistoryController implements MessageListener {
 						replyToServlet("99");
 					}
 					break;
+				case 111:
+					if(parameter1!=null){
+						//merely renaming
+						String idPib = parameter1;		
+			
+						logout(idPib);
+						replyToServlet("119");
+					}
+					break;	
+					
+				case 121:
+					if(parameter1!=null){
+						//merely renaming
+						String idPib = parameter1;		
+			
+						changePasswordSuccess(idPib);
+						replyToServlet("129");
+					}
+					break;
+				
+				case 131:
+					if(parameter1!=null){
+						//merely renaming
+						String idPib = parameter1;		
+			
+						changePasswordFail(idPib);
+						replyToServlet("139");
+					}
+					break;	
+					
 				case 99:
 					System.out.println("<historyController><preparse>failed");
 					break;
 			}	
 	}
 	
+	private void changePasswordFail(String idPib) {
+		hist.changePasswordFail(idPib);
+		
+	}
+
+	private void changePasswordSuccess(String idPib) {
+		hist.changePasswordSuccess(idPib);
+		
+	}
+
+	private void logout(String idPib) {
+		hist.logout(idPib);
+		
+	}
+
 	private void fundTransferNotSuccess(String idPib, String fromS, String toS, String amount) {
 		hist.fundTransferNotSuccess(idPib,fromS,toS,amount);
 		
