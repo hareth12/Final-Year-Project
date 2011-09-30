@@ -25,17 +25,17 @@ public class LoginBankAdmin implements LoginBankAdminRemote {
 	private EntityManager em;
 
 	@Override
-	public boolean login(String idBankAdmin, String password) {
+	public int login(String idBankAdmin, String password) {
 		LoginBankAdminClass x= em.find(LoginBankAdminClass.class, idBankAdmin);
 		if(x!=null){
 			if(x.getPassword().equals(password))
-				return true;
+				return x.getLevel();
 			else
-				return false;	
+				return -1;	
 		}
 		System.out.println(idBankAdmin+" not found in db");
 
-		return false;
+		return -1;
 	}
 	
 

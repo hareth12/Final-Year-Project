@@ -16,6 +16,7 @@ public class LoginClass {
 	private String pre2FAHash;
 	private long timeStarted;
 	private long timeToEnd;	
+	private boolean activated;
 	
 	public LoginClass(){}
 	
@@ -30,6 +31,7 @@ public class LoginClass {
 		long timeStarted = System.currentTimeMillis();	
 		this.timeStarted=timeStarted;
 		this.timeToEnd=timeToEnd;
+		this.activated=false;
 	}
 	
 	public void updateTime(){
@@ -111,6 +113,14 @@ public class LoginClass {
 
 	public long getTimeToEnd() {
 		return timeToEnd;
+	}
+
+	public void setActivated(boolean activated) {
+		this.activated = activated;
+	}
+
+	public boolean isActivated() {
+		return activated;
 	}
 	
 	

@@ -7,3 +7,6 @@
 1317308707542	Encapsulate field 'cookieHash'
 1317308711520	Encapsulate field 'loginSuccess'
 1317313285888	Move 1 resources to 'Login'
+1317362558382	Rename resource 'AccountActivation.jsp'
+1317362566916	Rename resource 'accountActivation.jsp'
+1317362853456	Encapsulate field 'level'

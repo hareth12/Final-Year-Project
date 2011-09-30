@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;com.trustBankAdmin.TrustBankAdminClass.level&apos; in &apos;com.trustBankAdmin.TrustBankAdminClass&apos;&#x0D;&#x0A;- Original project: &apos;TrustBankAdminEJB&apos;&#x0D;&#x0A;- Original element: &apos;com.trustBankAdmin.TrustBankAdminClass.level&apos;&#x0D;&#x0A;- Getter method name: &apos;getLevel&apos;&#x0D;&#x0A;- Setter method name: &apos;setLevel&apos;&#x0D;&#x0A;- Field visibility: &apos;public&apos;&#x0D;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;level&apos;" flags="589830" getter="getLevel" id="org.eclipse.jdt.ui.self.encapsulate" input="/ejbModule&lt;com.trustBankAdmin{TrustBankAdminClass.java[TrustBankAdminClass^level" insertion="11" setter="setLevel" stamp="1317360666883" version="1.0" visibility="1"/>
+</session>

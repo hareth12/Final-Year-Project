@@ -39,4 +39,14 @@
     <servlet-name>AccountCreation2</servlet-name>
     <url-pattern>/AccountCreation2</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AccountActivation</display-name>
+    <servlet-name>AccountActivation</servlet-name>
+    <servlet-class>uobBankAdmin.account.AccountActivation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AccountActivation</servlet-name>
+    <url-pattern>/AccountActivation</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -33,7 +33,7 @@ public class AccountCreation2 extends HttpServlet {
 
 	
 		if(userHash!=null){
-			if(ssocs.checkTrust(userHash)){
+			if(ssocs.checkTrust(userHash)>0){
 				validCookieBool=true;
 				System.out.println("<bankAdmin><AccountCreation>userHash = "+userHash);
 			}	

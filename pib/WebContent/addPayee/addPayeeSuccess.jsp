@@ -46,7 +46,7 @@
         <ul>
             <li><a href="/pib/AddPayee2FA1">Add Payee</a></li>
             <li><a href="./">Manage Payees</a></li>
-            <li><a href="/pib/FundTransfer">Make Transfer</a></li>
+            <li><a href="FundTransfer2FA1">Make Transfer</a></li>
         </ul>
     </li>
     <li class="dir">View Rates

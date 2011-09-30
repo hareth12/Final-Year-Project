@@ -118,7 +118,7 @@ public class SSOBankAdminEJB implements MessageListener {
 						SSODataBankAdmin s = login(idBankAdmin,password);
 						
 						if(s.getLoginSuccess()){
-							replyToServlet("19|"+s.getCookieHash()+"|");
+							replyToServlet("19|"+s.getCookieHash()+"|"+s.getLevel()+"|");
 						}
 						else
 							replyToServlet("10||");
@@ -135,10 +135,10 @@ public class SSOBankAdminEJB implements MessageListener {
 					if(parameter1!=null && !parameter1.isEmpty()){
 						//merely renaming
 						String userHash = parameter1;
-						boolean b = check(userHash);
+						int b = check(userHash);
 						
-						if(b){
-							replyToServlet("29||");
+						if(b>0){
+							replyToServlet("29|"+b+"|");
 						}
 						else
 							replyToServlet("20||");
@@ -189,11 +189,26 @@ public class SSOBankAdminEJB implements MessageListener {
 				break;
 			
 			case 51:
-
+				try {
+					if(parameter1!=null && !parameter1.isEmpty()){
+						//merely renaming
+						String idPib = parameter1;
+						boolean s = activatePIBaccount(idPib);
+						
+						if(s){
+							replyToServlet("59||");
+						}
+						else
+							replyToServlet("50||");
+					}
+					
+				} catch (Exception e1) {
+					e1.printStackTrace();	
+				}
 				break;		
 			
-			case 61:  //getLoginName
-
+			case 61:  
+				
 				break;
 				
 			case 71:
@@ -214,6 +229,10 @@ public class SSOBankAdminEJB implements MessageListener {
 		
 	}
 	
+	private boolean activatePIBaccount(String idPib) {
+		return login.activateAccount(idPib);
+	}
+
 	private boolean createPIBaccount(String idPib, String telephone) {		
 		return login.createPIBaccount(idPib,telephone);
 	}
@@ -222,17 +241,18 @@ public class SSOBankAdminEJB implements MessageListener {
 		return trustBankAdmin.getIdBankAdmin(userHash);
 	}
 
-	private boolean check(String userHash) {
+	private int check(String userHash) {
 		return trustBankAdmin.check(userHash);
 	}
 
 	private SSODataBankAdmin login(String idBankAdmin, String password) {
 		SSODataBankAdmin s = new SSODataBankAdmin();
-		boolean b = loginBankAdmin.login(idBankAdmin, password);
-		if(b){
+		int level = loginBankAdmin.login(idBankAdmin, password);
+		if(level>0){
 			s.setLoginSuccess(true);
-			String c = trustBankAdmin.newLogin(idBankAdmin);
+			String c = trustBankAdmin.newLogin(idBankAdmin,level);
 			s.setCookieHash(c);
+			s.setLevel(level);
 		}else{
 			s.setCookieHash(null);
 			s.setLoginSuccess(false);

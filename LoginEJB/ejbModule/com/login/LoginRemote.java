@@ -11,4 +11,5 @@ public interface LoginRemote {
 	String getTelephone(String idPib)throws Exception;
 	SSOData send2FACode(String idPib)throws Exception;
 	boolean createPIBaccount(String idPib, String telephone);
+	boolean activateAccount(String idPib);
 }

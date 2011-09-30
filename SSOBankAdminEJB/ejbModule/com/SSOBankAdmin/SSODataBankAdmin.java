@@ -3,6 +3,7 @@ package com.SSOBankAdmin;
 public class SSODataBankAdmin {
 	private Boolean loginSuccess;
 	private String cookieHash;
+	private int level;
 	
 	public SSODataBankAdmin(){};
 	
@@ -17,5 +18,13 @@ public class SSODataBankAdmin {
 	}
 	public String getCookieHash() {
 		return cookieHash;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
+	public int getLevel() {
+		return level;
 	}
 }

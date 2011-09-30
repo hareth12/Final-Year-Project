@@ -27,7 +27,7 @@ public class TrustBankAdmin implements TrustBankAdminRemote {
 		
 	}
 
-	public boolean check(String hash){
+	public int check(String hash){
 		TrustBankAdminClass t = em.find(TrustBankAdminClass.class, hash);
 		
 		if(t!=null){
@@ -35,17 +35,18 @@ public class TrustBankAdmin implements TrustBankAdminRemote {
 				if(t.checkTime()){
 						t.updateTime();
 						em.persist(t);
-						return true;
+						return t.getLevel();
 					}
 				}
 			}
-		return false;
+		return -1;
 	}
 
-	public String newLogin(String loginName){
+	public String newLogin(String loginName, int level){
 		TrustBankAdminClass t;
 		String cookieHash = hashGenerator(40);
 		t = new TrustBankAdminClass(cookieHash, loginName);
+		t.setLevel(level);
 		em.persist(t);
 		
 		return cookieHash;

@@ -8,6 +8,7 @@ public class LoginBankAdminClass {
 	@Id
 	private String idBankAdmin;
 	private String password;
+	private int level;
 
 	public LoginBankAdminClass(){}
 
@@ -25,6 +26,14 @@ public class LoginBankAdminClass {
 
 	public String getPassword() {
 		return password;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
+	public int getLevel() {
+		return level;
 	}
 	
 	

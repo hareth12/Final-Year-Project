@@ -12,6 +12,7 @@ public class TrustBankAdminClass {
 	private String loginName;
 	private long timeStarted;
 	private long timeToEnd;
+	private int level;
 	
 	public TrustBankAdminClass(){}
 	
@@ -22,6 +23,7 @@ public class TrustBankAdminClass {
 		long timeStarted = System.currentTimeMillis();
 		this.timeStarted=timeStarted;
 		this.timeToEnd=timeToEnd;
+		this.level=1;
 	}
 	
 	public void updateTime(){
@@ -63,6 +65,14 @@ public class TrustBankAdminClass {
 	}
 	public long getTimeToEnd() {
 		return timeToEnd;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
+	public int getLevel() {
+		return level;
 	}
 	
 }

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;com.login.LoginClass.activated&apos; in &apos;com.login.LoginClass&apos;&#x0D;&#x0A;- Original project: &apos;LoginEJB&apos;&#x0D;&#x0A;- Original element: &apos;com.login.LoginClass.activated&apos;&#x0D;&#x0A;- Getter method name: &apos;isActivated&apos;&#x0D;&#x0A;- Setter method name: &apos;setActivated&apos;&#x0D;&#x0A;- Field visibility: &apos;public&apos;&#x0D;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;activated&apos;" flags="589830" getter="isActivated" id="org.eclipse.jdt.ui.self.encapsulate" input="/ejbModule&lt;com.login{LoginClass.java[LoginClass^activated" insertion="19" setter="setActivated" stamp="1317360258934" version="1.0" visibility="1"/>
+</session>

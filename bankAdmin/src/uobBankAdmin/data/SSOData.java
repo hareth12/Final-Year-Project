@@ -4,6 +4,7 @@ package uobBankAdmin.data;
 public class SSOData {
 	private Boolean loginSuccess;
 	private String cookieHash;
+	private int level;
 	
 	public SSOData(){};
 	
@@ -18,6 +19,14 @@ public class SSOData {
 	}
 	public Boolean getLoginSuccess() {
 		return loginSuccess;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
+	public int getLevel() {
+		return level;
 	}
 	
 	

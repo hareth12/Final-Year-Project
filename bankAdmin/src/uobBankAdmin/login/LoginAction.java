@@ -69,8 +69,14 @@ public class LoginAction extends HttpServlet {
 			System.out.println("<BankAdmin><LoginAction>cookieHash= "+ssoData.getCookieHash());
 			response.addCookie(cookie1);
 			request.setAttribute("userName", userName);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/Landing/landing.jsp");
-			if (dispatcher != null) dispatcher.forward(request, response);
+			if(ssoData.getLevel()==1){
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/Landing/landing.jsp");
+				if (dispatcher != null) dispatcher.forward(request, response);
+			}
+			if(ssoData.getLevel()==2){
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/Landing/L2/landing.jsp");
+				if (dispatcher != null) dispatcher.forward(request, response);
+			}
 		}else{
 		
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/Login/loginFail.jsp");

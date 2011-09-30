@@ -30,7 +30,8 @@ public class Login implements LoginRemote {
 		LoginClass x= em.find(LoginClass.class, idPib);
 		if(x!=null){
 			if(x.getPassword().equals(password))
-				return true;
+				if(x.isActivated())
+					return true;
 			else
 				return false;	
 		}
@@ -43,8 +44,9 @@ public class Login implements LoginRemote {
 		LoginClass x = em.find(LoginClass.class,idPib);
 		SSOData ssoData = new SSOData();
 		if(x!=null){
-			if(x.getPassword().equals(password))
-			{
+			if(x.isActivated())
+				if(x.getPassword().equals(password))
+				{
 				String pre2FAHash = hashGeneratorForPreHash(4);
 				x.setPre2FAHash(pre2FAHash);
 				String hash2FA = hashGenerator(6);
@@ -57,7 +59,7 @@ public class Login implements LoginRemote {
 				String timeToExpire = changeDate(x.getTimeToEnd());
 				sendSMS(pre2FAHash,hash2FA, x.getTelephone(), timeToExpire);
 				return ssoData;
-			}else{
+				}else{
 				ssoData.setIs2FA(true);
 				ssoData.setLogin2FA1Success(false);
 				return ssoData;
@@ -196,10 +198,23 @@ public class Login implements LoginRemote {
 			x.setTelephone(telephone);
 			String password = hashGenerator(6);
 			x.setPassword(password);
+			x.setActivated(false);
 			em.persist(x);
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	public boolean activateAccount(String idPib) {
+		LoginClass x = em.find(LoginClass.class, idPib);
+		if(x!=null){
+			x.setActivated(true);
+			em.persist(x);
+			return true;
+		}
+		return false;
+		
 	}
 
 }

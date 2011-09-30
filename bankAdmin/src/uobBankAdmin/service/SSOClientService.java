@@ -101,13 +101,22 @@ public class SSOClientService {
 	
 	//======================
     
-    public boolean checkTrust(String userHash){
-    	boolean trustSuccess = false;
-    	String returnFromSSO = sendRequestSSO("21|"+userHash+"|filler|filler");
-    	if(returnFromSSO.equals("29||"))
-    		trustSuccess=true;
+    public int checkTrust(String userHash){
+    	int trustLevel = -1;
+    	String opCodeString=null;
+    	String returnFromSSO=sendRequestSSO("21|"+userHash+"|filler|filler");
     	
-    	return trustSuccess;
+    	if(returnFromSSO!=null){
+    		String[] postParse=returnFromSSO.split("[|]+");
+			opCodeString=postParse[0];
+    	
+			if(opCodeString.equals("29")){
+				String trustLevelString = postParse[1]; //for renaming purpose
+				trustLevel=Integer.parseInt(trustLevelString);
+			}
+
+    	}
+    	return trustLevel;
     }
 
 	public SSOData login(String userName, String password) {
@@ -133,6 +142,9 @@ public class SSOClientService {
 				String cookie = postParse[1]; //for renaming purpose
 				ssoData.setCookieHash(cookie);
 				System.out.println("<BankAdmin><SSOClientService><login1FA>cookie = "+cookie);
+				String levelString = postParse[2];
+				int level = Integer.parseInt(levelString);
+				ssoData.setLevel(level);
 				ssoData.setLoginSuccess(true);
 				return ssoData;
 				
@@ -208,6 +220,34 @@ public class SSOClientService {
 		}
 		else{
 			System.out.println("<bankAdmin><ssoClientService><createPIBaccount>returnFromSSO is null");
+		}
+    
+    return false;
+	}
+	
+	public boolean activatePIBaccount(String idPib) {
+		String returnFromSSO=null;
+    	String opCodeString=null;
+    	
+    	if(idPib!=null&& !idPib.isEmpty()){
+			returnFromSSO=sendRequestSSO("51|"+idPib+"|filler|filler|filler");
+			System.out.println("returnFromSSO= "+returnFromSSO);
+		}
+		else{
+			System.out.println("<bankAdmin><ssoClientService><activatePIBaccount>hash is null/empty.");
+		}
+		
+		if(returnFromSSO!=null){
+			String[] postParse=returnFromSSO.split("[|]+");
+			opCodeString=postParse[0];
+			
+			if(opCodeString.equals("59"))
+				return true;	
+			else
+				return false;		
+		}
+		else{
+			System.out.println("<bankAdmin><ssoClientService><activatePIBaccount>returnFromSSO is null");
 		}
     
     return false;
