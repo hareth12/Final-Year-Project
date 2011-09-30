@@ -101,7 +101,7 @@ public class SSOClientService {
     
     public boolean checkTrust1FA(String userHash){ //opcode = 41
     	boolean trustSuccess = false; 
-    	String returnFromSSO = sendRequestSSO("41|"+userHash+"|filler|filler");
+    	String returnFromSSO = sendRequestSSO("41|"+userHash+"|filler|filler|filler|filler|filler|filler");
     	if(returnFromSSO.equals("49||"))
     		trustSuccess=true;
     	
@@ -110,7 +110,7 @@ public class SSOClientService {
     
     public boolean checkTrust2FA(String userHash){  //opcode = 51
     	boolean trustSuccess = false;
-    	String returnFromSSO = sendRequestSSO("51|"+userHash+"|filler|filler");
+    	String returnFromSSO = sendRequestSSO("51|"+userHash+"|filler|filler|filler|filler|filler|filler");
     	if(returnFromSSO.equals("59||"))
     		trustSuccess=true;
     	
@@ -124,7 +124,7 @@ public class SSOClientService {
 		ssoData.setLoginSuccess(false);
 		
 		if((idPib!=null)&&(password!=null)&&!idPib.isEmpty()&&!password.isEmpty()){
-			returnFromSSO=sendRequestSSO("11|"+idPib+"|"+password+"|filler");
+			returnFromSSO=sendRequestSSO("11|"+idPib+"|"+password+"|filler|filler|filler|filler|filler");
 			System.out.println("returnFromSSO= "+returnFromSSO);
 		}
 		else{
@@ -177,7 +177,7 @@ public class SSOClientService {
 		
 		
 		if((idPib!=null)&&(password!=null)&&!idPib.isEmpty()&&!password.isEmpty()){
-			returnFromSSO=sendRequestSSO("21|"+idPib+"|"+password+"|filler");
+			returnFromSSO=sendRequestSSO("21|"+idPib+"|"+password+"|filler|filler|filler|filler|filler");
 			System.out.println("returnFromSSO= "+returnFromSSO);
 		}
 		else{
@@ -229,7 +229,7 @@ public class SSOClientService {
 		if((idPib!=null)&&(hash2FA!=null)&&!idPib.isEmpty()&&!hash2FA.isEmpty()&&
 				(cookieHash!=null)&&(cookieHash!=null)
 		){
-			returnFromSSO=sendRequestSSO("31|"+idPib+"|"+hash2FA+"|"+cookieHash);
+			returnFromSSO=sendRequestSSO("31|"+idPib+"|"+hash2FA+"|"+cookieHash+"|filler|filler|filler|filler");
 			System.out.println("returnFromSSO= "+returnFromSSO);
 		}
 		else{
@@ -273,12 +273,11 @@ public class SSOClientService {
     }
     
     public String getLoginName(String hash){ // opcode = 61
-    	String parameter1=null;
     	String returnFromSSO=null;
     	String opCodeString=null;
     	
     	if((hash!=null)&&(!hash.isEmpty())){
-			returnFromSSO=sendRequestSSO("61|"+hash+"|filler|filler");
+			returnFromSSO=sendRequestSSO("61|"+hash+"|filler|filler|filler|filler|filler|filler");
 			System.out.println("returnFromSSO= "+returnFromSSO);
 		}
 		else{
@@ -311,12 +310,11 @@ public class SSOClientService {
     }
 
 	public String getTelephone(String userName) {  //opcode = 71
-		String parameter1=null;
     	String returnFromSSO=null;
     	String opCodeString=null;
     	
     	if((userName!=null)&&(!userName.isEmpty())){
-			returnFromSSO=sendRequestSSO("71|"+userName+"|filler|filler");
+			returnFromSSO=sendRequestSSO("71|"+userName+"|filler|filler|filler|filler|filler|filler");
 			System.out.println("returnFromSSO= "+returnFromSSO);
 		}
 		else{
@@ -353,7 +351,7 @@ public class SSOClientService {
 		
 		
 		if((userName!=null)&&(userName!=null)){
-			returnFromSSO=sendRequestSSO("81|"+userName+"|filler|filler");
+			returnFromSSO=sendRequestSSO("81|"+userName+"|filler|filler|filler|filler|filler|filler");
 			System.out.println("returnFromSSO= "+returnFromSSO);
 		}
 		else{
@@ -391,15 +389,29 @@ public class SSOClientService {
     
     
 	public void logout(String userHash) { //opCode = 91
-		
-		
-		if((userHash!=null)&&(userHash!=null)){
-			sendRequestSSO("91|"+userHash+"|filler|filler");
-		}
-		else{
-			System.out.println("<ssoClientService><logout>userHash is null/empty.0");
-		}
-
+		if((userHash!=null)&&(userHash!=null))
+			sendRequestSSO("91|"+userHash+"|filler|filler|filler|filler|filler|filler|filler|filler");
+		else
+			System.out.println("<ssoClientService><logout>userHash is null/empty.0");	
 	}
     
+	public boolean changePassword(String idPib,String oldPassword, String newPassword1, String newPassword2){
+		String returnFromSSO = null;
+		String opCodeString=null;
+		
+		if(oldPassword!=null && newPassword1 !=null && newPassword2 !=null &&
+		!oldPassword.isEmpty() && !newPassword1.isEmpty() && !newPassword2.isEmpty()){
+			returnFromSSO=sendRequestSSO("111|"+idPib+"|"+oldPassword+"|"+newPassword1+"|"+newPassword2+"|filler|filller|filler|filler|filler");
+			if(returnFromSSO!=null){
+				String[] postParse=returnFromSSO.split("[|]+");
+				opCodeString=postParse[0];
+				
+				if(opCodeString.equals("119"))
+					return true;	
+			}
+		}
+		
+		return false;
+	}
+	
 }

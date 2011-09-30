@@ -93,6 +93,7 @@ public class SSO implements MessageListener {
 		String parameter1 = null;
 		String parameter2 = null;
 		String parameter3 = null;
+		String parameter4 =null;
 		
 		//parsing message into opcode, and parameters
 		String preParse;
@@ -103,7 +104,7 @@ public class SSO implements MessageListener {
 			parameter1=postParse[1];
 			parameter2=postParse[2];
 			parameter3=postParse[3];
-			
+			parameter4=postParse[4];
 		} catch (JMSException e1) {
 			e1.printStackTrace();
 		}
@@ -284,10 +285,30 @@ public class SSO implements MessageListener {
 					}
 				}catch(Exception e1){
 					e1.printStackTrace();
-					System.out.println("<sso><send2FACode>failed");
+					System.out.println("<sso><logout>failed");
 				}
 				break;	
 			
+			case 111:
+				try{
+					if(parameter1!=null  && parameter2!=null && parameter3!=null){
+						//merely renaming
+						String idPib = parameter1;
+						String oldPassword = parameter2;
+						String newPassword1 = parameter3;
+						String newPassword2 = parameter4;
+						boolean b = changePassword(idPib,oldPassword, newPassword1, newPassword2);
+						if(b)
+							replyToServlet("119||");
+						else
+							replyToServlet("110||");
+					}
+				}catch(Exception e1){
+					e1.printStackTrace();
+					System.out.println("<sso><changePassword>failed");
+				}
+				break;
+							
 			case 101:
 				System.out.println("<sso><preparse>failed");
 				break;
@@ -295,6 +316,10 @@ public class SSO implements MessageListener {
 		
 	}
 	
+	private boolean changePassword(String idPib,String oldPassword, String newPassword1,
+			String newPassword2) {
+		return login.changePassword(idPib,oldPassword,newPassword1,newPassword2);
+	}
 	private void logout(String userHash) throws Exception { //opCode = 91
 		trust.removeTrust(userHash);
 		

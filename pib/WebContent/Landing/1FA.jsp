@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Psuedo Bank Personal Internal Banking</title>
+<title>Pseudo Bank Personal Internal Banking</title>
 <link href="/pib/asset/secured/helper.css" media="screen" rel="stylesheet" type="text/css" />
 
 <style type="text/css">
@@ -18,7 +18,7 @@
 </head>
 <body>
 <div id="wrap">  <!-- This wrap div needs to encompass everything except the footer div at bottom -->
-<h1>Welcome to Psuedo Bank Personal Internet Banking</h1>
+<h1>Welcome to Pseudo Bank Personal Internet Banking</h1>
 
 <ul id="nav" class="dropdown dropdown-vertical">
     <li><a href="/pib/Landing1FA">Home</a></li>
@@ -41,7 +41,7 @@
     </li>
     <li class="dir">Customer Service
         <ul>
-            <li><a href="./">Change Password</a></li> 
+            <li><a href="/pib/ChangePassword1FA">Change Password</a></li> 
         </ul>
     </li>
 </ul>

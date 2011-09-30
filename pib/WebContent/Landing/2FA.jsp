@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Psuedo Bank Personal Internal Banking</title>
+<title>Pseudo Bank Personal Internal Banking</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="author" content="Tom@Lwis (http://www.lwis.net/free-css-drop-down-menu/)" />
 <meta name="keywords" content="css, dropdowns, dropdown menu, drop-down, menu, navigation, nav, horizontal, vertical left-to-right, vertical right-to-left, horizontal linear, horizontal upwards, cross browser, internet explorer, ie, firefox, safari, opera, browser, lwis" />
@@ -23,7 +23,7 @@
 </head>
 <body>
 <div id="wrap">  <!-- This wrap div needs to encompass everything except the footer div at bottom -->
-<h1>Welcome to Psuedo Bank Personal Internal Banking</h1>
+<h1>Welcome to Pseudo Bank Personal Internal Banking</h1>
 
 <ul id="nav" class="dropdown dropdown-vertical">
     <li><a href="/pib/Landing2FA">Home</a></li>
@@ -58,9 +58,10 @@
     </li>
     <li class="dir">Customer Service</a>
         <ul>
-            <li><a href="./">Change Password</a></li>
+            <li><a href="/pib/ChangePassword2FA">Change Password</a></li>
         </ul>
     </li>
+    <li><a href="/pib/Logout">Logout</a></li>
 </ul>
 	<div id="main">
 	Welcome <%=((String)request.getAttribute("userName")) %>!

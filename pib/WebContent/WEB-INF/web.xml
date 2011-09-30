@@ -219,4 +219,44 @@
     <servlet-name>ViewOnlineActivity</servlet-name>
     <url-pattern>/ViewOnlineActivity</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ChangePassword1FA</display-name>
+    <servlet-name>ChangePassword1FA</servlet-name>
+    <servlet-class>uob.password.ChangePassword1FA</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChangePassword1FA</servlet-name>
+    <url-pattern>/ChangePassword1FA</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ChangePassword1FA2</display-name>
+    <servlet-name>ChangePassword1FA2</servlet-name>
+    <servlet-class>uob.password.ChangePassword1FA2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChangePassword1FA2</servlet-name>
+    <url-pattern>/ChangePassword1FA2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ChangePassword2FA</display-name>
+    <servlet-name>ChangePassword2FA</servlet-name>
+    <servlet-class>uob.password.ChangePassword2FA</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChangePassword2FA</servlet-name>
+    <url-pattern>/ChangePassword2FA</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ChangePassword2FA2</display-name>
+    <servlet-name>ChangePassword2FA2</servlet-name>
+    <servlet-class>uob.password.ChangePassword2FA2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChangePassword2FA2</servlet-name>
+    <url-pattern>/ChangePassword2FA2</url-pattern>
+  </servlet-mapping>
 </web-app>

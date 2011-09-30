@@ -23,7 +23,7 @@
 </head>
 <body>
 <div id="wrap">  <!-- This wrap div needs to encompass everything except the footer div at bottom -->
-<h1>Welcome to Psuedo Bank Personal Internal Banking</h1>
+<h1>Welcome to Pseudo Bank Personal Internal Banking</h1>
 
 <ul id="nav" class="dropdown dropdown-vertical">
     <li><a href="/pib/Landing2FA">Home</a></li>
@@ -58,7 +58,7 @@
     </li>
     <li class="dir">Customer Service</a>
         <ul>
-            <li><a href="./">Change Password</a></li>
+            <li><a href="/pib/ChangePassword2FA">Change Password</a></li>
         </ul>
     </li>
 </ul>

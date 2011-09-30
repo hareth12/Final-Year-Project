@@ -1,0 +1,410 @@
+package uob.service;
+
+import java.util.Hashtable;
+
+import javax.jms.Destination;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.Queue;
+import javax.jms.QueueConnection;
+import javax.jms.QueueConnectionFactory;
+import javax.jms.QueueReceiver;
+import javax.jms.QueueSender;
+import javax.jms.QueueSession;
+import javax.jms.TextMessage;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+import uob.data.SSOData;
+
+public class SSOClientService {
+	
+	private QueueConnection requestorQueueConnection = null;
+	private QueueSender requestorQueueSender = null;
+	private QueueSession requestorSession = null;
+	private InitialContext ctx;
+	private Hashtable requestorHashTable = new Hashtable();
+    
+	private QueueConnection replyQueueConnection = null;
+	private Destination replyQueue;
+	private QueueReceiver replyReceiver=null;
+	private QueueSession replySession = null;
+	
+	//======================
+	public String sendRequestSSO(String message){
+   	 requestorHashTable.put(Context.INITIAL_CONTEXT_FACTORY, "weblogic.jndi.WLInitialContextFactory");
+   	 requestorHashTable.put(Context.PROVIDER_URL,"t3://localhost:7001");
+   	 String returnString=null;
+   	 
+        try {
+       	 ctx = new InitialContext(requestorHashTable);
+	         Queue queue = (Queue) ctx.lookup("SSOQueue");
+	         QueueConnectionFactory requestorFactory = (QueueConnectionFactory) ctx.lookup("SSOConnectionFactory");
+	         requestorQueueConnection = requestorFactory.createQueueConnection();
+	         requestorSession = requestorQueueConnection.createQueueSession(false, QueueSession.AUTO_ACKNOWLEDGE);
+	         
+	         QueueConnectionFactory replyFactory = (QueueConnectionFactory) ctx.lookup("SSOReplyConnectionFactory");
+	         replyQueueConnection = replyFactory.createQueueConnection();	 
+	         replySession = replyQueueConnection.createQueueSession(false, QueueSession.AUTO_ACKNOWLEDGE);
+	         replyQueue = (Destination) ctx.lookup("SSOReplyQueue");
+	         replyReceiver = replySession.createReceiver((Queue) replyQueue);
+	       
+	         
+	         
+	         TextMessage msg = requestorSession.createTextMessage();	      
+	         msg.setText(message);
+	         msg.setJMSReplyTo(replyQueue);
+	         requestorQueueSender = requestorSession.createSender(queue);
+	         requestorQueueSender.send(msg);
+	         System.out.println("reply to: "+msg.getJMSMessageID());
+          
+	         System.out.println("Message sent successfully to remote queue.");
+	         
+	         returnString = receiveSync();
+	         requestorSession.close(); // this is important.
+	         replySession.close();
+		} catch (NamingException e) {
+			
+			e.printStackTrace();
+		} catch (JMSException e) {
+			
+			e.printStackTrace();
+		}
+		
+		
+		return returnString;
+		
+    }
+	//=======
+   
+    public String receiveSync() throws JMSException{
+   	 System.out.println("<fypWebService><Login><receiveSync>"); 
+   	 String returnString=null;
+   	 replyQueueConnection.start();
+   	 Message msg = replyReceiver.receive();
+   	 TextMessage tmsg = (TextMessage) msg;
+   	 replyQueueConnection.close();
+   	
+   	 if(msg==null)
+   		 System.out.println("msg is null");
+   	 else{
+   		 System.out.println("msg is not null");
+   	 	 System.out.println("content of reply:  "+tmsg.getText());
+   	 	 
+   	 	 returnString=tmsg.getText();
+   	 	 }
+   		 return returnString;
+    }
+	
+	//======================
+    
+    public boolean checkTrust1FA(String userHash){ //opcode = 41
+    	boolean trustSuccess = false; 
+    	String returnFromSSO = sendRequestSSO("41|"+userHash+"|filler|filler");
+    	if(returnFromSSO.equals("49||"))
+    		trustSuccess=true;
+    	
+    	return trustSuccess;
+    }
+    
+    public boolean checkTrust2FA(String userHash){  //opcode = 51
+    	boolean trustSuccess = false;
+    	String returnFromSSO = sendRequestSSO("51|"+userHash+"|filler|filler");
+    	if(returnFromSSO.equals("59||"))
+    		trustSuccess=true;
+    	
+    	return trustSuccess;
+    }
+
+    public SSOData login1FA(String idPib, String password){  //opcode = 11
+    	SSOData ssoData = new SSOData();
+    	String opCodeString=null;
+		String returnFromSSO=null;
+		ssoData.setLoginSuccess(false);
+		
+		if((idPib!=null)&&(password!=null)&&!idPib.isEmpty()&&!password.isEmpty()){
+			returnFromSSO=sendRequestSSO("11|"+idPib+"|"+password+"|filler");
+			System.out.println("returnFromSSO= "+returnFromSSO);
+		}
+		else{
+			System.out.println("<ssoClientService><login1FA>idPib/password is null/empty.0");
+		}
+		
+		if(returnFromSSO!=null){
+			String[] postParse=returnFromSSO.split("[|]+");
+			opCodeString=postParse[0];
+			
+			if(opCodeString.equals("19")){
+				//add parameter 1 & 2 into here 
+				String cookie = postParse[2]; //for renaming purpose
+				ssoData.setCookieHash(cookie);
+				System.out.println("<SSOClientService><login1FA>cookie = "+cookie);
+				ssoData.setIs2FA(false);
+				ssoData.setLoginSuccess(true);
+				return ssoData;
+				
+			}
+			else{
+				//if(opCodeString.equals("10")
+				//this is commented out to catch other cases
+				//only opCodeString="12" will work
+				ssoData.setIs2FA(false);
+				ssoData.setLoginSuccess(false);
+				ssoData.setLogin2FA1Success(false);
+				ssoData.setLogin2FA2Success(false);
+				ssoData.setCookieHash(null);
+				return ssoData;
+			}
+				
+		}
+		else{
+			System.out.println("<ssoClientService><login1FA>returnFromSSO is null");
+		}
+		ssoData.setIs2FA(false);
+		ssoData.setLoginSuccess(false);
+		ssoData.setLogin2FA1Success(false);
+		ssoData.setLogin2FA2Success(false);
+		ssoData.setCookieHash(null);
+		return ssoData;
+    }
+
+    public SSOData login2FA1(String idPib, String password){  //opcode = 21
+    	SSOData ssoData = new SSOData();
+    	String opCodeString=null;
+		String returnFromSSO=null;
+		
+		
+		
+		if((idPib!=null)&&(password!=null)&&!idPib.isEmpty()&&!password.isEmpty()){
+			returnFromSSO=sendRequestSSO("21|"+idPib+"|"+password+"|filler");
+			System.out.println("returnFromSSO= "+returnFromSSO);
+		}
+		else{
+			System.out.println("<ssoClientService><login2FA1>idPib/password is null/empty.0");
+		}
+		
+		if(returnFromSSO!=null){
+			String[] postParse=returnFromSSO.split("[|]+");
+			opCodeString=postParse[0];
+			
+			if(opCodeString.equals("29")){
+				//add parameter 1 & 2 into here 
+				String preHash = postParse[2]; //for renaming purpose
+				ssoData.setPre2FAHash(preHash);
+				System.out.println("<SSOClientService><login2FA1>preHash = "+preHash);
+				ssoData.setIs2FA(true);
+				ssoData.setLoginSuccess(false);
+				ssoData.setLogin2FA1Success(true);
+				
+			}
+			else{
+				//if(opCodeString.equals("20")
+				//this is commented out to catch other cases
+				//only opCodeString=29" will work
+				ssoData.setIs2FA(true);
+				ssoData.setLoginSuccess(false);
+				ssoData.setCookieHash(null);
+				ssoData.setPre2FAHash(null);
+				ssoData.setLogin2FA1Success(false);
+			}
+				
+		}
+		else{
+			System.out.println("<ssoClientService><login2FA1>returnFromSSO is null");
+		}
+    	
+    	return ssoData;
+    }
+ 
+    public SSOData login2FA2(String idPib, String hash2FA, String cookieHash){  //opcode = 31
+		System.out.println("<SSOClientService><login2FA2> idPib   = "+idPib);
+		System.out.println("<SSOClientService><login2FA2> hash2FA = "+hash2FA);
+    	SSOData ssoData = new SSOData();
+    	String opCodeString=null;
+		String returnFromSSO=null;
+		
+		
+		
+		if((idPib!=null)&&(hash2FA!=null)&&!idPib.isEmpty()&&!hash2FA.isEmpty()&&
+				(cookieHash!=null)&&(cookieHash!=null)
+		){
+			returnFromSSO=sendRequestSSO("31|"+idPib+"|"+hash2FA+"|"+cookieHash);
+			System.out.println("returnFromSSO= "+returnFromSSO);
+		}
+		else{
+			System.out.println("<ssoClientService><login2FA2>idPib/hash2FA is null/empty.");
+		}
+		
+		if(returnFromSSO!=null){
+			String[] postParse=returnFromSSO.split("[|]+");
+			opCodeString=postParse[0];
+			
+			if(opCodeString.equals("39")){
+				//add parameter 1 & 2 into here 
+				String newCookieHash = postParse[2]; //for renaming purpose
+				ssoData.setCookieHash(cookieHash);
+				System.out.println("<SSOClientService><login2FA2>cookieHash = "+newCookieHash);
+				ssoData.setIs2FA(true);
+				ssoData.setLoginSuccess(false);
+				ssoData.setLogin2FA1Success(true);
+				ssoData.setLogin2FA2Success(true);
+				
+			}
+			else{
+				//if(opCodeString.equals("30")
+				//this is commented out to catch other cases
+				//only opCodeString=39" will work
+				ssoData.setIs2FA(true);
+				ssoData.setLoginSuccess(false);
+				ssoData.setCookieHash(null);
+				ssoData.setPre2FAHash(null);
+				ssoData.setLogin2FA1Success(false);
+				ssoData.setLogin2FA2Success(false);
+			}
+				
+		}
+		else{
+			System.out.println("<ssoClientService><login2FA2>returnFromSSO is null");
+		}
+    	
+    	return ssoData;	
+    	
+    }
+    
+    public String getLoginName(String hash){ // opcode = 61
+    	String parameter1=null;
+    	String returnFromSSO=null;
+    	String opCodeString=null;
+    	
+    	if((hash!=null)&&(!hash.isEmpty())){
+			returnFromSSO=sendRequestSSO("61|"+hash+"|filler|filler");
+			System.out.println("returnFromSSO= "+returnFromSSO);
+		}
+		else{
+			System.out.println("<ssoClientService><getLoginName>hash is null/empty.");
+		}
+		
+		if(returnFromSSO!=null){
+			String[] postParse=returnFromSSO.split("[|]+");
+			opCodeString=postParse[0];
+			
+			if(opCodeString.equals("69")){
+				
+				String loginName = postParse[1]; //for renaming purpose
+				return loginName;	
+				
+			}
+			else{
+				//if(opCodeString.equals("60")
+				//this is commented out to catch other cases
+				//only opCodeString=69" will work
+				return null;
+			}
+				
+		}
+		else{
+			System.out.println("<ssoClientService><getLoginName>returnFromSSO is null");
+		}
+    
+    return null;
+    }
+
+	public String getTelephone(String userName) {  //opcode = 71
+		String parameter1=null;
+    	String returnFromSSO=null;
+    	String opCodeString=null;
+    	
+    	if((userName!=null)&&(!userName.isEmpty())){
+			returnFromSSO=sendRequestSSO("71|"+userName+"|filler|filler");
+			System.out.println("returnFromSSO= "+returnFromSSO);
+		}
+		else{
+			System.out.println("<ssoClientService><getTelephone>hash is null/empty.");
+		}
+		
+		if(returnFromSSO!=null){
+			String[] postParse=returnFromSSO.split("[|]+");
+			opCodeString=postParse[0];
+			
+			if(opCodeString.equals("79")){
+				
+				String telephone = postParse[1]; //for renaming purpose
+				return telephone;	
+				
+			}
+			else{
+				return null;
+			}
+				
+		}
+		else{
+			System.out.println("<ssoClientService><getTelephone>returnFromSSO is null");
+		}
+    
+    return null;
+	}
+
+	public SSOData send2FAcode(String userName) { //opCode = 81
+		SSOData ssoData = new SSOData();
+    	String opCodeString=null;
+		String returnFromSSO=null;
+		
+		
+		
+		if((userName!=null)&&(userName!=null)){
+			returnFromSSO=sendRequestSSO("81|"+userName+"|filler|filler");
+			System.out.println("returnFromSSO= "+returnFromSSO);
+		}
+		else{
+			System.out.println("<ssoClientService><send2FAcode>idPib/password is null/empty.0");
+		}
+		
+		if(returnFromSSO!=null){
+			String[] postParse=returnFromSSO.split("[|]+");
+			opCodeString=postParse[0];
+			
+			if(opCodeString.equals("89")){
+				String preHash = postParse[1]; //for renaming purpose
+				ssoData.setPre2FAHash(preHash);
+				System.out.println("<SSOClientService><login2FA1>preHash = "+preHash);
+				ssoData.setIs2FA(true);
+				ssoData.setLoginSuccess(false);
+				ssoData.setLogin2FA1Success(true);
+				
+			}
+			else{
+				ssoData.setIs2FA(true);
+				ssoData.setLoginSuccess(false);
+				ssoData.setCookieHash(null);
+				ssoData.setPre2FAHash(null);
+				ssoData.setLogin2FA1Success(false);
+			}
+				
+		}
+		else{
+			System.out.println("<ssoClientService><send2FAcode>returnFromSSO is null");
+		}
+    	
+    	return ssoData;
+	}
+    
+    
+	public void logout(String userHash) { //opCode = 91
+		if((userHash!=null)&&(userHash!=null))
+			sendRequestSSO("91|"+userHash+"|filler|filler");
+		else
+			System.out.println("<ssoClientService><logout>userHash is null/empty.0");	
+	}
+    
+	public boolean changePassword(String oldPassword, String newPassword1, String newPassword2){
+		if(oldPassword!=null && newPassword1 !=null && newPassword2 !=null &&
+		!oldPassword.isEmpty() && !newPassword1.isEmpty() && !newPassword2.isEmpty()){
+			
+			
+		}
+		
+		return false;
+	}
+	
+}

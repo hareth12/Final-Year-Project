@@ -39,11 +39,8 @@ public class Logout extends HttpServlet {
 		else{
 			System.out.println("<fyp2><Logout>userHash from Client is null!");
 		}
-		
-		
-	
-		
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/login/logout.jsp");
+
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/Login/logout.jsp");
 			if (dispatcher != null) dispatcher.forward(request, response);
 		
 

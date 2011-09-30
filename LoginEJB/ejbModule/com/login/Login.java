@@ -233,4 +233,20 @@ public class Login implements LoginRemote {
 		return xList;
 	}
 
+	@Override
+	public boolean changePassword(String idPib,String oldPassword, String newPassword1,
+			String newPassword2) {
+		LoginClass x = em.find(LoginClass.class, idPib);
+		if(x!=null){
+			if(x.getPassword().equals(oldPassword)){
+				if(newPassword1.equals(newPassword2)){
+					x.setPassword(newPassword1);
+					em.persist(x);
+					return true;
+				}
+			}	
+		}
+		return false;
+	}
+
 }

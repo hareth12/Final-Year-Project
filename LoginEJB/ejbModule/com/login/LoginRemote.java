@@ -15,4 +15,6 @@ public interface LoginRemote {
 	boolean createPIBaccount(String idPib, String telephone);
 	boolean activateAccount(String idPib);
 	List<String> getListOfUnactivatedPIBId();
+	boolean changePassword(String idPib ,String oldPassword, String newPassword1,
+			String newPassword2);
 }
