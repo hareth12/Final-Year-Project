@@ -1,6 +1,8 @@
 package uobBankAdmin.account;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -8,8 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import uobBankAdmin.service.ICHClientService;
-import uobBankAdmin.service.RBKClientService;
 import uobBankAdmin.service.SSOClientService;
 
 
@@ -25,7 +25,7 @@ public class AccountActivation extends HttpServlet {
 		Cookie[] cookies = request.getCookies();
 		String userHash = getClientHash(cookies);
 		SSOClientService ssocs = new SSOClientService();
-
+		
 	
 		if(userHash!=null){
 			if(ssocs.checkTrust(userHash)>1){
@@ -42,8 +42,9 @@ public class AccountActivation extends HttpServlet {
 			String userName=ssocs.getLoginName(userHash);
 			System.out.println("<bankAdmin><AccountCreation>userName= "+userName);
 			
-			boolean b = ssocs.activatePIBaccount("jack");
-			System.out.println("<bankAdmin><AccountCreation>boolean b = "+b);
+			List<String> t = ssocs.getListOfUnactivatedPIBAccounts();
+			String[] records = getStringArray(t);
+			request.setAttribute("records", records);
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/Account/L2/accountActivation1.jsp");
 			if (dispatcher != null) dispatcher.forward(request, response);
@@ -71,4 +72,24 @@ public class AccountActivation extends HttpServlet {
 		return null;
 		
 	}
+	
+	
+	private String[] getStringArray(List<String> x){
+		String [] object = null;
+		if(x!=null){	
+			int row = x.size();	
+			object = new String[row+1];
+			object[row]="-1";
+			int i = 0;
+			while(i<row){		
+				object[i] = x.get(i);
+				i++;
+			}
+			
+			return object;
+		}
+		return object;
+	}
+
+
 }

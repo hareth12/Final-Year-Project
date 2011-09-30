@@ -49,4 +49,14 @@
     <servlet-name>AccountActivation</servlet-name>
     <url-pattern>/AccountActivation</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AccountActivation2</display-name>
+    <servlet-name>AccountActivation2</servlet-name>
+    <servlet-class>uobBankAdmin.account.AccountActivation2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AccountActivation2</servlet-name>
+    <url-pattern>/AccountActivation2</url-pattern>
+  </servlet-mapping>
 </web-app>

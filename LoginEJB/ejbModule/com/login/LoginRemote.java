@@ -1,5 +1,7 @@
 package com.login;
 
+import java.util.List;
+
 import javax.ejb.Remote;
 
 @Remote
@@ -12,4 +14,5 @@ public interface LoginRemote {
 	SSOData send2FACode(String idPib)throws Exception;
 	boolean createPIBaccount(String idPib, String telephone);
 	boolean activateAccount(String idPib);
+	List<String> getListOfUnactivatedPIBId();
 }

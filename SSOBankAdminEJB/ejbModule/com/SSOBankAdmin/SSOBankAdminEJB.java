@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Properties;
 
 import javax.ejb.ActivationConfigProperty;
@@ -208,7 +209,7 @@ public class SSOBankAdminEJB implements MessageListener {
 				break;		
 			
 			case 61:  
-				
+				getListOfUnactivatedPIBId();
 				break;
 				
 			case 71:
@@ -229,6 +230,27 @@ public class SSOBankAdminEJB implements MessageListener {
 		
 	}
 	
+	private void getListOfUnactivatedPIBId() {
+		List<String> x = login.getListOfUnactivatedPIBId();
+		
+		if(!x.isEmpty()){
+			String replyString = "69";
+			
+			int i = x.size();
+			int j =0;
+			while(j<i){
+				replyString=replyString+"|"+x.get(j);
+				j++;
+			}
+			replyToServlet(replyString);
+			
+		}else
+			replyToServlet("60||");
+		
+		
+		
+	}
+
 	private boolean activatePIBaccount(String idPib) {
 		return login.activateAccount(idPib);
 	}

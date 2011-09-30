@@ -6,17 +6,18 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 
 import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
-/**
- * Session Bean implementation class Account
- */
+
 @Stateful(mappedName="Login")
 public class Login implements LoginRemote {
 
@@ -26,7 +27,6 @@ public class Login implements LoginRemote {
 
 	@Override
 	public boolean login(String idPib, String password) throws Exception {
-		// TODO Auto-generated method stub
 		LoginClass x= em.find(LoginClass.class, idPib);
 		if(x!=null){
 			if(x.getPassword().equals(password))
@@ -127,7 +127,6 @@ public class Login implements LoginRemote {
 
 	@Override
 	public boolean login2FA2(String idPib, String hash2FA) throws Exception {
-		// TODO Auto-generated method stub
 		LoginClass x = em.find(LoginClass.class,idPib);
 		SSOData ssoData = new SSOData();
 		if(x!=null){
@@ -215,6 +214,23 @@ public class Login implements LoginRemote {
 		}
 		return false;
 		
+	}
+
+	@Override
+	public List<String> getListOfUnactivatedPIBId() {
+		Query q = em.createQuery("SELECT m from LoginClass m where m.activated = ?1 ");
+		q.setParameter(1, false);
+		List<LoginClass> resultList=q.getResultList();
+		List<String> xList = new ArrayList<String>();
+		
+		int size = resultList.size();
+		int i = 0;
+		while(i<size){
+			xList.add(resultList.get(i).getIdPib());
+			i++;
+		}
+		
+		return xList;
 	}
 
 }
