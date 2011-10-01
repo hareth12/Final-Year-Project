@@ -127,7 +127,6 @@ INDEX VERSION 1.126+C:\Users\ngzhongqin\workspace\FinalYearProject\.metadata\.pl
 2635344528.index
 1619295387.index
 2294888160.index
-3824015308.index
 1688467346.index
 612883609.index
 3949118648.index

@@ -1,0 +1,21 @@
+package uob.service;
+
+public class CombinedService {
+	private FDClientService fdcs;
+	private RBKClientService rbkcs;
+	
+	CombinedService(){
+		fdcs=new FDClientService();
+		rbkcs=new RBKClientService();
+	}
+	
+	public boolean transferRBKtoFD(long RBKnumber, long FDnumber, double amount){
+		
+		
+		return false;
+	}
+	
+	public boolean transferFDtoRBK(long RBKnumber, long FDnumber, double amount){
+		return false;
+	}
+}

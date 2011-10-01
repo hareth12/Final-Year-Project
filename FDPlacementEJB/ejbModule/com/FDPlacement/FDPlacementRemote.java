@@ -6,7 +6,7 @@ import javax.ejb.Remote;
 
 @Remote
 public interface FDPlacementRemote {
-	public void testing(String a);
+	public List<FDPlacementClass> getPlacementList(long accountNumber);
 }
 
 

@@ -1,0 +1,7 @@
+package uob.service;
+
+public class CombinedService {
+	public boolean transferRBKtoFD(long RBKnumber, long FDnumber, double amount){
+		return false;
+	}
+}

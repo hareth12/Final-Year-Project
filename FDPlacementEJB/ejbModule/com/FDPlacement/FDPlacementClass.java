@@ -7,13 +7,14 @@ import javax.persistence.Id;
 
 @Entity
 public class FDPlacementClass implements Serializable{
-	@Id
 	private long accountNumber;
 	private double amount;
 	private double interestRate;
 	private long timeStarted;
 	private long timeToEnd;
 	private String idPib;
+	@Id
+	private String txnNumber;
 	
 
 	public FDPlacementClass() {
@@ -77,6 +78,16 @@ public class FDPlacementClass implements Serializable{
 
 	public String getIdPib() {
 		return idPib;
+	}
+
+
+	public void setTxnNumber(String txnNumber) {
+		this.txnNumber = txnNumber;
+	}
+
+
+	public String getTxnNumber() {
+		return txnNumber;
 	}
 
 

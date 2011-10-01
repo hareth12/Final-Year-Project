@@ -23,6 +23,8 @@ import javax.naming.NamingException;
 
 import com.FDAccount.FDAccountClass;
 import com.FDAccount.FDAccountRemote;
+import com.FDPlacement.FDPlacementClass;
+import com.FDPlacement.FDPlacementRemote;
 
 @MessageDriven(mappedName = "FDQueue", activationConfig = { @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue") })
 public class FD implements MessageListener {
@@ -63,6 +65,8 @@ public class FD implements MessageListener {
 	@EJB (mappedName="FDAccount")
 	FDAccountRemote fdAcct;
 	
+	@EJB (mappedName="FDPlacement")
+	FDPlacementRemote fdPlacement;
 	
 	/**
 	 * Default constructor.
@@ -120,13 +124,52 @@ public class FD implements MessageListener {
 					break;
 					
 				case 21:
-				
+					try {
+						if(parameter1!=null){
+							String accountNumberString = parameter1;
+							long accountNumber = Long.parseLong(accountNumberString);
+							getPlacementList(accountNumber);	
+						}
+						
+					} catch (Exception e1) {
+						e1.printStackTrace();
+						System.out.println("<fd><21>failed");
+					}
+					
 					break;
+				
 				case 31:
-	
+					try{
+						if(parameter1!=null){
+							//merely renaming
+							String accountNumberString = parameter1;
+							String amountString = parameter2;
+							
+							long accountNumber = Long.parseLong(accountNumberString);
+							Double amount = Double.parseDouble(amountString);
+							withdraw(accountNumber,amount);
+						}
+					}catch(Exception e1){
+						e1.printStackTrace();
+						System.out.println("<fd><31>failed");
+					}
 					break;	
+					
 				case 41:
-
+					try{
+						if(parameter1!=null){
+							//merely renaming
+							String accountNumberString = parameter1;
+							String amountString = parameter2;
+							
+							long accountNumber = Long.parseLong(accountNumberString);
+							Double amount = Double.parseDouble(amountString);
+							deposit(accountNumber,amount);
+						}
+					}catch(Exception e1){
+						e1.printStackTrace();
+						System.out.println("<fd><41>failed");
+					}
 					break;	
 					
 				case 51:
@@ -149,6 +192,59 @@ public class FD implements MessageListener {
 					System.out.println("<fd><preparse>failed");
 					break;
 			}		
+	}
+
+	private void deposit(long accountNumber, Double amount) {
+		double amountReturn = fdAcct.deposit(accountNumber,amount);
+		if(amountReturn!=-1){
+			String amountReturnString = Double.toString(amountReturn);
+			replyToServlet("49|"+amountReturnString+"|");
+		}else
+			replyToServlet("40||");
+	}
+
+	private void withdraw(long accountNumber, Double amount) {
+		double amountReturn = fdAcct.withdraw(accountNumber,amount);
+		if(amountReturn!=-1){
+			String amountReturnString = Double.toString(amountReturn);
+			replyToServlet("39|"+amountReturnString+"|");
+		}else
+			replyToServlet("30||");
+		
+	}
+
+	private void getPlacementList(long accountNumber) {
+		List<FDPlacementClass> placementList = fdPlacement.getPlacementList(accountNumber);
+		if(!placementList.isEmpty()){
+			int i = 0;
+			String replyString = "29|";
+			int size = placementList.size();
+			String holdingString = null;
+			
+			while(i!=size){
+				holdingString = Long.toString(placementList.get(i).getAccountNumber());
+				replyString = replyString + holdingString+"|";
+				replyString = replyString + Double.toString( placementList.get(i).getAmount() )   +"|";
+				holdingString = Double.toString(placementList.get(i).getInterestRate());
+				replyString = replyString + holdingString+"|";
+				
+				holdingString = Long.toString(placementList.get(i).getTimeStarted());
+				replyString = replyString + holdingString+"|";
+				holdingString = Long.toString(placementList.get(i).getTimeToEnd());
+				replyString = replyString + holdingString+"|";
+				
+				holdingString = placementList.get(i).getIdPib();
+				replyString = replyString + holdingString+"|";
+				holdingString = placementList.get(i).getTxnNumber();
+				replyString = replyString + holdingString+"|";
+				i++;
+			}
+			
+			replyToServlet(replyString);
+		}else
+		{
+			replyToServlet("20||");
+		}		
 	}
 
 	private void getAccountList(String idPib) {

@@ -19,6 +19,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 import uob.data.FDAccountClass;
+import uob.data.FDPlacementClass;
 
 
 public class FDClientService {
@@ -114,7 +115,7 @@ public class FDClientService {
 			
 			if((userName!=null)&&(!userName.isEmpty())){
 				returnFromFD=sendRequestFD("11|"+userName+"|filler|filler|filler|filler|filler");
-	    		System.out.println("returnFromHist= "+returnFromFD);
+	    		System.out.println("returnFromFD= "+returnFromFD);
 	    	}
 			
 			if(returnFromFD!=null){
@@ -165,5 +166,138 @@ public class FDClientService {
 			
 	    	return null;  	 
 	}
+     
+     
+     public List<FDPlacementClass> getListFDPlacement(long accountNumber) { //opCode = 21
+		 System.out.println("<FDClientService><21> method is called with accountNumber = "+accountNumber);
+    	 
+	    	List<FDPlacementClass> placementList = new ArrayList<FDPlacementClass>();
+			String returnFromFD = null;
+			String opCodeString=null;
+			
+			String amountNumberString = null;
+			String amountString = null;
+			String interestRateString = null;
+			String timeStartedString = null;
+			String timeToEndString = null;
+			String idPib = null;
+			String txnNumber = null;
+			
+			amountNumberString = Long.toString(accountNumber);
+			
+			returnFromFD=sendRequestFD("21|"+amountNumberString+"|filler|filler|filler|filler|filler");
+    		System.out.println("returnFromFD= "+returnFromFD);
+	    	
+			
+			if(returnFromFD!=null){
+				String[] postParse = returnFromFD.split("[|]+");
+				opCodeString = postParse[0];
+				int j= postParse.length;
+				
+				//active
+				if(opCodeString.equals("29")){
+					int i=1;
+					while(i!=j){
+						amountNumberString = postParse[i];
+						i++;
+						amountString = postParse[i];
+						i++;
+						interestRateString = postParse[i];
+						i++;
+						timeStartedString = postParse[i];
+						i++;
+						timeToEndString = postParse[i];
+						i++;
+						idPib = postParse[i];
+						i++;
+						txnNumber = postParse[i];
+						i++;
+								
+						long accountNumber1 = Long.parseLong(amountNumberString);
+						double amount = Double.parseDouble(amountString);
+						double interestRate = Double.parseDouble(interestRateString);
+						long timeStarted = Long.parseLong(timeStartedString);
+						long timeToEnd = Long.parseLong(timeToEndString);
+						
+						FDPlacementClass f = new FDPlacementClass();
+						f.setAccountNumber(accountNumber1);
+						f.setAmount(amount);
+						f.setIdPib(idPib);
+						f.setInterestRate(interestRate);
+						f.setTimeStarted(timeStarted);
+						f.setTimeToEnd(timeToEnd);
+						f.setTxnNumber(txnNumber);
+						
+						placementList.add(f);
+						
+					}	
+				}
+					return placementList;
+			}
+			else{
+				System.out.println("<FDClientService><21>returnFromFD is null");
+			}
+			
+	    	return null;  	 
+	}
+
+     public double withdraw(long accountNumber ,double amount){//opCode =31
+    	 System.out.println("<FDClientService><31> method is called with accountNumber = "+accountNumber +" amount = "+amount);
+    	 	String opCodeString=null;
+	    	double amountReturn=-1;
+	    	
+	    	String accountNumberString = Long.toString(accountNumber);
+	    	String amountString=Double.toString(amount);
+
+			String returnFromFD=sendRequestFD("31|"+accountNumberString+"|"+amountString+"|filler|filler|filler|filler|filler");
+ 		System.out.println("returnFromFD= "+returnFromFD);
+	    	
+			
+			if(returnFromFD!=null){
+				String[] postParse = returnFromFD.split("[|]+");
+				opCodeString = postParse[0];
+				int j= postParse.length;
+				
+				//active
+				if(opCodeString.equals("39")){
+					amountReturn= Double.parseDouble(postParse[1]);
+					
+				}
+				else
+					System.out.println("<FDClientService><31>returnFromFD is null");
+				
+			}
+			return amountReturn;  	 
+			}
+     
+     public double deposit(long accountNumber ,double amount){//opCode =41
+    	 System.out.println("<FDClientService><41> method is called with accountNumber = "+accountNumber +" amount = "+amount);
+    	 	String opCodeString=null;
+	    	double amountReturn=-1;
+	    	
+	    	String accountNumberString = Long.toString(accountNumber);
+	    	String amountString=Double.toString(amount);
+
+			String returnFromFD=sendRequestFD("41|"+accountNumberString+"|"+amountString+"|filler|filler|filler|filler|filler");
+ 		System.out.println("returnFromFD= "+returnFromFD);
+	    	
+			
+			if(returnFromFD!=null){
+				String[] postParse = returnFromFD.split("[|]+");
+				opCodeString = postParse[0];
+				int j= postParse.length;
+				
+				//active
+				if(opCodeString.equals("49")){
+					amountReturn= Double.parseDouble(postParse[1]);
+					
+				}
+				else
+					System.out.println("<FDClientService><41>returnFromFD is null");
+				
+			}
+			return amountReturn;  	 
+			}
+
 }
 

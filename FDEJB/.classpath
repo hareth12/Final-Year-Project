@@ -14,5 +14,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="oracle.eclipse.tools.weblogic.lib.application/FD"/>
 	<classpathentry kind="src" path="/FDAccountEJB"/>
+	<classpathentry kind="src" path="/FDPlacementEJB"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

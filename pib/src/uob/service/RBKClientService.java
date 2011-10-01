@@ -536,5 +536,66 @@ public class RBKClientService {
 	return -1;
 	
 	}
+	
+	
+	
+	public double withdraw(long accountNumber ,double amount){//opCode =101
+   	 System.out.println("<RBKClientService><101> method is called with accountNumber = "+accountNumber +" amount = "+amount);
+   	 	String opCodeString=null;
+	    	double amountReturn=-1;
+	    	
+	    	String accountNumberString = Long.toString(accountNumber);
+	    	String amountString=Double.toString(amount);
+
+			String returnFromFD=sendRequestRBK("101|"+accountNumberString+"|"+amountString+"|filler|filler|filler|filler|filler");
+		System.out.println("returnFromFD= "+returnFromFD);
+	    	
+			
+			if(returnFromFD!=null){
+				String[] postParse = returnFromFD.split("[|]+");
+				opCodeString = postParse[0];
+				int j= postParse.length;
+				
+				//active
+				if(opCodeString.equals("109")){
+					amountReturn= Double.parseDouble(postParse[1]);
+					
+				}
+				else
+					System.out.println("<RBKClientService><101>returnFromFD is null");
+				
+			}
+			return amountReturn;  	 
+			}
+    
+    public double deposit(long accountNumber ,double amount){//opCode =111
+   	 System.out.println("<RBKClientService><111> method is called with accountNumber = "+accountNumber +" amount = "+amount);
+   	 	String opCodeString=null;
+	    	double amountReturn=-1;
+	    	
+	    	String accountNumberString = Long.toString(accountNumber);
+	    	String amountString=Double.toString(amount);
+
+			String returnFromFD=sendRequestRBK("111|"+accountNumberString+"|"+amountString+"|filler|filler|filler|filler|filler");
+		System.out.println("returnFromFD= "+returnFromFD);
+	    	
+			
+			if(returnFromFD!=null){
+				String[] postParse = returnFromFD.split("[|]+");
+				opCodeString = postParse[0];
+				int j= postParse.length;
+				
+				//active
+				if(opCodeString.equals("119")){
+					amountReturn= Double.parseDouble(postParse[1]);
+					
+				}
+				else
+					System.out.println("<RBKClientService><111>returnFromFD is null");
+				
+			}
+			return amountReturn;  	 
+			}
+	
 }
 

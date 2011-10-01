@@ -49,6 +49,13 @@
             <li><a href="/pib/FundTransfer2FA1">Make Transfer</a></li>
         </ul>
     </li>
+     <li class="dir">Fixed Deposit
+        <ul>
+            <li><a href="/pib/FDEnquiry1">Enquiry</a></li>
+            <li><a href="/pib/FDTransfer1">Transfer Fund</a></li>
+            <li><a href="/pib/FDMakePlacemen1">Make Placement</a></li>
+        </ul>
+    </li>        
     <li class="dir">View Rates
         <ul>
             <li><a href="./">View Unit Trust Prices</a></li>  

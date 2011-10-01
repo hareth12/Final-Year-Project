@@ -35,7 +35,6 @@ public class Landing2FA extends HttpServlet {
 		Cookie[] cookies = request.getCookies();
 		String userHash = getClientHash(cookies);
 		SSOClientService ssocs = new SSOClientService();
-		FDClientService fdcs = new FDClientService();
 		
 		//need to change to 2FA later
 		if(userHash!=null){
@@ -53,8 +52,6 @@ public class Landing2FA extends HttpServlet {
 		if(validCookieBool){
 			String userName=ssocs.getLoginName(userHash);
 			request.setAttribute("userName", userName);
-			
-			fdcs.getListOfFDAccount(userName);
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/Landing/2FA.jsp");
 			if (dispatcher != null) dispatcher.forward(request, response);

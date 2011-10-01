@@ -11,6 +11,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 
+
 /**
  * Session Bean implementation class Account
  */
@@ -139,7 +140,34 @@ public class Account implements AccountRemote {
 		return accountNumber;
 	}
 	
-	
+	public double deposit(long accountNumber, Double amount) {
+		AccountClass x = em.find(AccountClass.class, accountNumber);
+		if(x!=null){
+			double newAvailable = x.getAvailableBalance()+amount;
+			double newCurrent = x.getCurrentBalance()+amount;
+			x.setAvailableBalance(newAvailable);
+			x.setCurrentBalance(newCurrent);
+			return amount;
+		}
+		return -1;
+	}
+
+	@Override
+	public double withdraw(long accountNumber, Double amount) {
+		AccountClass x = em.find(AccountClass.class, accountNumber);
+		if(x!=null){
+			if(x.getAvailableBalance()>=amount)
+				if(x.getCurrentBalance()>=amount){
+					double newAvailable = x.getAvailableBalance()-amount;
+					double newCurrent = x.getCurrentBalance()-amount;
+					x.setAvailableBalance(newAvailable);
+					x.setCurrentBalance(newCurrent);
+					return amount;
+					
+				}
+		}
+		return -1;
+	}
 
 
 }

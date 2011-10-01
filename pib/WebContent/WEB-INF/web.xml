@@ -259,4 +259,14 @@
     <servlet-name>ChangePassword2FA2</servlet-name>
     <url-pattern>/ChangePassword2FA2</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FDEnquiry1</display-name>
+    <servlet-name>FDEnquiry1</servlet-name>
+    <servlet-class>uob.fixedDeposit.FDEnquiry1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FDEnquiry1</servlet-name>
+    <url-pattern>/FDEnquiry1</url-pattern>
+  </servlet-mapping>
 </web-app>

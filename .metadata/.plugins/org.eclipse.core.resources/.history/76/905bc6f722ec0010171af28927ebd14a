@@ -1,0 +1,273 @@
+package com.FD.bean;
+
+import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.List;
+import java.util.Properties;
+
+import javax.ejb.ActivationConfigProperty;
+import javax.ejb.EJB;
+import javax.ejb.MessageDriven;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.MessageListener;
+import javax.jms.Queue;
+import javax.jms.QueueConnection;
+import javax.jms.QueueConnectionFactory;
+import javax.jms.QueueSender;
+import javax.jms.QueueSession;
+import javax.jms.TextMessage;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+import com.FDAccount.FDAccountClass;
+import com.FDAccount.FDAccountRemote;
+import com.FDPlacement.FDPlacementClass;
+import com.FDPlacement.FDPlacementRemote;
+
+@MessageDriven(mappedName = "FDQueue", activationConfig = { @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue") })
+public class FD implements MessageListener {
+	QueueConnection cnn = null;
+    QueueSender sender = null;
+    QueueSession session = null;
+    InitialContext ctx;
+    Hashtable ht = new Hashtable();
+	
+    
+    //==========
+	private void replyToServlet(String message){	
+        try {
+        	ht.put(Context.INITIAL_CONTEXT_FACTORY, "weblogic.jndi.WLInitialContextFactory");
+        	ht.put(Context.PROVIDER_URL,"t3://localhost:7001");
+
+            ctx = new InitialContext(ht);
+            Queue queue = (Queue) ctx.lookup("FDReplyQueue");
+            QueueConnectionFactory factory = (QueueConnectionFactory) ctx.lookup("FDReplyConnectionFactory");
+            cnn = factory.createQueueConnection();
+            session = cnn.createQueueSession(false, QueueSession.AUTO_ACKNOWLEDGE);
+            TextMessage msg = session.createTextMessage();
+
+            msg.setText(message);
+            sender = session.createSender(queue);
+            sender.send(msg);
+            
+           
+            System.out.println("<fd><replyToServlet>");
+            session.close(); // this is important.
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+	}
+	//==========
+	
+	
+	@EJB (mappedName="FDAccount")
+	FDAccountRemote fdAcct;
+	
+	@EJB (mappedName="FDPlacement")
+	FDPlacementRemote fdPlacement;
+	
+	/**
+	 * Default constructor.
+	 */
+	public FD() {
+		
+	}
+
+	/**
+	 * @see MessageListener#onMessage(Message)
+	 */
+	public void onMessage(Message message) {
+		TextMessage tmsg = null;
+		tmsg = (TextMessage) message;
+		int opCode = 99;
+		String parameter1 = null;
+		String parameter2 = null;
+		String parameter3 = null;
+		String parameter4 = null;
+		String parameter5 = null;
+		String parameter6 = null;
+		
+		//parsing message into opcode, and parameters
+		String preParse;
+		try {
+			preParse = tmsg.getText();
+			String[] postParse=preParse.split("[|]+");
+			opCode=Integer.parseInt(postParse[0]);
+
+			parameter1=postParse[1];
+			parameter2=postParse[2];
+			parameter3=postParse[3];
+			parameter4=postParse[4];
+			parameter5=postParse[5];
+			parameter6=postParse[6];
+			
+		} catch (JMSException e1) {
+
+			e1.printStackTrace();
+		}
+
+		
+			switch(opCode){
+				case 11:
+				try {
+						if(parameter1!=null){
+							String idPib = parameter1;
+							getAccountList(idPib);	
+						}
+						
+					} catch (Exception e1) {
+						e1.printStackTrace();
+						System.out.println("<fd><11>failed");
+					}
+					break;
+					
+				case 21:
+					try {
+						if(parameter1!=null){
+							String accountNumberString = parameter1;
+							long accountNumber = Long.parseLong(accountNumberString);
+							getPlacementList(accountNumber);	
+						}
+						
+					} catch (Exception e1) {
+						e1.printStackTrace();
+						System.out.println("<fd><21>failed");
+					}
+					
+					break;
+				
+				case 31:
+					try{
+						if(parameter1!=null){
+							//merely renaming
+							String accountNumberString = parameter1;
+							String amountString = parameter2;
+							
+							long accountNumber = Long.parseLong(accountNumberString);
+							Double amount = Double.parseDouble(amountString);
+							withdraw(accountNumber,amount);
+						}
+					}catch(Exception e1){
+						e1.printStackTrace();
+						System.out.println("<fd><31>failed");
+					}
+					break;	
+					
+				case 41:
+					try{
+						if(parameter1!=null){
+							//merely renaming
+							String accountNumberString = parameter1;
+							String amountString = parameter2;
+							
+							long accountNumber = Long.parseLong(accountNumberString);
+							Double amount = Double.parseDouble(amountString);
+							deposit(accountNumber,amount);
+						}
+					}catch(Exception e1){
+						e1.printStackTrace();
+						System.out.println("<fd><41>failed");
+					}
+					break;	
+					
+				case 51:
+					
+					break;	
+					
+				case 61:
+					
+					break;	
+					
+				case 71:
+
+					break;	
+				
+				case 81:
+					
+					break;	
+					
+				case 99:
+					System.out.println("<fd><preparse>failed");
+					break;
+			}		
+	}
+
+	private void deposit(long accountNumber, Double amount) {
+		double amountReturn = fdAcct.deposit(accountNumber,amount);
+		
+	}
+
+	private void withdraw(long accountNumber, Double amount) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void getPlacementList(long accountNumber) {
+		List<FDPlacementClass> placementList = fdPlacement.getPlacementList(accountNumber);
+		if(!placementList.isEmpty()){
+			int i = 0;
+			String replyString = "29|";
+			int size = placementList.size();
+			String holdingString = null;
+			
+			while(i!=size){
+				holdingString = Long.toString(placementList.get(i).getAccountNumber());
+				replyString = replyString + holdingString+"|";
+				replyString = replyString + Double.toString( placementList.get(i).getAmount() )   +"|";
+				holdingString = Double.toString(placementList.get(i).getInterestRate());
+				replyString = replyString + holdingString+"|";
+				
+				holdingString = Long.toString(placementList.get(i).getTimeStarted());
+				replyString = replyString + holdingString+"|";
+				holdingString = Long.toString(placementList.get(i).getTimeToEnd());
+				replyString = replyString + holdingString+"|";
+				
+				holdingString = placementList.get(i).getIdPib();
+				replyString = replyString + holdingString+"|";
+				holdingString = placementList.get(i).getTxnNumber();
+				replyString = replyString + holdingString+"|";
+				i++;
+			}
+			
+			replyToServlet(replyString);
+		}else
+		{
+			replyToServlet("20||");
+		}		
+	}
+
+	private void getAccountList(String idPib) {
+		List<FDAccountClass> accountList = fdAcct.getAccountList(idPib);
+		if(!accountList.isEmpty()){
+			int i = 0;
+			String replyString = "19|";
+			int size = accountList.size();
+			String holdingString = null;
+			
+			while(i!=size){
+				holdingString = Long.toString(accountList.get(i).getAccountNumber());
+				replyString = replyString + holdingString+"|";
+				replyString = replyString + Double.toString( accountList.get(i).getCurrentBalance() )   +"|";
+				holdingString = Double.toString(accountList.get(i).getAvailableBalance());
+				replyString = replyString + holdingString+"|";
+				holdingString = accountList.get(i).getIdPib();
+				replyString = replyString + holdingString+"|";
+				holdingString = accountList.get(i).getAccountType();
+				replyString = replyString + holdingString+"|";
+				i++;
+			}
+			
+			replyToServlet(replyString);
+		}else
+		{
+			replyToServlet("10||");
+		}
+		
+	}
+	
+
+}
+
+

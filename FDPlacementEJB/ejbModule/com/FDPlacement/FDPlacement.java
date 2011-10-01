@@ -10,7 +10,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-
 @Stateful(mappedName="FDPlacement")
 public class FDPlacement implements FDPlacementRemote {
 
@@ -34,9 +33,14 @@ public class FDPlacement implements FDPlacementRemote {
 
 
 	@Override
-	public void testing(String a) {
-		// TODO Auto-generated method stub
-		System.out.println("inside testing function of fdplacement");
+	public List<FDPlacementClass> getPlacementList(long accountNumber) {
+		System.out.println("<FDPlacement><getPlacementList>accountNumber = "+accountNumber);
+				
+		Query q = em.createQuery("SELECT m from FDPlacementClass m where m.accountNumber = ?1 ");
+		q.setParameter(1, accountNumber);
+		List<FDPlacementClass> resultList=q.getResultList();
+		
+		return resultList;
 	}
 	
 	

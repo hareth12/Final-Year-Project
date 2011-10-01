@@ -240,6 +240,40 @@ public class RBK implements MessageListener {
 					}
 					break;	
 					
+				case 101:
+					try{
+						if(parameter1!=null){
+							//merely renaming
+							String accountNumberString = parameter1;
+							String amountString = parameter2;
+							
+							long accountNumber = Long.parseLong(accountNumberString);
+							Double amount = Double.parseDouble(amountString);
+							withdraw(accountNumber,amount);
+						}
+					}catch(Exception e1){
+						e1.printStackTrace();
+						System.out.println("<rbk><withdraw>failed");
+					}
+					break;	
+					
+				case 111:
+					try{
+						if(parameter1!=null){
+							//merely renaming
+							String accountNumberString = parameter1;
+							String amountString = parameter2;
+							
+							long accountNumber = Long.parseLong(accountNumberString);
+							Double amount = Double.parseDouble(amountString);
+							deposit(accountNumber,amount);
+						}
+					}catch(Exception e1){
+						e1.printStackTrace();
+						System.out.println("<rbk><deposit>failed");
+					}
+					break;	
+					
 				case 99:
 					System.out.println("<rbk><preparse>failed");
 					break;
@@ -247,6 +281,26 @@ public class RBK implements MessageListener {
 		
 			
 	}
+	
+	private void deposit(long accountNumber, Double amount) {
+		double amountReturn = acct.deposit(accountNumber,amount);
+		if(amountReturn!=-1){
+			String amountReturnString = Double.toString(amountReturn);
+			replyToServlet("119|"+amountReturnString+"|");
+		}else
+			replyToServlet("110||");
+	}
+
+	private void withdraw(long accountNumber, Double amount) {
+		double amountReturn = acct.withdraw(accountNumber,amount);
+		if(amountReturn!=-1){
+			String amountReturnString = Double.toString(amountReturn);
+			replyToServlet("109|"+amountReturnString+"|");
+		}else
+			replyToServlet("100||");
+		
+	}
+	
 	
 	private void getAccountLink(long fromAccount)  throws Exception{ //opCode 31
 		List<AccountLinkDataStructure> x = accountLink.getAccountLink(fromAccount);

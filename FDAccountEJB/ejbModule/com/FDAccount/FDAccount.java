@@ -68,4 +68,34 @@ public class FDAccount implements FDAccountRemote {
 	
 		return resultList;
 	}
+
+	@Override
+	public double deposit(long accountNumber, Double amount) {
+		FDAccountClass x = em.find(FDAccountClass.class, accountNumber);
+		if(x!=null){
+			double newAvailable = x.getAvailableBalance()+amount;
+			double newCurrent = x.getCurrentBalance()+amount;
+			x.setAvailableBalance(newAvailable);
+			x.setCurrentBalance(newCurrent);
+			return amount;
+		}
+		return -1;
+	}
+
+	@Override
+	public double withdraw(long accountNumber, Double amount) {
+		FDAccountClass x = em.find(FDAccountClass.class, accountNumber);
+		if(x!=null){
+			if(x.getAvailableBalance()>=amount)
+				if(x.getCurrentBalance()>=amount){
+					double newAvailable = x.getAvailableBalance()-amount;
+					double newCurrent = x.getCurrentBalance()-amount;
+					x.setAvailableBalance(newAvailable);
+					x.setCurrentBalance(newCurrent);
+					return amount;
+					
+				}
+		}
+		return -1;
+	}
 }
