@@ -6,6 +6,6 @@ import javax.ejb.Remote;
 
 @Remote
 public interface FDAccountRemote {
-	public void testing(String a);
+	public List<FDAccountClass> getAccountList(String idPib);
 }
 

@@ -23,7 +23,6 @@ import javax.naming.NamingException;
 
 import com.FDAccount.FDAccountClass;
 import com.FDAccount.FDAccountRemote;
-import com.history.HistoryData;
 
 @MessageDriven(mappedName = "FDQueue", activationConfig = { @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue") })
 public class FD implements MessageListener {
@@ -153,22 +152,22 @@ public class FD implements MessageListener {
 	}
 
 	private void getAccountList(String idPib) {
-		List<FDAccountClass> accountListList = fdAcct.getAccountList(idPib);
-		if(!accountListList.isEmpty()){
+		List<FDAccountClass> accountList = fdAcct.getAccountList(idPib);
+		if(!accountList.isEmpty()){
 			int i = 0;
 			String replyString = "19|";
-			int size = accountListList.size();
+			int size = accountList.size();
 			String holdingString = null;
 			
 			while(i!=size){
-				holdingString = Long.toString(accountListList.get(i).getTime());
+				holdingString = Long.toString(accountList.get(i).getAccountNumber());
 				replyString = replyString + holdingString+"|";
-				replyString = replyString + accountListList.get(i).getTxnName()+"|";
-				holdingString = Double.toString(accountListList.get(i).getAmount());
+				replyString = replyString + Double.toString( accountList.get(i).getCurrentBalance() )   +"|";
+				holdingString = Double.toString(accountList.get(i).getAvailableBalance());
 				replyString = replyString + holdingString+"|";
-				holdingString = accountListList.get(i).getStatus();
+				holdingString = accountList.get(i).getIdPib();
 				replyString = replyString + holdingString+"|";
-				holdingString = Long.toString(accountListList.get(i).getTxnNumber());
+				holdingString = accountList.get(i).getAccountType();
 				replyString = replyString + holdingString+"|";
 				i++;
 			}

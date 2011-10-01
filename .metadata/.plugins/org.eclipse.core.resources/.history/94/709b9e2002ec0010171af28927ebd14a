@@ -1,0 +1,53 @@
+package com.FDAccount;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import javax.ejb.Stateful;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+/**
+ * Session Bean implementation class Account
+ */
+@Stateful(mappedName="FDAccount")
+public class FDAccount implements FDAccountRemote {
+
+	
+	@PersistenceContext(unitName="FDAccount-unit")
+	private EntityManager em;
+
+	
+	private long randomAccountNumberGenerator(){
+		
+		String AB = "0123456789";
+		Random rnd = new Random();
+		StringBuilder sb = new StringBuilder(10);
+		for( int i = 0; i < 10; i++ ) 
+		      sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );		
+		String resultString=sb.toString();	
+		long resultInt=Long.parseLong(resultString);	
+		
+		return resultInt;
+	}
+
+
+	@Override
+	public void testing(String a) {
+		// TODO Auto-generated method stub
+		System.out.println("inside testing function of FDAccount");
+	}
+
+
+	@Override
+	public List<FDAccountClass> getAccountList(String idPib) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
+}
