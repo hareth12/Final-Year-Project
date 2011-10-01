@@ -269,4 +269,14 @@
     <servlet-name>FDEnquiry1</servlet-name>
     <url-pattern>/FDEnquiry1</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FDTransfer1</display-name>
+    <servlet-name>FDTransfer1</servlet-name>
+    <servlet-class>uob.fixedDeposit.FDTransfer1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FDTransfer1</servlet-name>
+    <url-pattern>/FDTransfer1</url-pattern>
+  </servlet-mapping>
 </web-app>
