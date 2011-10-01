@@ -1,0 +1,18 @@
+package com.FDPlacement;
+
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class FDPlacemet
+ */
+@Stateless
+public class FDPlacement implements FDPlacementRemote {
+
+    /**
+     * Default constructor. 
+     */
+    public FDPlacement() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

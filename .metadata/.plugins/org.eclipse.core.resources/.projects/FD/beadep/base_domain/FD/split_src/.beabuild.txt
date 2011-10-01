@@ -1,0 +1,4 @@
+C\:/Users/ngzhongqin/workspace/FinalYearProject/FD/EarContent/APP-INF/classes = APP-INF/classes
+C\:/Users/ngzhongqin/workspace/FinalYearProject/FDAccountEJB/build/classes = FDAccountEJB.jar
+C\:/Users/ngzhongqin/workspace/FinalYearProject/FDEJB/build/classes = FDEJB.jar
+C\:/Users/ngzhongqin/workspace/FinalYearProject/FDPlacementEJB/build/classes = FDPlacementEJB.jar

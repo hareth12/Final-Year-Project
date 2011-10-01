@@ -1,0 +1,18 @@
+package com.FDAccount;
+
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class FDAccount
+ */
+@Stateless
+public class FDAccount implements FDAccountRemote {
+
+    /**
+     * Default constructor. 
+     */
+    public FDAccount() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

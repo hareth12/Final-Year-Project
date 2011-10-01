@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="70" version="2.0">
+<workbench progressCount="73" version="2.0">
 <workbenchAdvisor/>
 <window height="724" maximized="true" width="683" x="682" y="89">
 <fastViewData fastViewLocation="1024">
@@ -47,31 +47,27 @@
 <part id="2"/>
 <part id="3"/>
 <part id="4"/>
-<part id="5"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="1FA.jsp" partName="1FA.jsp" path="C:/Users/ngzhongqin/workspace/FinalYearProject/pib/WebContent/Landing/1FA.jsp" title="1FA.jsp" tooltip="pib/WebContent/Landing/1FA.jsp" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/pib/WebContent/Landing/1FA.jsp"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ChangePassword2FA.java" partName="ChangePassword2FA.java" path="C:/Users/ngzhongqin/workspace/FinalYearProject/pib/src/uob/password/ChangePassword2FA.java" title="ChangePassword2FA.java" tooltip="pib/src/uob/password/ChangePassword2FA.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/pib/src/uob/password/ChangePassword2FA.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="3335" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="enquiry1FA.jsp" partName="enquiry1FA.jsp" path="C:/Users/ngzhongqin/workspace/FinalYearProject/fyp2/WebContent/enquiry/enquiry1FA.jsp" title="enquiry1FA.jsp" tooltip="fyp2/WebContent/enquiry/enquiry1FA.jsp" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fyp2/WebContent/enquiry/enquiry1FA.jsp"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ChangePassword2FA2.java" partName="ChangePassword2FA2.java" path="C:/Users/ngzhongqin/workspace/FinalYearProject/pib/src/uob/password/ChangePassword2FA2.java" title="ChangePassword2FA2.java" tooltip="pib/src/uob/password/ChangePassword2FA2.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/pib/src/uob/password/ChangePassword2FA2.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="2926" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Logout.java" partName="Logout.java" path="C:/Users/ngzhongqin/workspace/FinalYearProject/pib/src/uob/login/Logout.java" title="Logout.java" tooltip="pib/src/uob/login/Logout.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/pib/src/uob/login/Logout.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1173" selectionTopPixel="0"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ChangePassword2FA2.java" partName="ChangePassword2FA2.java" path="C:/Users/ngzhongqin/workspace/FinalYearProject/pibChinese/src/uob/password/ChangePassword2FA2.java" title="ChangePassword2FA2.java" tooltip="pibChinese/src/uob/password/ChangePassword2FA2.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/pibChinese/src/uob/password/ChangePassword2FA2.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2926" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="2FA.jsp" partName="2FA.jsp" path="C:/Users/ngzhongqin/workspace/FinalYearProject/pib/WebContent/Landing/2FA.jsp" title="2FA.jsp" tooltip="pib/WebContent/Landing/2FA.jsp" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/pib/WebContent/Landing/2FA.jsp"/>
+<editor id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="login2FA.jsp" partName="login2FA.jsp" path="C:/Users/ngzhongqin/workspace/FinalYearProject/pib/WebContent/Login/login2FA.jsp" title="login2FA.jsp" tooltip="pib/WebContent/Login/login2FA.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/pib/WebContent/Login/login2FA.jsp"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SSO.java" partName="SSO.java" path="C:/Users/ngzhongqin/workspace/FinalYearProject/SSOEJB/ejbModule/com/sso/SSO.java" title="SSO.java" tooltip="SSOEJB/ejbModule/com/sso/SSO.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SSOEJB/ejbModule/com/sso/SSO.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3072" selectionTopPixel="891"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SSOClientService.java" partName="SSOClientService.java" path="C:/Users/ngzhongqin/workspace/FinalYearProject/pib/src/uob/service/SSOClientService.java" title="SSOClientService.java" tooltip="pib/src/uob/service/SSOClientService.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/pib/src/uob/service/SSOClientService.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="12239" selectionTopPixel="6069"/>
+<editor activePart="true" focus="true" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="login2FA.jsp" partName="login2FA.jsp" path="C:/Users/ngzhongqin/workspace/FinalYearProject/pibChinese/WebContent/Login/login2FA.jsp" title="login2FA.jsp" tooltip="pibChinese/WebContent/Login/login2FA.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/pibChinese/WebContent/Login/login2FA.jsp"/>
 </editor>
 </editors>
 <views>
@@ -123,7 +119,7 @@
 <viewState CommonNavigator.LINKING_ENABLED="0"/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="org.eclipse.jst.j2ee.J2EEPerspective">
+<perspectives activePart="org.eclipse.jst.pagedesigner.PageDesignerEditor" activePerspective="org.eclipse.jst.j2ee.J2EEPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.ui.internal.ide.application.ResourcePerspective" id="org.eclipse.ui.resourcePerspective" label="Resource"/>
 <alwaysOnActionSet id="org.eclipse.help.internal.ui.HelpActionSet"/>
@@ -318,8 +314,8 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@32124f5" ratio="0.20632531" ratioLeft="274" ratioRight="1054" relationship="2" relative="topLeft">
-<folder appearance="2" expanded="0">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@32124f5" ratio="0.20481928" ratioLeft="272" ratioRight="1056" relationship="2" relative="topLeft">
+<folder appearance="2" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
@@ -352,7 +348,7 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@32f5bb3" ratio="0.24976349" ratioLeft="264" ratioRight="793" relationship="2" relative="org.eclipse.ui.internal.ViewStack@32124f5">
-<folder appearance="2" expanded="0">
+<folder appearance="2" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
@@ -366,7 +362,7 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.28722382" ratioLeft="299" ratioRight="742" relationship="2" relative="org.eclipse.ui.internal.ViewStack@362ecc1"/>
 </mainWindow>
-<detachedWindow height="808" width="1288" x="-1284" y="-4">
+<detachedWindow height="800" width="1288" x="-1284" y="-4">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -383,117 +379,187 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/enquiry/enquiry2FA.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/Landing/2FA.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/Password/changePassword1FA2Fail.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SSOEJB/ejbModule/com/sso/SSO.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/addPayee/addPayee2FA1.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/addPayee/addPayee2FA1Action.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/addPayee/addPayee2FA1Action2.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/addPayee/addPayeeNotSuccessful.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/addPayee/addPayeeSuccess.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/fundTransfer/fundTransfer2FA1.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/fundTransfer/fundTransfer2FA1Action.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/fundTransfer/fundTransfer2FA1Action2.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/fundTransfer/fundTransfer2FANotSuccessful.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/fundTransfer/fundTransfer2FASuccess.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/History/ViewOnlineActivity.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/pib/WebContent/History/ViewOnlineActivity.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/Landing/1FA.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/pib/WebContent/Landing/1FA.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/enquiry/enquiry1FA.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/Password/changePassword1FA.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/Password/changePassword1FA2Success.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/Password/changePassword2FA.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/Password/changePassword2FA2Fail.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/Password/changePassword2FA2Success.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/Landing/1FA.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/fyp2/WebContent/enquiry/enquiry1FA.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/fyp2/WebContent/enquiry/enquiry1FA.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/pib/src/uob/login/Logout.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/Login/logout.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/Login/loginFail.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/pib/src/uob/service/SSOClientService.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/pibChinese/WebContent/addPayee/addPayeeSuccess.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pibChinese/WebContent/fundTransfer/fundTransfer2FA1.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/pibChinese/WebContent/fundTransfer/fundTransfer2FA1.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pibChinese/WebContent/fundTransfer/fundTransfer2FA1Action.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/pibChinese/WebContent/fundTransfer/fundTransfer2FA1Action.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pibChinese/WebContent/fundTransfer/fundTransfer2FA1Action2.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/pibChinese/WebContent/fundTransfer/fundTransfer2FA1Action2.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pibChinese/WebContent/fundTransfer/fundTransfer2FANotSuccessful.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/pibChinese/WebContent/fundTransfer/fundTransfer2FANotSuccessful.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pibChinese/WebContent/fundTransfer/fundTransfer2FASuccess.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/pibChinese/WebContent/fundTransfer/fundTransfer2FASuccess.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pibChinese/WebContent/History/ViewOnlineActivity.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/pibChinese/WebContent/History/ViewOnlineActivity.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pibChinese/WebContent/Landing/2FA.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/pibChinese/WebContent/Landing/2FA.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pibChinese/WebContent/Landing/1FA.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/pibChinese/WebContent/Landing/1FA.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pibChinese/WebContent/enquiry/enquiry1FA.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/pibChinese/WebContent/enquiry/enquiry1FA.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pibChinese/WebContent/enquiry/enquiry2FA.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/pibChinese/WebContent/enquiry/enquiry2FA.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/pib/src/uob/password/ChangePassword1FA.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/pibChinese/src/uob/password/ChangePassword1FA.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/pib/src/uob/password/ChangePassword1FA2.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/pibChinese/src/uob/password/ChangePassword1FA2.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/pib/src/uob/password/ChangePassword2FA.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/pibChinese/src/uob/password/ChangePassword2FA.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/pib/src/uob/password/ChangePassword2FA2.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/pibChinese/src/uob/password/ChangePassword2FA2.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pib/WebContent/Login/login2FA.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/pib/WebContent/Login/login2FA.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" path="/pibChinese/WebContent/Login/login2FA.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/pibChinese/WebContent/Login/login2FA.jsp"/>
 </editors>
-<item historyLabel="2FA.jsp" index="1"/>
-<item historyLabel="addPayee2FA1.jsp" index="4"/>
-<item historyLabel="addPayee2FA1Action.jsp" index="5"/>
-<item historyLabel="addPayee2FA1Action2.jsp" index="6"/>
-<item historyLabel="addPayeeNotSuccessful.jsp" index="7"/>
-<item historyLabel="addPayeeSuccess.jsp" index="8"/>
-<item historyLabel="enquiry2FA.jsp" index="0"/>
-<item historyLabel="fundTransfer2FA1.jsp" index="9"/>
-<item historyLabel="fundTransfer2FA1Action.jsp" index="10"/>
-<item historyLabel="fundTransfer2FA1Action2.jsp" index="11"/>
-<item historyLabel="fundTransfer2FANotSuccessful.jsp" index="12"/>
-<item historyLabel="fundTransfer2FASuccess.jsp" index="13"/>
-<item historyLabel="ViewOnlineActivity.jsp" index="14">
-<position info="not_deleted" x="3163" y="0"/>
+<item historyLabel="addPayeeSuccess.jsp" index="0">
+<position info="not_deleted" x="3486" y="0"/>
 </item>
-<item historyLabel="ViewOnlineActivity.jsp" index="15">
-<position info="not_deleted" x="1333" y="0"/>
+<item historyLabel="fundTransfer2FA1.jsp" index="1">
+<position info="not_deleted" x="1676" y="825"/>
 </item>
-<item historyLabel="ViewOnlineActivity.jsp" index="15">
-<position info="not_deleted" x="1335" y="0"/>
-</item>
-<item historyLabel="fundTransfer2FA1Action2.jsp" index="11"/>
-<item historyLabel="ViewOnlineActivity.jsp" index="14"/>
-<item historyLabel="fundTransfer2FASuccess.jsp" index="13"/>
-<item historyLabel="fundTransfer2FANotSuccessful.jsp" index="12"/>
-<item historyLabel="fundTransfer2FA1Action.jsp" index="10"/>
-<item historyLabel="fundTransfer2FA1.jsp" index="9"/>
-<item historyLabel="enquiry2FA.jsp" index="0"/>
-<item historyLabel="addPayeeSuccess.jsp" index="8"/>
-<item historyLabel="addPayeeNotSuccessful.jsp" index="7"/>
-<item historyLabel="addPayee2FA1Action2.jsp" index="6"/>
-<item historyLabel="addPayee2FA1Action.jsp" index="5"/>
-<item historyLabel="addPayee2FA1.jsp" index="4"/>
-<item historyLabel="2FA.jsp" index="1"/>
-<item historyLabel="1FA.jsp" index="16">
+<item historyLabel="fundTransfer2FA1.jsp" index="2">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="1FA.jsp" index="17">
-<position/>
+<item historyLabel="fundTransfer2FA1.jsp" index="2">
+<position info="not_deleted" x="3396" y="0"/>
 </item>
-<item historyLabel="enquiry1FA.jsp" index="18"/>
-<item historyLabel="changePassword1FA.jsp" index="19"/>
-<item historyLabel="changePassword1FA2Fail.jsp" index="2"/>
-<item historyLabel="changePassword1FA2Success.jsp" index="20"/>
-<item historyLabel="changePassword2FA.jsp" index="21"/>
-<item historyLabel="changePassword2FA2Fail.jsp" index="22"/>
-<item historyLabel="changePassword2FA2Success.jsp" index="23"/>
-<item historyLabel="1FA.jsp" index="24"/>
-<item historyLabel="enquiry1FA.jsp" index="25">
+<item historyLabel="fundTransfer2FA1Action.jsp" index="3">
+<position info="not_deleted" x="1909" y="577"/>
+</item>
+<item historyLabel="fundTransfer2FA1Action.jsp" index="4">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="enquiry1FA.jsp" index="26">
-<position info="not_deleted" x="861" y="0"/>
+<item historyLabel="fundTransfer2FA1Action.jsp" index="4">
+<position info="not_deleted" x="3396" y="0"/>
 </item>
-<item historyLabel="enquiry1FA.jsp" index="26">
-<position info="not_deleted" x="1323" y="0"/>
+<item historyLabel="fundTransfer2FA1Action2.jsp" index="5">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Logout.java" index="27">
+<item historyLabel="fundTransfer2FA1Action2.jsp" index="6">
+<position info="not_deleted" x="1890" y="0"/>
+</item>
+<item historyLabel="fundTransfer2FA1Action2.jsp" index="6">
+<position info="not_deleted" x="3396" y="0"/>
+</item>
+<item historyLabel="fundTransfer2FANotSuccessful.jsp" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="fundTransfer2FANotSuccessful.jsp" index="8">
 <position info="not_deleted" x="1774" y="0"/>
 </item>
-<item historyLabel="logout.jsp" index="28"/>
-<item historyLabel="loginFail.jsp" index="29">
-<position info="not_deleted" x="550" y="78"/>
+<item historyLabel="fundTransfer2FANotSuccessful.jsp" index="8">
+<position info="not_deleted" x="3396" y="0"/>
 </item>
-<item historyLabel="logout.jsp" index="28"/>
-<item historyLabel="Logout.java" index="27">
-<position info="not_deleted" x="1173" y="0"/>
+<item historyLabel="fundTransfer2FASuccess.jsp" index="9">
+<position info="not_deleted" x="1793" y="102"/>
 </item>
-<item historyLabel="2FA.jsp" index="1">
-<position info="not_deleted" x="1618" y="70"/>
+<item historyLabel="fundTransfer2FASuccess.jsp" index="10">
+<position info="not_deleted" x="3316" y="85"/>
 </item>
-<item historyLabel="SSO.java" index="3">
-<position info="not_deleted" x="3072" y="0"/>
+<item historyLabel="ViewOnlineActivity.jsp" index="11">
+<position info="not_deleted" x="1676" y="825"/>
 </item>
-<item historyLabel="Logout.java" index="27">
-<position info="not_deleted" x="1173" y="0"/>
-</item>
-<item active="true" historyLabel="SSOClientService.java" index="30">
+<item historyLabel="ViewOnlineActivity.jsp" index="12">
 <position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ViewOnlineActivity.jsp" index="12">
+<position info="not_deleted" x="3396" y="0"/>
+</item>
+<item historyLabel="2FA.jsp" index="13">
+<position info="not_deleted" x="1550" y="62"/>
+</item>
+<item historyLabel="2FA.jsp" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="2FA.jsp" index="14">
+<position info="not_deleted" x="3486" y="0"/>
+</item>
+<item historyLabel="2FA.jsp" index="14">
+<position info="not_deleted" x="3396" y="0"/>
+</item>
+<item historyLabel="1FA.jsp" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="1FA.jsp" index="16">
+<position info="not_deleted" x="1041" y="0"/>
+</item>
+<item historyLabel="1FA.jsp" index="16">
+<position info="not_deleted" x="1959" y="0"/>
+</item>
+<item historyLabel="enquiry1FA.jsp" index="17">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="enquiry1FA.jsp" index="18">
+<position info="not_deleted" x="1394" y="0"/>
+</item>
+<item historyLabel="enquiry1FA.jsp" index="18">
+<position info="not_deleted" x="1959" y="0"/>
+</item>
+<item historyLabel="1FA.jsp" index="15"/>
+<item historyLabel="enquiry2FA.jsp" index="19">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="enquiry2FA.jsp" index="20">
+<position info="not_deleted" x="1774" y="0"/>
+</item>
+<item historyLabel="enquiry2FA.jsp" index="20">
+<position info="not_deleted" x="3396" y="0"/>
+</item>
+<item historyLabel="ChangePassword1FA.java" index="21">
+<position info="not_deleted" x="0" y="3366"/>
+</item>
+<item historyLabel="ChangePassword1FA.java" index="22">
+<position info="not_deleted" x="3366" y="0"/>
+</item>
+<item historyLabel="ChangePassword1FA.java" index="21">
+<position info="not_deleted" x="0" y="3366"/>
+</item>
+<item historyLabel="ChangePassword1FA2.java" index="23">
+<position info="not_deleted" x="0" y="2956"/>
+</item>
+<item historyLabel="ChangePassword1FA2.java" index="24">
+<position info="not_deleted" x="2956" y="0"/>
+</item>
+<item historyLabel="ChangePassword1FA2.java" index="23">
+<position info="not_deleted" x="0" y="2956"/>
+</item>
+<item historyLabel="ChangePassword1FA.java" index="21">
+<position info="not_deleted" x="0" y="3366"/>
+</item>
+<item historyLabel="ChangePassword2FA.java" index="25">
+<position info="not_deleted" x="0" y="3335"/>
+</item>
+<item historyLabel="ChangePassword2FA.java" index="26">
+<position info="not_deleted" x="3335" y="0"/>
+</item>
+<item historyLabel="ChangePassword2FA.java" index="25">
+<position info="not_deleted" x="0" y="3335"/>
+</item>
+<item historyLabel="ChangePassword2FA2.java" index="27">
+<position info="not_deleted" x="0" y="2926"/>
+</item>
+<item historyLabel="ChangePassword2FA2.java" index="28">
+<position info="not_deleted" x="2926" y="0"/>
+</item>
+<item historyLabel="login2FA.jsp" index="29">
+<position info="not_deleted" x="414" y="0"/>
+</item>
+<item historyLabel="login2FA.jsp" index="30">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="login2FA.jsp" index="30">
+<position info="not_deleted" x="616" y="0"/>
+</item>
+<item historyLabel="login2FA.jsp" index="30">
+<position info="not_deleted" x="865" y="192"/>
+</item>
+<item historyLabel="login2FA.jsp" index="31">
+<position info="not_deleted" x="1305" y="1087"/>
+</item>
+<item active="true" historyLabel="login2FA.jsp" index="32">
+<position info="not_deleted" x="733" y="306"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -501,15 +567,8 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="topLeft"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@32124f5"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@362ecc1"/>
-</trimArea>
 <trimArea IMemento.internal.id="131072">
 <trimItem IMemento.internal.id="topRight"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@340e741"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@32f5bb3"/>
 </trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
@@ -523,50 +582,50 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SSOClientService.java" tooltip="pib/src/uob/service/SSOClientService.java">
-<persistable path="/pib/src/uob/service/SSOClientService.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="login2FA.jsp" tooltip="pibChinese/WebContent/Login/login2FA.jsp">
+<persistable path="/pibChinese/WebContent/Login/login2FA.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SSO.java" tooltip="SSOEJB/ejbModule/com/sso/SSO.java">
-<persistable path="/SSOEJB/ejbModule/com/sso/SSO.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="login2FA.jsp" tooltip="pib/WebContent/Login/login2FA.jsp">
+<persistable path="/pib/WebContent/Login/login2FA.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="2FA.jsp" tooltip="pib/WebContent/Landing/2FA.jsp">
-<persistable path="/pib/WebContent/Landing/2FA.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ChangePassword2FA2.java" tooltip="pibChinese/src/uob/password/ChangePassword2FA2.java">
+<persistable path="/pibChinese/src/uob/password/ChangePassword2FA2.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="loginFail.jsp" tooltip="pib/WebContent/Login/loginFail.jsp">
-<persistable path="/pib/WebContent/Login/loginFail.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ChangePassword2FA2.java" tooltip="pib/src/uob/password/ChangePassword2FA2.java">
+<persistable path="/pib/src/uob/password/ChangePassword2FA2.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="logout.jsp" tooltip="pib/WebContent/Login/logout.jsp">
-<persistable path="/pib/WebContent/Login/logout.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ChangePassword2FA.java" tooltip="pibChinese/src/uob/password/ChangePassword2FA.java">
+<persistable path="/pibChinese/src/uob/password/ChangePassword2FA.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Logout.java" tooltip="pib/src/uob/login/Logout.java">
-<persistable path="/pib/src/uob/login/Logout.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ChangePassword2FA.java" tooltip="pib/src/uob/password/ChangePassword2FA.java">
+<persistable path="/pib/src/uob/password/ChangePassword2FA.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="enquiry1FA.jsp" tooltip="fyp2/WebContent/enquiry/enquiry1FA.jsp">
-<persistable path="/fyp2/WebContent/enquiry/enquiry1FA.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ChangePassword1FA2.java" tooltip="pibChinese/src/uob/password/ChangePassword1FA2.java">
+<persistable path="/pibChinese/src/uob/password/ChangePassword1FA2.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="1FA.jsp" tooltip="pib/WebContent/Landing/1FA.jsp">
-<persistable path="/pib/WebContent/Landing/1FA.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ChangePassword1FA2.java" tooltip="pib/src/uob/password/ChangePassword1FA2.java">
+<persistable path="/pib/src/uob/password/ChangePassword1FA2.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="changePassword2FA2Success.jsp" tooltip="pib/WebContent/Password/changePassword2FA2Success.jsp">
-<persistable path="/pib/WebContent/Password/changePassword2FA2Success.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ChangePassword1FA.java" tooltip="pibChinese/src/uob/password/ChangePassword1FA.java">
+<persistable path="/pibChinese/src/uob/password/ChangePassword1FA.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="changePassword2FA2Fail.jsp" tooltip="pib/WebContent/Password/changePassword2FA2Fail.jsp">
-<persistable path="/pib/WebContent/Password/changePassword2FA2Fail.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ChangePassword1FA.java" tooltip="pib/src/uob/password/ChangePassword1FA.java">
+<persistable path="/pib/src/uob/password/ChangePassword1FA.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="changePassword2FA.jsp" tooltip="pib/WebContent/Password/changePassword2FA.jsp">
-<persistable path="/pib/WebContent/Password/changePassword2FA.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="enquiry2FA.jsp" tooltip="pibChinese/WebContent/enquiry/enquiry2FA.jsp">
+<persistable path="/pibChinese/WebContent/enquiry/enquiry2FA.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="changePassword1FA2Success.jsp" tooltip="pib/WebContent/Password/changePassword1FA2Success.jsp">
-<persistable path="/pib/WebContent/Password/changePassword1FA2Success.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="enquiry1FA.jsp" tooltip="pibChinese/WebContent/enquiry/enquiry1FA.jsp">
+<persistable path="/pibChinese/WebContent/enquiry/enquiry1FA.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="changePassword1FA2Fail.jsp" tooltip="pib/WebContent/Password/changePassword1FA2Fail.jsp">
-<persistable path="/pib/WebContent/Password/changePassword1FA2Fail.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="1FA.jsp" tooltip="pibChinese/WebContent/Landing/1FA.jsp">
+<persistable path="/pibChinese/WebContent/Landing/1FA.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="changePassword1FA.jsp" tooltip="pib/WebContent/Password/changePassword1FA.jsp">
-<persistable path="/pib/WebContent/Password/changePassword1FA.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="2FA.jsp" tooltip="pibChinese/WebContent/Landing/2FA.jsp">
+<persistable path="/pibChinese/WebContent/Landing/2FA.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="enquiry1FA.jsp" tooltip="pib/WebContent/enquiry/enquiry1FA.jsp">
-<persistable path="/pib/WebContent/enquiry/enquiry1FA.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.pagedesigner.PageDesignerEditor" name="ViewOnlineActivity.jsp" tooltip="pibChinese/WebContent/History/ViewOnlineActivity.jsp">
+<persistable path="/pibChinese/WebContent/History/ViewOnlineActivity.jsp"/>
 </file>
 </mruList>
 </workbench>

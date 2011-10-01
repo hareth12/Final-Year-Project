@@ -1,0 +1,5 @@
+package com.FDAccount;
+
+public interface FDAccountRemote {
+	public void testing(String a);
+}

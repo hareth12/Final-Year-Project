@@ -1,0 +1,27 @@
+package com.FDPlacement;
+
+package com.FDAccount;
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+
+@Entity
+public class FDPlacementClass implements Serializable{
+	@Id
+	private long accountNumber;
+	private double currentBalance;
+	private double availableBalance;
+	private String accountType;
+	private String idPib;
+	
+
+	public FDPlacementClass() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+	
+	
+	}

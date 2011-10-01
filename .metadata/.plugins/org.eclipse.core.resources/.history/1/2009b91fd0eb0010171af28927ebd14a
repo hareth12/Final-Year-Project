@@ -1,0 +1,32 @@
+package com.FDAccount;
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+
+@Entity
+public class FDAccountClass implements Serializable{
+	@Id
+	private long accountNumber;
+	private double currentBalance;
+	private double availableBalance;
+	private String accountType;
+	private String idPib;
+	
+	public FDAccountClass(long accountNumber2){
+		this.accountNumber=accountNumber2;
+		this.setCurrentBalance(0);
+		this.setAvailableBalance(0);
+		this.setAccountType("UniPlus");
+	}
+
+
+	public AccountClass() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+	
+	
+	}

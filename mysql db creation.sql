@@ -28,7 +28,37 @@ CREATE  TABLE `fyp`.`accountLinkClass` (
 
   PRIMARY KEY (`indexHash`) );
   
+  CREATE  TABLE `fyp`.`FDPlacementClass` (
 
+  `accountNumber` BIGINT(20) NOT NULL ,
+
+  `amount` FLOAT NOT NULL ,
+
+  `interestRate` FLOAT NOT NULL ,
+
+  `timeStarted` BIGINT(20) NOT NULL ,
+
+  `timeToEnd` BIGINT(20) NOT NULL ,
+
+  `idPib` VARCHAR(45) NOT NULL ,
+
+  PRIMARY KEY (`accountNumber`) );
+
+
+  
+CREATE  TABLE `fyp`.`FDAccountClass` (
+
+  `AccountNumber` BIGINT(20) NOT NULL ,
+
+  `currentAmount` FLOAT NOT NULL ,
+
+  `availableAmount` FLOAT NOT NULL ,
+
+  `idPib` VARCHAR(45) NOT NULL ,
+
+  `accountType` VARCHAR(45) NOT NULL ,
+
+  PRIMARY KEY (`AccountNumber`) );
 
   
   CREATE  TABLE `fyp`.`trustClass` (
