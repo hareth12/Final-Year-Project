@@ -3,7 +3,7 @@
 <head>
 <title>Pseudo Bank Personal Internal Banking</title>
 <link href="/pib/asset/secured/helper.css" media="screen" rel="stylesheet" type="text/css" />
-
+ <link rel="icon" type="image/ico" href="/pib/asset/favicon.ico" />
 <style type="text/css">
 
 /* Layout */
@@ -34,9 +34,9 @@
     </li>
     <li class="dir">View Rates
         <ul>
-            <li><a href="./">View Unit Trust Prices</a></li>
-            <li><a href="./">View Foreign Exchange Rates</a></li>
-            <li><a href="./">View Gold & Silver Rates</a></li>
+            <li><a href="/pib/ViewUnitTrust1FA">View Unit Trust Prices</a></li>
+            <li><a href="/pib/ViewForex1FA">View Foreign Exchange Rates</a></li>
+            <li><a href="/pib/ViewGoldSilver1FA">View Gold & Silver Rates</a></li>
         </ul>
     </li>
     <li class="dir">Customer Service

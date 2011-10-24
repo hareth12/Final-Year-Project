@@ -11,5 +11,7 @@ public interface FDAccountRemote {
 	public double deposit(long accountNumber, Double amount);
 
 	public double withdraw(long accountNumber, Double amount);
+
+	public boolean makeFDPlacement(long accountNumber, Double amount, int days);
 }
 

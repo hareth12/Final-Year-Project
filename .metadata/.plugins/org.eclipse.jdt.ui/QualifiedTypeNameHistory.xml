@@ -11,4 +11,5 @@
 <fullyQualifiedTypeName name="uobBankAdmin.data.SSOData"/>
 <fullyQualifiedTypeName name="uobBankAdmin.service.SSOClientService"/>
 <fullyQualifiedTypeName name="uobBankAdmin.service.RBKClientService"/>
+<fullyQualifiedTypeName name="uob.data.FDPlacementClass"/>
 </qualifiedTypeNameHistroy>

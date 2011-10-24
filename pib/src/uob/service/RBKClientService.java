@@ -130,16 +130,16 @@ public class RBKClientService {
 			if(opCodeString.equals("19")){
 				int i=1;
 				while(i!=j){
-					System.out.println("<fypWebService><RBKClientService>accountNumber = "+postParse[i]);
+					//System.out.println("<fypWebService><RBKClientService>accountNumber = "+postParse[i]);
 					accountNumberString = postParse[i];
 					i++;
-					System.out.println("<fypWebService><RBKClientService>accountType = "+postParse[i]);
+					//System.out.println("<fypWebService><RBKClientService>accountType = "+postParse[i]);
 					accountType = postParse[i];
 					i++;
-					System.out.println("<fypWebService><RBKClientService>currentBalance = "+postParse[i]);
+				//	System.out.println("<fypWebService><RBKClientService>currentBalance = "+postParse[i]);
 					currentBalanceString = postParse[i];
 					i++;
-					System.out.println("<fypWebService><RBKClientService>availableBalance = "+postParse[i]);
+				//	System.out.println("<fypWebService><RBKClientService>availableBalance = "+postParse[i]);
 					availableBalanceString = postParse[i];
 					i++;
 				

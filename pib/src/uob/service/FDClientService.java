@@ -299,5 +299,37 @@ public class FDClientService {
 			return amountReturn;  	 
 			}
 
+     
+     public boolean makeFDPlacement(long accountNumber ,double amount, int days, String idPib){//opCode =51
+    	 System.out.println("<FDClientService><51> method is called with accountNumber = "+accountNumber +" amount = "+amount+" days = "+days );
+    	
+    	 	String opCodeString=null;
+	    	double amountReturn=-1;
+	    	
+	    	String accountNumberString = Long.toString(accountNumber);
+	    	String amountString=Double.toString(amount);
+	    	String daysString=Integer.toString(days);
+
+			String returnFromFD=sendRequestFD("51|"+accountNumberString+"|"+amountString+"|"+daysString+"|"+idPib+"|filler|filler|filler|filler");
+ 		System.out.println("returnFromFD= "+returnFromFD);
+	    	
+			
+			if(returnFromFD!=null){
+				String[] postParse = returnFromFD.split("[|]+");
+				opCodeString = postParse[0];
+				int j= postParse.length;
+				
+				//active
+				if(opCodeString.equals("59")){
+					return true;
+					
+				}
+				else
+					System.out.println("<FDClientService><51>returnFromFD is null");
+				
+			}
+			return false;  	 
+			}
+
 }
 

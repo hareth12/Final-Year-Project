@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
+ <link rel="icon" type="image/ico" href="/pib/asset/favicon.ico" />
 <title>Pseudo Bank Personal Internal Banking</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="author" content="Tom@Lwis (http://www.lwis.net/free-css-drop-down-menu/)" />
@@ -53,14 +54,14 @@
         <ul>
             <li><a href="/pib/FDEnquiry1">Enquiry</a></li>
             <li><a href="/pib/FDTransfer1">Transfer Fund</a></li>
-            <li><a href="/pib/FDMakePlacemen1">Make Placement</a></li>
+            <li><a href="/pib/FDMakePlacement1">Make Placement</a></li>
         </ul>
     </li>    
     <li class="dir">View Rates
         <ul>
-            <li><a href="./">View Unit Trust Prices</a></li>  
-            <li><a href="./">View Foreign Exchange Rates</a></li>
-            <li><a href="./">View Gold & Silver Rates</a></li>
+            <li><a href="/pib/ViewUnitTrust">View Unit Trust Prices</a></li>  
+            <li><a href="/pib/ViewForex">View Foreign Exchange Rates</a></li>
+            <li><a href="/pib/ViewGoldSilver">View Gold & Silver Rates</a></li>
         </ul>
     </li>
     <li class="dir">Customer Service</a>

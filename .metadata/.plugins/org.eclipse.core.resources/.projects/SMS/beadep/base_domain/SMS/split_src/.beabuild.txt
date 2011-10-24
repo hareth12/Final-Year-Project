@@ -1,0 +1,2 @@
+C\:/Users/ngzhongqin/workspace/FinalYearProject/SMS/EarContent/APP-INF/classes = APP-INF/classes
+C\:/Users/ngzhongqin/workspace/FinalYearProject/SMSMDB/build/classes = SMSMDB.jar

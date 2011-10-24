@@ -6,6 +6,7 @@
 <meta name="author" content="Tom@Lwis (http://www.lwis.net/free-css-drop-down-menu/)" />
 <meta name="keywords" content="css, dropdowns, dropdown menu, drop-down, menu, navigation, nav, horizontal, vertical left-to-right, vertical right-to-left, horizontal linear, horizontal upwards, cross browser, internet explorer, ie, firefox, safari, opera, browser, lwis" />
 <meta name="description" content="Simple vertical left-to-right direction css drop-down menu demo using clean, standards-friendly, free, easy, cross browser framework for css drop-down menus" />
+ <link rel="icon" type="image/ico" href="/pib/asset/favicon.ico" />
 <link href="/pib/asset/secured/helper.css" media="screen" rel="stylesheet" type="text/css" />
 
 <style type="text/css">
@@ -53,14 +54,14 @@
         <ul>
             <li><a href="/pib/FDEnquiry1">Enquiry</a></li>
             <li><a href="/pib/FDTransfer1">Transfer Fund</a></li>
-            <li><a href="/pib/FDMakePlacemen1">Make Placement</a></li>
+            <li><a href="/pib/FDMakePlacement1">Make Placement</a></li>
         </ul>
     </li>    
     <li class="dir">View Rates
         <ul>
-            <li><a href="./">View Unit Trust Prices</a></li>  
-            <li><a href="./">View Foreign Exchange Rates</a></li>
-            <li><a href="./">View Gold & Silver Rates</a></li>
+            <li><a href="/pib/ViewUnitTrust">View Unit Trust Prices</a></li>  
+            <li><a href="/pib/ViewForex">View Foreign Exchange Rates</a></li>
+            <li><a href="/pib/ViewGoldSilver">View Gold & Silver Rates</a></li>
         </ul>
     </li>
     <li class="dir">Customer Service</a>

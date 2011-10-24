@@ -53,6 +53,8 @@ public class Landing1FA extends HttpServlet {
 		if(validCookieBool){
 			String userName=ssocs.getLoginName(userHash);
 			request.setAttribute("userName", userName);
+			
+			rbkcs.withdraw(592462483, 1);
 					
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/Landing/1FA.jsp");

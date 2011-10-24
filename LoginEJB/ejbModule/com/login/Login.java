@@ -24,6 +24,8 @@ public class Login implements LoginRemote {
 	
 	@PersistenceContext(unitName="login-unit")
 	private EntityManager em;
+	
+	SMSClientService sms= new SMSClientService();
 
 	@Override
 	public boolean login(String idPib, String password) throws Exception {
@@ -81,16 +83,12 @@ public class Login implements LoginRemote {
 	}
 	
     private void sendSMS(String preHash,String Hash , String telephone, String time) throws Exception{
-    	String Msg = "The+SMS-OTP+is+"+preHash+"+"+Hash+"+for+TheBank+Personal+Internet+Banking+Please+enter+by+"+time+"+Singapore+Time";
-        URL smsURL = new URL("http://www.smsxchange.com/scripts/sendsms.asp?phone="+telephone +"&sms="+Msg+"&userid=zhongcai&password=607945");
-            URLConnection yc = smsURL.openConnection();
-            BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
-            String inputLine;
-            while((inputLine=in.readLine())!=null){
-                System.out.println(inputLine);
-            }
-            in.close();
-        }
+    	System.out.println("inside send SMS of Login.");
+    	String Msg = "The+SMS-OTP+is+"+preHash+"+"+Hash+"+for+PseudoBank+Personal+Internet+Banking+Please+enter+by+"+time+"+Singapore+Time";
+    	
+    	sms.sendSMS(telephone,Msg);
+   }
+       
 	
 	private String hashGenerator(int len){
 		String AB = "0123456789";
@@ -174,9 +172,7 @@ public class Login implements LoginRemote {
 				
 				String timeToExpire = changeDate(x.getTimeToEnd());
 				
-				
-				
-			///	sendSMS(pre2FAHash,hash2FA, x.getTelephone(), timeToExpire);
+				sendSMS(pre2FAHash,hash2FA, x.getTelephone(), timeToExpire);
 				
 				
 				

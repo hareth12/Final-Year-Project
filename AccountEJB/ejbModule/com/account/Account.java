@@ -50,30 +50,7 @@ public class Account implements AccountRemote {
 		q.setParameter(1, idPib);
 		List<AccountClass> resultList=q.getResultList();
 		
-		
-		//checking purpose
-		System.out.println("<Account><getAccount>size = "+ resultList.size());
-		int index = resultList.size();
-		int i =0;
-		while(i!=index){
-			
-			/*
-			AccountClassClean x = new AccountClassClean();
-			x.setAccountNumber(resultList.get(i).getAccountNumber());
-			x.setAccountType(resultList.get(i).getAccountType());
-			x.setAvailableBalance(resultList.get(i).getAvailableBalance());
-			x.setCurrentBalance(resultList.get(i).getCurrentBalance());
-			x.setIdPib(idPib);
-			accountList.add(x);
-			*/
-			
-			System.out.println("<Account><getAccount>AccountNumber   = "+ resultList.get(i).getAccountNumber());
-			System.out.println("<Account><getAccount>Account Type    = "+ resultList.get(i).getAccountType());
-			System.out.println("<Account><getAccount>Current Balance = "+ resultList.get(i).getCurrentBalance());
-			System.out.println("<Account><getAccount>Avail Balance   = "+ resultList.get(i).getAvailableBalance());
-			i++;
-		}
-		
+
 		return resultList;
 		
 	}

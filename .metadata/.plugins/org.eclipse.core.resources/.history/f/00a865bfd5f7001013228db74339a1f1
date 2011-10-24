@@ -1,0 +1,92 @@
+package com.SMSMDB;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.List;
+import java.util.Properties;
+
+import javax.ejb.ActivationConfigProperty;
+import javax.ejb.EJB;
+import javax.ejb.MessageDriven;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.MessageListener;
+import javax.jms.Queue;
+import javax.jms.QueueConnection;
+import javax.jms.QueueConnectionFactory;
+import javax.jms.QueueSender;
+import javax.jms.QueueSession;
+import javax.jms.TextMessage;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+@MessageDriven(mappedName = "SMSQueue", activationConfig = { @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue") })
+public class SMSMDB implements MessageListener {
+	QueueConnection cnn = null;
+    QueueSender sender = null;
+    QueueSession session = null;
+    InitialContext ctx;
+    Hashtable ht = new Hashtable();
+	
+	
+	
+	/**
+	 * Default constructor.
+	 */
+	public SMSMDB() {
+		
+	}
+
+	/**
+	 * @see MessageListener#onMessage(Message)
+	 */
+	public void onMessage(Message message) {
+		
+		TextMessage tmsg = null;
+		tmsg = (TextMessage) message;
+		int opCode = 99;
+		String parameter1 = null;
+		String parameter2 = null;
+		String parameter3 = null;
+		String parameter4 = null;
+		String parameter5 = null;
+		String parameter6 = null;
+		String parameter7 = null;
+		String parameter8 = null;
+		System.out.println("<sms module>");
+		
+		//parsing message into opcode, and parameters
+		String preParse;
+		try {
+			preParse = tmsg.getText();
+			String[] postParse=preParse.split("[|]+");	
+			parameter0=postParse[0];
+			parameter1=postParse[1];
+		
+			
+		} catch (JMSException e1) {
+			e1.printStackTrace();
+		}
+		
+		sendSMS(postParse[0],postParse[1]);
+				
+	}
+	
+    private void sendSMS(String telephone, String msg) throws Exception{
+ 
+        URL smsURL = new URL("http://www.smsxchange.com/scripts/sendsms.asp?phone="+telephone +"&sms="+msg+"&userid=zhongcai&password=607945");
+            URLConnection yc = smsURL.openConnection();
+            BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
+            String inputLine;
+            while((inputLine=in.readLine())!=null){
+                System.out.println(inputLine);
+            }
+            in.close();
+        }
+}
+

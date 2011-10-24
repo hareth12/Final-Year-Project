@@ -42,7 +42,43 @@ public class FDPlacement implements FDPlacementRemote {
 		
 		return resultList;
 	}
+
+
+	@Override
+	public boolean makeFDPlacement(long accountNumber, Double amount, int days, String idPib) {
+		FDPlacementClass x = new FDPlacementClass();
+		x.setAccountNumber(accountNumber);
+		x.setAmount(amount);
+		long currentTime = System.currentTimeMillis();
+		long matureTime=currentTime + (long)((long)days * 86400000);
+		System.out.println("mature time is "+matureTime);
+		System.out.println("current time is "+currentTime);
+		x.setTimeStarted(currentTime);
+		x.setTimeToEnd(matureTime);
+		if(days==30){
+			x.setInterestRate(0.014);
+		}
+		if(days==180){
+			x.setInterestRate(0.023);
+		}
+		x.setTxnNumber(Long.toString(randomAccountNumberGeneratorTXN()));
+		x.setIdPib(idPib);
+		em.persist(x);
+		
+		return true;
+	}
 	
-	
+	private long randomAccountNumberGeneratorTXN(){
+		
+		String AB = "0123456789";
+		Random rnd = new Random();
+		StringBuilder sb = new StringBuilder(20);
+		for( int i = 0; i < 10; i++ ) 
+		      sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );		
+		String resultString=sb.toString();	
+		long resultInt=Long.parseLong(resultString);	
+		
+		return resultInt;
+	}
 
 }

@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <title>Pseudo Bank Personal Internal Banking</title>
+ <link rel="icon" type="image/ico" href="/pib/asset/favicon.ico" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="author" content="Tom@Lwis (http://www.lwis.net/free-css-drop-down-menu/)" />
 <meta name="keywords" content="css, dropdowns, dropdown menu, drop-down, menu, navigation, nav, horizontal, vertical left-to-right, vertical right-to-left, horizontal linear, horizontal upwards, cross browser, internet explorer, ie, firefox, safari, opera, browser, lwis" />
@@ -53,14 +54,14 @@
         <ul>
             <li><a href="/pib/FDEnquiry1">Enquiry</a></li>
             <li><a href="/pib/FDTransfer1">Transfer Fund</a></li>
-            <li><a href="/pib/FDMakePlacemen1">Make Placement</a></li>
+            <li><a href="/pib/FDMakePlacement1">Make Placement</a></li>
         </ul>
     </li>    
     <li class="dir">View Rates
         <ul>
-            <li><a href="./">View Unit Trust Prices</a></li>  
-            <li><a href="./">View Foreign Exchange Rates</a></li>
-            <li><a href="./">View Gold & Silver Rates</a></li>
+            <li><a href="/pib/ViewUnitTrust">View Unit Trust Prices</a></li>  
+            <li><a href="/pib/ViewForex">View Foreign Exchange Rates</a></li>
+            <li><a href="/pib/ViewGoldSilver">View Gold & Silver Rates</a></li>
         </ul>
     </li>
     <li class="dir">Customer Service</a>
@@ -102,18 +103,18 @@
 		</tr>
 		
 			<% int j = 0;
-		while(y[i][0]!=null){
+		while(y[j][0]!=null){
 			out.println("<tr>"+
-						"<td>"+y[i][0]+"</td><td>"+y[i][1]+"</td><td>"+y[i][2]+"</td><td>"+y[i][3]+
+						"<td>"+y[j][0]+"</td><td>"+y[j][1]+"</td><td>"+y[j][2]+"</td><td>"+y[j][3]+
 						"</td></tr>");
-			i++;			
+			j++;			
 			}
 		 %>
 		  </tbody>
 		</table>
 			
 			<strong>Transfer Funds From Retail Account to Fixed Deposit Account</strong>
- 			<form method="post" action="/pib/FDTransfer2A">
+ 			<form method="post" action="/pib/FDTransfer21A">
             	<label>Retail Account </label>
             	<select name="fromRBK">	 	 
 				 <%i =0;			
@@ -133,7 +134,7 @@
 				%>  
 				  </select>
 				  <label>Amount</label>
-				  <input type="text" name="amount" id="amount" />
+				  <input type="text" name="amount1" id="amount1" />
 				 <input type="submit" value="Transfer"/> 
 				</form>
 				
@@ -141,29 +142,27 @@
 				<br></br>
 				
 				<strong>Transfer Funds From Fixed Deposit Account to Retail Account</strong>
- 			<form method="post" action="/pib/FDTransfer2B">
-            	
+ 			<form method="post" action="/pib/FDTransfer22A">   	
 				<label>Fixed Deposit Account</label>
-            	<select name="toFD">	 	 
+            	<select name="fromFD">	 	 
 				 <%i =0;
-						while(x[i][0]!=null){
-						System.out.println("inside sdahfiadshfo");
+					while(x[i][0]!=null){
 						out.println("<option value=\""+x[i][1]+"\">"+ x[i][0]+" "+x[i][1]+"</option>");
 						i++;
 					}
 				%>  
 				  </select>
 				  <label>Retail Account </label>
-            	<select name="fromRBK">	 	 
+            	<select name="toRBK">	 	 
 				 <%i =0;			
 					while(y[i][0]!=null){
 						out.println("<option value=\""+y[i][1]+"\">"+ y[i][0]+" "+y[i][1]+"</option>");
 						i++;
 					}
 				%>
-				</select>			
+				</select>		
 				  <label>Amount</label>
-				  <input type="text" name="amount" id="amount" />
+				  <input type="text" name="amount2" id="amount2" />
 				 <input type="submit" value="Transfer"/> 
 				</form>
 	

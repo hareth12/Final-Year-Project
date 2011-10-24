@@ -1,0 +1,81 @@
+package com.FDPlacement;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import javax.ejb.Stateful;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+@Stateful(mappedName="FDPlacement")
+public class FDPlacement implements FDPlacementRemote {
+
+	
+	@PersistenceContext(unitName="FDPlacement-unit")
+	private EntityManager em;
+
+	
+	private long randomAccountNumberGenerator(){
+		
+		String AB = "0123456789";
+		Random rnd = new Random();
+		StringBuilder sb = new StringBuilder(10);
+		for( int i = 0; i < 10; i++ ) 
+		      sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );		
+		String resultString=sb.toString();	
+		long resultInt=Long.parseLong(resultString);	
+		
+		return resultInt;
+	}
+
+
+	@Override
+	public List<FDPlacementClass> getPlacementList(long accountNumber) {
+		System.out.println("<FDPlacement><getPlacementList>accountNumber = "+accountNumber);
+				
+		Query q = em.createQuery("SELECT m from FDPlacementClass m where m.accountNumber = ?1 ");
+		q.setParameter(1, accountNumber);
+		List<FDPlacementClass> resultList=q.getResultList();
+		
+		return resultList;
+	}
+
+
+	@Override
+	public boolean makeFDPlacement(long accountNumber, Double amount, int days, String idPib) {
+		FDPlacementClass x = new FDPlacementClass();
+		x.setAccountNumber(accountNumber);
+		long currentTime = System.currentTimeMillis();
+		long matureTime=currentTime + days * 86400000 ;
+		x.setTimeStarted(currentTime);
+		x.setTimeToEnd(matureTime);
+		if(days==30){
+			x.setInterestRate(0.014);
+		}
+		if(days==180){
+			x.setInterestRate(0.023);
+		}
+		x.setTxnNumber(Long.toString(randomAccountNumberGeneratorTXN()));
+		x.setIdPib(idPib);
+		em.persist(x);
+		
+		return false;
+	}
+	
+	private long randomAccountNumberGeneratorTXN(){
+		
+		String AB = "0123456789";
+		Random rnd = new Random();
+		StringBuilder sb = new StringBuilder(20);
+		for( int i = 0; i < 10; i++ ) 
+		      sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );		
+		String resultString=sb.toString();	
+		long resultInt=Long.parseLong(resultString);	
+		
+		return resultInt;
+	}
+
+}

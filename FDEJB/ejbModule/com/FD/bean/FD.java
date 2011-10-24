@@ -173,7 +173,23 @@ public class FD implements MessageListener {
 					break;	
 					
 				case 51:
-					
+					try{
+						if(parameter1!=null){
+							//merely renaming
+							String accountNumberString = parameter1;
+							String amountString = parameter2;
+							String daysString = parameter3;
+							String idPib = parameter4;
+							
+							long accountNumber = Long.parseLong(accountNumberString);
+							Double amount = Double.parseDouble(amountString);
+							int days = Integer.parseInt(daysString);
+							makeFDPlacement(accountNumber,amount,days,idPib);
+						}
+					}catch(Exception e1){
+						e1.printStackTrace();
+						System.out.println("<fd><51>failed");
+					}
 					break;	
 					
 				case 61:
@@ -192,6 +208,18 @@ public class FD implements MessageListener {
 					System.out.println("<fd><preparse>failed");
 					break;
 			}		
+	}
+
+	private void makeFDPlacement(long accountNumber, Double amount, int days,String idPib) {
+		boolean makeFDPlacementSuccessFDAccount = fdAcct.makeFDPlacement(accountNumber,amount,days);
+		boolean makeFDPlacementSuccess = false;
+		if(makeFDPlacementSuccessFDAccount){
+			makeFDPlacementSuccess=fdPlacement.makeFDPlacement(accountNumber,amount,days,idPib);
+		}
+		if(makeFDPlacementSuccess){
+			replyToServlet("59||");
+		}else
+			replyToServlet("50||");
 	}
 
 	private void deposit(long accountNumber, Double amount) {

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="SMS">
+        <wb-resource deploy-path="/" source-path="/EarContent"/>
+        <dependent-module archiveName="SMSMDB.jar" deploy-path="/" handle="module:/resource/SMSMDB/SMSMDB">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="SMSMDBClient.jar" deploy-path="/" handle="module:/resource/SMSMDBClient/SMSMDBClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

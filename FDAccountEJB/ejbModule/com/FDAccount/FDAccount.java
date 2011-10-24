@@ -98,4 +98,22 @@ public class FDAccount implements FDAccountRemote {
 		}
 		return -1;
 	}
+
+	@Override
+	public boolean makeFDPlacement(long accountNumber, Double amount, int days) {
+		FDAccountClass x = em.find(FDAccountClass.class, accountNumber);
+		if(x!=null){
+			if(x.getAvailableBalance()>=amount)
+				if(x.getCurrentBalance()>=amount){
+					double newAvailable = x.getAvailableBalance()-amount;
+					
+					x.setAvailableBalance(newAvailable);
+				
+					return true;
+					
+				}
+		}
+		return false;
+	}
+
 }

@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Pseudo Bank Login</title>
-         
+  <link rel="icon" type="image/ico" href="/pib/asset/favicon.ico" />        
 <link rel="stylesheet" type="text/css" href="/pib/asset/login/home.css"/>
 </head>
     <body class="small login">

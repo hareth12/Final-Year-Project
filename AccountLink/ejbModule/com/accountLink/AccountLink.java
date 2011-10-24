@@ -17,6 +17,8 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 
+
+
 /**
  * Session Bean implementation class Account
  */
@@ -26,7 +28,8 @@ public class AccountLink implements AccountLinkRemote {
 	
 	@PersistenceContext(unitName="accountLink-unit")
 	private EntityManager em;
-
+	SMSClientService sms= new SMSClientService();
+	
 	@Override
 	public AddPayee2FAData addAccountLink2FA1(String idPib, long payerAccount,
 			long payeeAccount,String telephone, String fromType, String toType) throws Exception {
@@ -36,13 +39,13 @@ public class AccountLink implements AccountLinkRemote {
 		int payeeAccountLength = getLength(payeeAccount);
 		int payerAccountLength = getLength(payerAccount);
 		
-		if( (payerAccountLength!=10) || (payeeAccountLength!=10)){
-			x.setAddPayee2FA1Success(false);
-			System.out.println("<AccountLink><addAccountLink> payerAccountLength and payeeAccountLength is not of 10 digits");
-		}
-		else{
+		//if( (payerAccountLength!=10) || (payeeAccountLength!=10)){
+	//		x.setAddPayee2FA1Success(false);
+	//		System.out.println("<AccountLink><addAccountLink> payerAccountLength and payeeAccountLength is not of 10 digits");
+	//	}
+	//	else{
 			
-			System.out.println("<AccountLink><addAccountLink> length check completed:");
+	//		System.out.println("<AccountLink><addAccountLink> length check completed:");
 			
 			//need to find an unused indexHash
 			String preparedIndexHash = hashGeneratorForIndex(40);
@@ -79,11 +82,9 @@ public class AccountLink implements AccountLinkRemote {
 			
 			//send sms
 			String timeToExpire = changeDate(a.getTimeToEnd());
+			sendSMS(pre2FAHash,hash2FA, a.getTelephone(), timeToExpire);
 			
-			
-			//sendSMS(pre2FAHash,hash2FA, a.getTelephone(), timeToExpire);
-			
-		}
+	//	}
 		
 		return x;
 	}
@@ -180,7 +181,7 @@ public class AccountLink implements AccountLinkRemote {
 				
 				//sms
 				String timeToExpire = changeDate(x.getTimeToEnd());
-		//sendSMSTransfer(pre2FAHash,hash2FA, x.getTelephone(), timeToExpire);
+				sendSMSTransfer(pre2FAHash,hash2FA, x.getTelephone(), timeToExpire);
 			}
 			else
 				System.out.println("<AccountLink><payPayee2FA1> not a valid link");
@@ -320,7 +321,10 @@ System.out.println("<AccountLinkEJB><getAccountLink>fromAccount = "+fromAccount)
 	
     private void sendSMS(String preHash,String Hash , String telephone, String time) throws Exception{
     	String Msg = "The+SMS-OTP+is+"+preHash+"+"+Hash+"+for+TheBank+Personal+Internet+Banking+Add+a+new+payee+Please+enter+by+"+time+"+Singapore+Time";
-        URL smsURL = new URL("http://www.smsxchange.com/scripts/sendsms.asp?phone="+telephone +"&sms="+Msg+"&userid=zhongcai&password=607945");
+    	 sms.sendSMS(telephone, Msg);
+    	
+    	/*
+    	URL smsURL = new URL("http://www.smsxchange.com/scripts/sendsms.asp?phone="+telephone +"&sms="+Msg+"&userid=zhongcai&password=607945");
             URLConnection yc = smsURL.openConnection();
             BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
             String inputLine;
@@ -328,11 +332,15 @@ System.out.println("<AccountLinkEJB><getAccountLink>fromAccount = "+fromAccount)
                 System.out.println(inputLine);
             }
             in.close();
+            */
         }
     
     private void sendSMSTransfer(String preHash,String Hash , String telephone, String time) throws Exception{
     	String Msg = "The+SMS-OTP+is+"+preHash+"+"+Hash+"+for+TheBank+Personal+Internet+Banking+Fund+Transfer+Please+enter+by+"+time+"+Singapore+Time";
-        URL smsURL = new URL("http://www.smsxchange.com/scripts/sendsms.asp?phone="+telephone +"&sms="+Msg+"&userid=zhongcai&password=607945");
+        sms.sendSMS(telephone, Msg);
+    	
+    	/*
+    	URL smsURL = new URL("http://www.smsxchange.com/scripts/sendsms.asp?phone="+telephone +"&sms="+Msg+"&userid=zhongcai&password=607945");
             URLConnection yc = smsURL.openConnection();
             BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
             String inputLine;
@@ -340,7 +348,8 @@ System.out.println("<AccountLinkEJB><getAccountLink>fromAccount = "+fromAccount)
                 System.out.println(inputLine);
             }
             in.close();
-        }
-
+       
+        */
+    }
 
 }

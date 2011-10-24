@@ -4,12 +4,13 @@ public class CombinedService {
 	private FDClientService fdcs;
 	private RBKClientService rbkcs;
 	
-	CombinedService(){
+	public CombinedService(){
 		fdcs=new FDClientService();
 		rbkcs=new RBKClientService();
 	}
 	
 	public boolean transferRBKtoFD(long RBKnumber, long FDnumber, double amount){
+		System.out.println("RBK= "+RBKnumber+" FD = "+ FDnumber+" amount= "+amount);
 		if(rbkcs.withdraw(RBKnumber, amount)>0){
 			if(fdcs.deposit(FDnumber, amount)>0){
 				return true;
@@ -23,6 +24,7 @@ public class CombinedService {
 	}
 	
 	public boolean transferFDtoRBK(long RBKnumber, long FDnumber, double amount){
+		System.out.println("RBK= "+RBKnumber+" FD = "+ FDnumber+" amount= "+amount);
 		if(fdcs.withdraw(FDnumber, amount)>0){
 			if(rbkcs.deposit(RBKnumber, amount)>0){
 				return true;
